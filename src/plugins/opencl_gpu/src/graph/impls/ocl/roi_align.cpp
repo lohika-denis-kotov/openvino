@@ -4,7 +4,7 @@
 #include "roi_align_inst.h"
 #include "primitive_base.hpp"
 #include "impls/implementation_map.hpp"
-#include "intel_gpu/runtime/error_handler.hpp"
+#include "opencl_gpu/runtime/error_handler.hpp"
 #include "kernel_selector_helper.h"
 #include "roi_align/roi_align_kernel_selector.h"
 #include "roi_align/roi_align_kernel_ref.h"

@@ -2,16 +2,16 @@
 // SPDX-License-Identifier: Apache-2.0
 //
 
-#include "intel_gpu/plugin/program.hpp"
-#include "intel_gpu/plugin/common_utils.hpp"
+#include "opencl_gpu/plugin/program.hpp"
+#include "opencl_gpu/plugin/common_utils.hpp"
 
 #include "ngraph/op/reverse_sequence.hpp"
 
-#include "intel_gpu/primitives/reverse_sequence.hpp"
+#include "opencl_gpu/primitives/reverse_sequence.hpp"
 
 namespace ov {
 namespace runtime {
-namespace intel_gpu {
+namespace opencl_gpu {
 
 static void CreateReverseSequenceOp(Program& p, const std::shared_ptr<ngraph::op::v0::ReverseSequence>& op) {
     p.ValidateInputs(op, {2});
@@ -33,6 +33,6 @@ static void CreateReverseSequenceOp(Program& p, const std::shared_ptr<ngraph::op
 
 REGISTER_FACTORY_IMPL(v0, ReverseSequence);
 
-}  // namespace intel_gpu
+}  // namespace opencl_gpu
 }  // namespace runtime
 }  // namespace ov

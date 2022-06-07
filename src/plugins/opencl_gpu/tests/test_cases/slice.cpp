@@ -3,9 +3,9 @@
 //
 #include "test_utils.h"
 
-#include <intel_gpu/primitives/input_layout.hpp>
-#include <intel_gpu/primitives/slice.hpp>
-#include <intel_gpu/primitives/data.hpp>
+#include <opencl_gpu/primitives/input_layout.hpp>
+#include <opencl_gpu/primitives/slice.hpp>
+#include <opencl_gpu/primitives/data.hpp>
 
 #include <random>
 #include <algorithm>

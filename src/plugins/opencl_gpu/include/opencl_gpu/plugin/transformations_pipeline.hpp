@@ -8,11 +8,11 @@
 
 #include <ngraph/function.hpp>
 
-#include "intel_gpu/plugin/device_config.hpp"
+#include "opencl_gpu/plugin/device_config.hpp"
 
 namespace ov {
 namespace runtime {
-namespace intel_gpu {
+namespace opencl_gpu {
 
 class TransformationsPipeline {
 public:
@@ -25,6 +25,6 @@ private:
     cldnn::device_info device_info;
 };
 
-}  // namespace intel_gpu
+}  // namespace opencl_gpu
 }  // namespace runtime
 }  // namespace ov

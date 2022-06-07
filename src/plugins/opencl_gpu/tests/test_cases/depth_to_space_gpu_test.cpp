@@ -6,11 +6,11 @@
 
 #include "test_utils.h"
 
-#include <intel_gpu/primitives/input_layout.hpp>
-#include <intel_gpu/primitives/depth_to_space.hpp>
-#include <intel_gpu/primitives/reshape.hpp>
-#include <intel_gpu/primitives/permute.hpp>
-#include <intel_gpu/primitives/reorder.hpp>
+#include <opencl_gpu/primitives/input_layout.hpp>
+#include <opencl_gpu/primitives/depth_to_space.hpp>
+#include <opencl_gpu/primitives/reshape.hpp>
+#include <opencl_gpu/primitives/permute.hpp>
+#include <opencl_gpu/primitives/reorder.hpp>
 
 #include <cstddef>
 

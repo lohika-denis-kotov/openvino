@@ -2,7 +2,7 @@
 // SPDX-License-Identifier: Apache-2.0
 //
 
-#include "intel_gpu/plugin/device_config.hpp"
+#include "opencl_gpu/plugin/device_config.hpp"
 
 #include <ie_system_conf.h>
 #include <sys/stat.h>
@@ -14,8 +14,8 @@
 #include "cpp_interfaces/interface/ie_internal_plugin_config.hpp"
 #include "file_utils.h"
 #include "ie_api.h"
-#include "intel_gpu/plugin/itt.hpp"
-#include "openvino/runtime/intel_gpu/properties.hpp"
+#include "opencl_gpu/plugin/itt.hpp"
+#include "openvino/runtime/opencl_gpu/properties.hpp"
 #include <openvino/util/common_util.hpp>
 
 #ifdef _WIN32
@@ -31,7 +31,7 @@ using namespace InferenceEngine;
 
 namespace ov {
 namespace runtime {
-namespace intel_gpu {
+namespace opencl_gpu {
 
 static void createDirectory(std::string _path) {
 #if defined(OPENVINO_ENABLE_UNICODE_PATH_SUPPORT) && defined(_WIN32)
@@ -63,7 +63,7 @@ static int getNumberOfCores(const IStreamsExecutor::Config::PreferredCoreType co
 
 IE_SUPPRESS_DEPRECATED_START
 void Config::UpdateFromMap(const std::map<std::string, std::string>& configMap) {
-    OV_ITT_SCOPED_TASK(itt::domains::intel_gpu_plugin, "Config::UpdateFromMap");
+    OV_ITT_SCOPED_TASK(itt::domains::opencl_gpu_plugin, "Config::UpdateFromMap");
     for (auto& kvp : configMap) {
         std::string key = kvp.first;
         std::string val = kvp.second;
@@ -116,7 +116,7 @@ void Config::UpdateFromMap(const std::map<std::string, std::string>& configMap) 
             default:
                 IE_THROW(ParameterMismatch) << "Unsupported queue priority value: " << uVal;
             }
-        } else if (key == ov::intel_gpu::hint::queue_priority) {
+        } else if (key == ov::opencl_gpu::hint::queue_priority) {
             std::stringstream ss(val);
             ov::hint::Priority priority;
             ss >> priority;
@@ -176,13 +176,13 @@ void Config::UpdateFromMap(const std::map<std::string, std::string>& configMap) 
             default:
                 IE_THROW(ParameterMismatch) << "Unsupported queue throttle value: " << uVal;
             }
-        } else if (key == ov::intel_gpu::hint::queue_throttle) {
+        } else if (key == ov::opencl_gpu::hint::queue_throttle) {
             std::stringstream ss(val);
-            ov::intel_gpu::hint::ThrottleLevel throttle;
+            ov::opencl_gpu::hint::ThrottleLevel throttle;
             ss >> throttle;
-            if (throttle == ov::intel_gpu::hint::ThrottleLevel::HIGH)
+            if (throttle == ov::opencl_gpu::hint::ThrottleLevel::HIGH)
                 queueThrottle = cldnn::throttle_mode_types::high;
-            else if (throttle == ov::intel_gpu::hint::ThrottleLevel::MEDIUM)
+            else if (throttle == ov::opencl_gpu::hint::ThrottleLevel::MEDIUM)
                 queueThrottle = cldnn::throttle_mode_types::med;
             else
                 queueThrottle = cldnn::throttle_mode_types::low;
@@ -307,7 +307,7 @@ void Config::UpdateFromMap(const std::map<std::string, std::string>& configMap) 
                            << "\nOut of range value will be set as a default value, maximum concurrent threads.";
             }
         } else if (key.compare(GPUConfigParams::KEY_GPU_ENABLE_LOOP_UNROLLING) == 0 ||
-                   key == ov::intel_gpu::enable_loop_unrolling) {
+                   key == ov::opencl_gpu::enable_loop_unrolling) {
             if (val.compare(PluginConfigParams::YES) == 0) {
                 enable_loop_unrolling = true;
             } else if (val.compare(PluginConfigParams::NO) == 0) {
@@ -316,7 +316,7 @@ void Config::UpdateFromMap(const std::map<std::string, std::string>& configMap) 
                 IE_THROW(ParameterMismatch) << "Unsupported KEY_GPU_ENABLE_LOOP_UNROLLING flag value: " << val;
             }
         } else if (key.compare(GPUConfigParams::KEY_GPU_HOST_TASK_PRIORITY) == 0 ||
-                   key == ov::intel_gpu::hint::host_task_priority) {
+                   key == ov::opencl_gpu::hint::host_task_priority) {
             if (val.compare(GPUConfigParams::GPU_HOST_TASK_PRIORITY_HIGH) == 0 ||
                 val.compare(ov::util::to_string(ov::hint::Priority::HIGH)) == 0) {
                 task_exec_config._threadPreferredCoreType = IStreamsExecutor::Config::BIG;
@@ -338,7 +338,7 @@ void Config::UpdateFromMap(const std::map<std::string, std::string>& configMap) 
 }
 
 void Config::adjustKeyMapValues() {
-    OV_ITT_SCOPED_TASK(itt::domains::intel_gpu_plugin, "Config::AdjustKeyMapValues");
+    OV_ITT_SCOPED_TASK(itt::domains::opencl_gpu_plugin, "Config::AdjustKeyMapValues");
     if (useProfiling) {
         key_config_map[PluginConfigParams::KEY_PERF_COUNT] = PluginConfigParams::YES;
         key_config_map[ov::enable_profiling.name()] = PluginConfigParams::YES;
@@ -423,7 +423,7 @@ void Config::adjustKeyMapValues() {
             priority = ov::util::to_string(ov::hint::Priority::LOW);
         else
             priority = ov::util::to_string(ov::hint::Priority::MEDIUM);
-        key_config_map[ov::intel_gpu::hint::queue_priority.name()] = priority;
+        key_config_map[ov::opencl_gpu::hint::queue_priority.name()] = priority;
     }
     {
         std::string qt = "0";
@@ -446,12 +446,12 @@ void Config::adjustKeyMapValues() {
     {
         std::string throttleLevel;
         if (queueThrottle == cldnn::throttle_mode_types::high)
-            throttleLevel = ov::util::to_string(ov::intel_gpu::hint::ThrottleLevel::HIGH);
+            throttleLevel = ov::util::to_string(ov::opencl_gpu::hint::ThrottleLevel::HIGH);
         else if (queueThrottle == cldnn::throttle_mode_types::low)
-            throttleLevel = ov::util::to_string(ov::intel_gpu::hint::ThrottleLevel::LOW);
+            throttleLevel = ov::util::to_string(ov::opencl_gpu::hint::ThrottleLevel::LOW);
         else
-            throttleLevel = ov::util::to_string(ov::intel_gpu::hint::ThrottleLevel::MEDIUM);
-        key_config_map[ov::intel_gpu::hint::queue_throttle.name()] = throttleLevel;
+            throttleLevel = ov::util::to_string(ov::opencl_gpu::hint::ThrottleLevel::MEDIUM);
+        key_config_map[ov::opencl_gpu::hint::queue_throttle.name()] = throttleLevel;
     }
     {
         std::string hostTaskPriority;
@@ -461,7 +461,7 @@ void Config::adjustKeyMapValues() {
             hostTaskPriority = ov::util::to_string(ov::hint::Priority::HIGH);
         else
             hostTaskPriority = ov::util::to_string(ov::hint::Priority::MEDIUM);
-        key_config_map[ov::intel_gpu::hint::host_task_priority.name()] = hostTaskPriority;
+        key_config_map[ov::opencl_gpu::hint::host_task_priority.name()] = hostTaskPriority;
     }
     {
         std::string tm = PluginConfigParams::TUNING_DISABLED;
@@ -503,10 +503,10 @@ void Config::adjustKeyMapValues() {
 
     if (enable_loop_unrolling) {
         key_config_map[GPUConfigParams::KEY_GPU_ENABLE_LOOP_UNROLLING] = PluginConfigParams::YES;
-        key_config_map[ov::intel_gpu::enable_loop_unrolling.name()] = PluginConfigParams::YES;
+        key_config_map[ov::opencl_gpu::enable_loop_unrolling.name()] = PluginConfigParams::YES;
     } else {
         key_config_map[GPUConfigParams::KEY_GPU_ENABLE_LOOP_UNROLLING] = PluginConfigParams::NO;
-        key_config_map[ov::intel_gpu::enable_loop_unrolling.name()] = PluginConfigParams::NO;
+        key_config_map[ov::opencl_gpu::enable_loop_unrolling.name()] = PluginConfigParams::NO;
     }
 
     key_config_map[PluginConfigParams::KEY_PERFORMANCE_HINT] = perfHintsConfig.ovPerfHint;
@@ -518,8 +518,8 @@ void Config::adjustKeyMapValues() {
 
 bool Config::isNewApiProperty(std::string property) {
     static const std::set<std::string> new_api_keys{
-        ov::intel_gpu::hint::queue_priority.name(),
-        ov::intel_gpu::hint::queue_throttle.name(),
+        ov::opencl_gpu::hint::queue_priority.name(),
+        ov::opencl_gpu::hint::queue_throttle.name(),
         ov::compilation_num_threads.name(),
         ov::num_streams.name(),
     };
@@ -536,7 +536,7 @@ std::string Config::ConvertPropertyToLegacy(const std::string& key, const std::s
         else if (priority == ov::hint::Priority::LOW)
             return PluginConfigParams::MODEL_PRIORITY_LOW;
     } else if (key == GPUConfigParams::KEY_GPU_HOST_TASK_PRIORITY) {
-        auto priority = ov::util::from_string(value, ov::intel_gpu::hint::host_task_priority);
+        auto priority = ov::util::from_string(value, ov::opencl_gpu::hint::host_task_priority);
         if (priority == ov::hint::Priority::HIGH)
             return GPUConfigParams::GPU_HOST_TASK_PRIORITY_HIGH;
         else if (priority == ov::hint::Priority::MEDIUM)
@@ -569,6 +569,6 @@ Config& Configs::GetDefaultDeviceConfig() {
 
 IE_SUPPRESS_DEPRECATED_END
 
-}  // namespace intel_gpu
+}  // namespace opencl_gpu
 }  // namespace runtime
 }  // namespace ov

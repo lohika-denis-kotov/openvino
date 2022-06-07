@@ -21,19 +21,19 @@ namespace {
     };
 
     const std::vector<std::map<std::string, std::string>> multiConfigs = {
-            {{ InferenceEngine::MultiDeviceConfigParams::KEY_MULTI_DEVICE_PRIORITIES , CommonTestUtils::DEVICE_GPU}}
+            {{ InferenceEngine::MultiDeviceConfigParams::KEY_MULTI_DEVICE_PRIORITIES , CommonTestUtils::DEVICE_OCL}}
     };
 
     const std::vector<std::map<std::string, std::string>> autoConfigs = {
-        {{InferenceEngine::MultiDeviceConfigParams::KEY_MULTI_DEVICE_PRIORITIES , CommonTestUtils::DEVICE_GPU},
+        {{InferenceEngine::MultiDeviceConfigParams::KEY_MULTI_DEVICE_PRIORITIES , CommonTestUtils::DEVICE_OCL},
             {InferenceEngine::MultiDeviceConfigParams::KEY_MULTI_DEVICE_PRIORITIES ,
-             CommonTestUtils::DEVICE_GPU + std::string(",") + CommonTestUtils::DEVICE_CPU}}
+             CommonTestUtils::DEVICE_OCL + std::string(",") + CommonTestUtils::DEVICE_CPU}}
     };
 
     INSTANTIATE_TEST_SUITE_P(smoke_BehaviorTests, InferRequestPreprocessTest,
                             ::testing::Combine(
                                     ::testing::ValuesIn(netPrecisions),
-                                    ::testing::Values(CommonTestUtils::DEVICE_GPU),
+                                    ::testing::Values(CommonTestUtils::DEVICE_OCL),
                                     ::testing::ValuesIn(configs)),
                             InferRequestPreprocessTest::getTestCaseName);
 
@@ -75,7 +75,7 @@ namespace {
                                         ::testing::ValuesIn(ioLayouts),
                                         ::testing::Bool(),
                                         ::testing::Bool(),
-                                        ::testing::Values(CommonTestUtils::DEVICE_GPU),
+                                        ::testing::Values(CommonTestUtils::DEVICE_OCL),
                                         ::testing::ValuesIn(configs)),
                                 InferRequestPreprocessConversionTest::getTestCaseName);
 
@@ -89,7 +89,7 @@ namespace {
                                 ::testing::Bool(),
                                 ::testing::Values(true), // only SetBlob
                                 ::testing::Values(true), // only SetBlob
-                                ::testing::Values(CommonTestUtils::DEVICE_GPU),
+                                ::testing::Values(CommonTestUtils::DEVICE_OCL),
                                 ::testing::ValuesIn(configs)),
                         InferRequestPreprocessDynamicallyInSetBlobTest::getTestCaseName);
 

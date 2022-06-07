@@ -18,7 +18,7 @@ inline const std::string getPluginLibNameByDevice(const std::string& deviceName)
             { "VPUX", "openvino_intel_vpux_plugin" },
             { "CPU", "openvino_intel_cpu_plugin" },
             { "GNA", "openvino_intel_gna_plugin" },
-            { "GPU", "openvino_intel_gpu_plugin" },
+            { "OCL", "openvino_opencl_gpu_plugin" },
             { "HETERO", "openvino_hetero_plugin" },
             { "BATCH", "openvino_auto_batch_plugin" },
             { "MULTI", "openvino_auto_plugin" },

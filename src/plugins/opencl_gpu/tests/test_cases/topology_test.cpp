@@ -4,18 +4,18 @@
 
 #include "test_utils.h"
 
-#include <intel_gpu/primitives/lrn.hpp>
-#include <intel_gpu/primitives/convolution.hpp>
-#include <intel_gpu/primitives/fully_connected.hpp>
-#include <intel_gpu/primitives/pooling.hpp>
-#include <intel_gpu/primitives/data.hpp>
-#include <intel_gpu/primitives/reorder.hpp>
-#include <intel_gpu/primitives/scale.hpp>
-#include <intel_gpu/primitives/eltwise.hpp>
-#include <intel_gpu/primitives/softmax.hpp>
-#include <intel_gpu/primitives/activation.hpp>
-#include <intel_gpu/primitives/concatenation.hpp>
-#include <intel_gpu/graph/topology.hpp>
+#include <opencl_gpu/primitives/lrn.hpp>
+#include <opencl_gpu/primitives/convolution.hpp>
+#include <opencl_gpu/primitives/fully_connected.hpp>
+#include <opencl_gpu/primitives/pooling.hpp>
+#include <opencl_gpu/primitives/data.hpp>
+#include <opencl_gpu/primitives/reorder.hpp>
+#include <opencl_gpu/primitives/scale.hpp>
+#include <opencl_gpu/primitives/eltwise.hpp>
+#include <opencl_gpu/primitives/softmax.hpp>
+#include <opencl_gpu/primitives/activation.hpp>
+#include <opencl_gpu/primitives/concatenation.hpp>
+#include <opencl_gpu/graph/topology.hpp>
 
 
 #include <iostream>

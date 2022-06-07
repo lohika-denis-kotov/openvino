@@ -16,7 +16,7 @@
 #include "permute_inst.h"
 #include "depth_to_space_inst.h"
 #include "region_yolo_inst.h"
-#include "intel_gpu/runtime/debug_configuration.hpp"
+#include "opencl_gpu/runtime/debug_configuration.hpp"
 
 using namespace cldnn;
 

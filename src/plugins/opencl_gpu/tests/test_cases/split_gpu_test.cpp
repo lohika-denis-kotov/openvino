@@ -4,10 +4,10 @@
 
 #include "test_utils.h"
 
-#include <intel_gpu/primitives/input_layout.hpp>
-#include <intel_gpu/primitives/split.hpp>
-#include <intel_gpu/primitives/scale.hpp>
-#include <intel_gpu/primitives/reorder.hpp>
+#include <opencl_gpu/primitives/input_layout.hpp>
+#include <opencl_gpu/primitives/split.hpp>
+#include <opencl_gpu/primitives/scale.hpp>
+#include <opencl_gpu/primitives/reorder.hpp>
 
 #include <sstream>
 #include <iomanip>

@@ -2,17 +2,17 @@
 // SPDX-License-Identifier: Apache-2.0
 //
 
-#include "intel_gpu/plugin/program.hpp"
-#include "intel_gpu/plugin/common_utils.hpp"
+#include "opencl_gpu/plugin/program.hpp"
+#include "opencl_gpu/plugin/common_utils.hpp"
 
 #include "ngraph/op/batch_to_space.hpp"
 #include "ngraph/op/constant.hpp"
 
-#include "intel_gpu/primitives/batch_to_space.hpp"
+#include "opencl_gpu/primitives/batch_to_space.hpp"
 
 namespace ov {
 namespace runtime {
-namespace intel_gpu {
+namespace opencl_gpu {
 
 static void CreateBatchToSpaceOp(Program& p, const std::shared_ptr<ngraph::op::v1::BatchToSpace>& op) {
     p.ValidateInputs(op, {4});
@@ -53,6 +53,6 @@ static void CreateBatchToSpaceOp(Program& p, const std::shared_ptr<ngraph::op::v
 
 REGISTER_FACTORY_IMPL(v1, BatchToSpace);
 
-}  // namespace intel_gpu
+}  // namespace opencl_gpu
 }  // namespace runtime
 }  // namespace ov

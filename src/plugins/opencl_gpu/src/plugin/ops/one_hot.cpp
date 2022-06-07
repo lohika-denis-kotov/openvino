@@ -2,17 +2,17 @@
 // SPDX-License-Identifier: Apache-2.0
 //
 
-#include "intel_gpu/plugin/program.hpp"
-#include "intel_gpu/plugin/common_utils.hpp"
+#include "opencl_gpu/plugin/program.hpp"
+#include "opencl_gpu/plugin/common_utils.hpp"
 #include "transformations/utils/utils.hpp"
 
 #include "ngraph/op/one_hot.hpp"
 
-#include "intel_gpu/primitives/one_hot.hpp"
+#include "opencl_gpu/primitives/one_hot.hpp"
 
 namespace ov {
 namespace runtime {
-namespace intel_gpu {
+namespace opencl_gpu {
 
 static void CreateOneHotOp(Program& p, const std::shared_ptr<ngraph::op::v1::OneHot>& op) {
     p.ValidateInputs(op, {4});
@@ -64,6 +64,6 @@ static void CreateOneHotOp(Program& p, const std::shared_ptr<ngraph::op::v1::One
 
 REGISTER_FACTORY_IMPL(v1, OneHot);
 
-}  // namespace intel_gpu
+}  // namespace opencl_gpu
 }  // namespace runtime
 }  // namespace ov

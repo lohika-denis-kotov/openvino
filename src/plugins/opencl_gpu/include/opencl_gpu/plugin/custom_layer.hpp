@@ -10,11 +10,11 @@
 #include <map>
 #include <ie_common.h>
 #include "pugixml.hpp"
-#include "intel_gpu/runtime/tensor.hpp"
+#include "opencl_gpu/runtime/tensor.hpp"
 
 namespace ov {
 namespace runtime {
-namespace intel_gpu {
+namespace opencl_gpu {
 
 using CustomLayerPtr = std::shared_ptr<class CustomLayer>;
 using CustomLayerMap = std::map<std::string, CustomLayerPtr>;
@@ -84,6 +84,6 @@ protected:
     std::string m_ErrorMessage;
 };
 
-}  // namespace intel_gpu
+}  // namespace opencl_gpu
 }  // namespace runtime
 }  // namespace ov

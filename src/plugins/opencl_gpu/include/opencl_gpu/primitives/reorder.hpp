@@ -5,7 +5,7 @@
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 #pragma once
 #include "primitive.hpp"
-#include "intel_gpu/runtime/memory.hpp"
+#include "opencl_gpu/runtime/memory.hpp"
 #include <vector>
 
 namespace cldnn {

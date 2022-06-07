@@ -2,16 +2,16 @@
 // SPDX-License-Identifier: Apache-2.0
 //
 
-#include "intel_gpu/plugin/program.hpp"
-#include "intel_gpu/plugin/common_utils.hpp"
+#include "opencl_gpu/plugin/program.hpp"
+#include "opencl_gpu/plugin/common_utils.hpp"
 
-#include "intel_gpu/primitives/convert_color.hpp"
-#include "intel_gpu/primitives/concatenation.hpp"
+#include "opencl_gpu/primitives/convert_color.hpp"
+#include "opencl_gpu/primitives/concatenation.hpp"
 #include "openvino/core/preprocess/input_tensor_info.hpp"
 
 namespace ov {
 namespace runtime {
-namespace intel_gpu {
+namespace opencl_gpu {
 
 static void CreateCommonConvertColorOp(Program& p, const std::shared_ptr<ngraph::Node>& op,
                                        const cldnn::convert_color::color_format from_color,
@@ -89,6 +89,6 @@ REGISTER_FACTORY_IMPL(v8, NV12toBGR);
 REGISTER_FACTORY_IMPL(v8, I420toRGB);
 REGISTER_FACTORY_IMPL(v8, I420toBGR);
 
-}  // namespace intel_gpu
+}  // namespace opencl_gpu
 }  // namespace runtime
 }  // namespace ov

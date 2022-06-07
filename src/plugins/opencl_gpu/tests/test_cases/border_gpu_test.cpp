@@ -4,8 +4,8 @@
 
 #include "test_utils.h"
 
-#include <intel_gpu/primitives/input_layout.hpp>
-#include <intel_gpu/primitives/border.hpp>
+#include <opencl_gpu/primitives/input_layout.hpp>
+#include <opencl_gpu/primitives/border.hpp>
 
 #include <cstddef>
 

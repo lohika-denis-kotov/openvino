@@ -6,8 +6,8 @@
 
 #include "ocl_common.hpp"
 #include "ocl_memory.hpp"
-#include "intel_gpu/runtime/kernel_args.hpp"
-#include "intel_gpu/runtime/kernel.hpp"
+#include "opencl_gpu/runtime/kernel_args.hpp"
+#include "opencl_gpu/runtime/kernel.hpp"
 
 #include <memory>
 #include <vector>

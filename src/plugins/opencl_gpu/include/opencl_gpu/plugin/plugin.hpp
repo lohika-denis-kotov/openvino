@@ -7,14 +7,14 @@
 #include <map>
 #include <string>
 #include <memory>
-#include "intel_gpu/runtime/engine.hpp"
+#include "opencl_gpu/runtime/engine.hpp"
 #include <cpp_interfaces/interface/ie_iplugin_internal.hpp>
 #include <cpp_interfaces/interface/ie_iexecutable_network_internal.hpp>
-#include "intel_gpu/plugin/remote_context.hpp"
+#include "opencl_gpu/plugin/remote_context.hpp"
 
 namespace ov {
 namespace runtime {
-namespace intel_gpu {
+namespace opencl_gpu {
 
 using CustomLayerPtr = std::shared_ptr<class CustomLayer>;
 
@@ -89,6 +89,6 @@ public:
     }
 };
 
-}  // namespace intel_gpu
+}  // namespace opencl_gpu
 }  // namespace runtime
 }  // namespace ov

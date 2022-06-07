@@ -5,8 +5,8 @@
 #pragma once
 
 #include "primitive_inst.h"
-#include "intel_gpu/runtime/error_handler.hpp"
-#include "intel_gpu/runtime/memory.hpp"
+#include "opencl_gpu/runtime/error_handler.hpp"
+#include "opencl_gpu/runtime/memory.hpp"
 #include "to_string_utils.h"
 #include "register.hpp"
 #include "utils.hpp"

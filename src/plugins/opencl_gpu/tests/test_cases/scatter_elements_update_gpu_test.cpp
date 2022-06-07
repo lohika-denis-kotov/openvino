@@ -4,11 +4,11 @@
 
 #include "test_utils.h"
 
-#include <intel_gpu/primitives/input_layout.hpp>
-#include <intel_gpu/primitives/scatter_elements_update.hpp>
-#include <intel_gpu/runtime/memory.hpp>
-#include <intel_gpu/graph/topology.hpp>
-#include <intel_gpu/graph/network.hpp>
+#include <opencl_gpu/primitives/input_layout.hpp>
+#include <opencl_gpu/primitives/scatter_elements_update.hpp>
+#include <opencl_gpu/runtime/memory.hpp>
+#include <opencl_gpu/graph/topology.hpp>
+#include <opencl_gpu/graph/network.hpp>
 
 #include <cstddef>
 

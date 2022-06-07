@@ -2,17 +2,17 @@
 // SPDX-License-Identifier: Apache-2.0
 //
 
-#include "intel_gpu/plugin/program.hpp"
-#include "intel_gpu/plugin/common_utils.hpp"
+#include "opencl_gpu/plugin/program.hpp"
+#include "opencl_gpu/plugin/common_utils.hpp"
 
 #include "ngraph/op/scatter_elements_update.hpp"
 #include "ngraph/op/constant.hpp"
 
-#include "intel_gpu/primitives/scatter_elements_update.hpp"
+#include "opencl_gpu/primitives/scatter_elements_update.hpp"
 
 namespace ov {
 namespace runtime {
-namespace intel_gpu {
+namespace opencl_gpu {
 
 static inline cldnn::scatter_elements_update::scatter_elements_update_axis GetScatterElementsUpdateAxis(int axis, unsigned rank) {
     if (axis < 0)
@@ -68,6 +68,6 @@ static void CreateScatterElementsUpdateOp(Program& p, const std::shared_ptr<ngra
 
 REGISTER_FACTORY_IMPL(v3, ScatterElementsUpdate);
 
-}  // namespace intel_gpu
+}  // namespace opencl_gpu
 }  // namespace runtime
 }  // namespace ov

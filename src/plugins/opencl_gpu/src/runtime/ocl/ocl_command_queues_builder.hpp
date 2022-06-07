@@ -5,7 +5,7 @@
 #pragma once
 
 #include "ocl_common.hpp"
-#include "intel_gpu/runtime/engine.hpp"
+#include "opencl_gpu/runtime/engine.hpp"
 
 namespace cldnn {
 namespace ocl {

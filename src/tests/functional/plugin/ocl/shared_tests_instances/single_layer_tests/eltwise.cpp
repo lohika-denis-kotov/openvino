@@ -63,7 +63,7 @@ const auto multiply_params = ::testing::Combine(
         ::testing::ValuesIn(netPrecisions),
         ::testing::Values(ov::element::undefined),
         ::testing::Values(ov::element::undefined),
-        ::testing::Values(CommonTestUtils::DEVICE_GPU),
+        ::testing::Values(CommonTestUtils::DEVICE_OCL),
         ::testing::Values(additional_config));
 
 INSTANTIATE_TEST_SUITE_P(smoke_CompareWithRefs, EltwiseLayerTest, multiply_params, EltwiseLayerTest::getTestCaseName);

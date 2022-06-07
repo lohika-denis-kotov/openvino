@@ -4,8 +4,8 @@
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 #pragma once
-#include "intel_gpu/primitives/primitive.hpp"
-#include "intel_gpu/runtime/memory.hpp"
+#include "opencl_gpu/primitives/primitive.hpp"
+#include "opencl_gpu/runtime/memory.hpp"
 #include "kernel_selector_helper.h"
 
 #include <vector>

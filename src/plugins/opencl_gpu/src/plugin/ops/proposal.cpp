@@ -2,18 +2,18 @@
 // SPDX-License-Identifier: Apache-2.0
 //
 
-#include "intel_gpu/plugin/program.hpp"
-#include "intel_gpu/plugin/common_utils.hpp"
+#include "opencl_gpu/plugin/program.hpp"
+#include "opencl_gpu/plugin/common_utils.hpp"
 
 #include "ngraph/op/proposal.hpp"
 
-#include "intel_gpu/primitives/proposal.hpp"
-#include "intel_gpu/primitives/mutable_data.hpp"
-#include "intel_gpu/runtime/debug_configuration.hpp"
+#include "opencl_gpu/primitives/proposal.hpp"
+#include "opencl_gpu/primitives/mutable_data.hpp"
+#include "opencl_gpu/runtime/debug_configuration.hpp"
 
 namespace ov {
 namespace runtime {
-namespace intel_gpu {
+namespace opencl_gpu {
 
 static void CreateProposalOp(Program& p, const std::shared_ptr<ngraph::op::v0::Proposal>& op) {
     p.ValidateInputs(op, {3});
@@ -155,6 +155,6 @@ static void CreateProposalOp(Program& p, const std::shared_ptr<ngraph::op::v0::P
 REGISTER_FACTORY_IMPL(v0, Proposal);
 REGISTER_FACTORY_IMPL(v4, Proposal);
 
-}  // namespace intel_gpu
+}  // namespace opencl_gpu
 }  // namespace runtime
 }  // namespace ov

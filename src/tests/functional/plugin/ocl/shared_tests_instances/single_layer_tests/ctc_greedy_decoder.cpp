@@ -32,7 +32,7 @@ const auto basicCases = ::testing::Combine(
                       std::vector<size_t>({ 50, 3, 55 }),
                       std::vector<size_t>({ 1, 1, 16 })),
     ::testing::ValuesIn(mergeRepeated),
-    ::testing::Values(CommonTestUtils::DEVICE_GPU));
+    ::testing::Values(CommonTestUtils::DEVICE_OCL));
 
 INSTANTIATE_TEST_SUITE_P(smoke_CtcGreedyDecoderBasic, CTCGreedyDecoderLayerTest,
                         basicCases,

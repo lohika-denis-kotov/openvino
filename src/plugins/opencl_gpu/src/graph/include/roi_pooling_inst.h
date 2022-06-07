@@ -4,7 +4,7 @@
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 #pragma once
-#include "intel_gpu/primitives/roi_pooling.hpp"
+#include "opencl_gpu/primitives/roi_pooling.hpp"
 #include "primitive_inst.h"
 
 #include <string>

@@ -113,7 +113,7 @@ INSTANTIATE_TEST_SUITE_P(smoke_GPU_BehaviorTests, InferRequestIOPrecision,
                                  ::testing::Values(InferenceEngine::Layout::ANY),
                                  ::testing::Values(InferenceEngine::Layout::ANY),
                                  ::testing::Values(std::vector<size_t>{1, 50}),
-                                 ::testing::Values(CommonTestUtils::DEVICE_GPU)),
+                                 ::testing::Values(CommonTestUtils::DEVICE_OCL)),
                          InferRequestIOPrecision::getTestCaseName);
 
 TEST(TensorTest, smoke_canSetShapeForPreallocatedTensor) {
@@ -124,7 +124,7 @@ TEST(TensorTest, smoke_canSetShapeForPreallocatedTensor) {
     p.input().preprocess().convert_element_type(ov::element::f32);
 
     auto function = p.build();
-    auto exec_net = ie.compile_model(function, CommonTestUtils::DEVICE_GPU);
+    auto exec_net = ie.compile_model(function, CommonTestUtils::DEVICE_OCL);
     auto inf_req = exec_net.create_infer_request();
 
     // Check set_shape call for pre-allocated input/output tensors

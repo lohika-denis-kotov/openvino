@@ -6,13 +6,13 @@
 
 #include "test_utils.h"
 
-#include <intel_gpu/primitives/input_layout.hpp>
-#include <intel_gpu/primitives/concatenation.hpp>
-#include <intel_gpu/primitives/pooling.hpp>
-#include <intel_gpu/primitives/condition.hpp>
-#include <intel_gpu/primitives/softmax.hpp>
-#include <intel_gpu/primitives/scale.hpp>
-#include <intel_gpu/primitives/data.hpp>
+#include <opencl_gpu/primitives/input_layout.hpp>
+#include <opencl_gpu/primitives/concatenation.hpp>
+#include <opencl_gpu/primitives/pooling.hpp>
+#include <opencl_gpu/primitives/condition.hpp>
+#include <opencl_gpu/primitives/softmax.hpp>
+#include <opencl_gpu/primitives/scale.hpp>
+#include <opencl_gpu/primitives/data.hpp>
 
 #include <cstddef>
 

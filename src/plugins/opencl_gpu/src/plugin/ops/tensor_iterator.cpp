@@ -2,9 +2,9 @@
 // SPDX-License-Identifier: Apache-2.0
 //
 
-#include "intel_gpu/plugin/program.hpp"
-#include "intel_gpu/plugin/common_utils.hpp"
-#include "intel_gpu/plugin/plugin.hpp"
+#include "opencl_gpu/plugin/program.hpp"
+#include "opencl_gpu/plugin/common_utils.hpp"
+#include "opencl_gpu/plugin/plugin.hpp"
 
 #include <cpp/ie_cnn_network.h>
 
@@ -12,11 +12,11 @@
 #include "ngraph/op/constant.hpp"
 #include "ngraph/op/util/sub_graph_base.hpp"
 
-#include "intel_gpu/primitives/loop.hpp"
-#include "intel_gpu/primitives/mutable_data.hpp"
-#include "intel_gpu/primitives/data.hpp"
-#include "intel_gpu/primitives/reorder.hpp"
-#include "intel_gpu/graph/topology.hpp"
+#include "opencl_gpu/primitives/loop.hpp"
+#include "opencl_gpu/primitives/mutable_data.hpp"
+#include "opencl_gpu/primitives/data.hpp"
+#include "opencl_gpu/primitives/reorder.hpp"
+#include "opencl_gpu/graph/topology.hpp"
 
 #include <vector>
 #include <algorithm>
@@ -25,7 +25,7 @@ using TensorIterator = ngraph::op::v0::TensorIterator;
 
 namespace ov {
 namespace runtime {
-namespace intel_gpu {
+namespace opencl_gpu {
 
 template<class DATA_TYPE>
 static DATA_TYPE CreateScalarData(Program &p, const cldnn::primitive_id& id, int64_t num, const cldnn::primitive_id& ext_prim_id) {
@@ -200,6 +200,6 @@ static void CreateTensorIteratorOp(Program &p, const std::shared_ptr<TensorItera
 
 REGISTER_FACTORY_IMPL(v0, TensorIterator);
 
-}  // namespace intel_gpu
+}  // namespace opencl_gpu
 }  // namespace runtime
 }  // namespace ov

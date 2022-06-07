@@ -5,24 +5,24 @@
 #include "test_utils.h"
 #include "fusion_test_common.hpp"
 
-#include <intel_gpu/primitives/input_layout.hpp>
-#include <intel_gpu/primitives/quantize.hpp>
-#include <intel_gpu/primitives/eltwise.hpp>
-#include <intel_gpu/primitives/data.hpp>
-#include <intel_gpu/primitives/mvn.hpp>
-#include <intel_gpu/primitives/permute.hpp>
-#include <intel_gpu/primitives/gather.hpp>
-#include <intel_gpu/primitives/gather_nd.hpp>
-#include <intel_gpu/primitives/gather_elements.hpp>
-#include <intel_gpu/primitives/scatter_update.hpp>
-#include <intel_gpu/primitives/scatter_nd_update.hpp>
-#include <intel_gpu/primitives/scatter_elements_update.hpp>
-#include <intel_gpu/primitives/depth_to_space.hpp>
-#include <intel_gpu/primitives/space_to_depth.hpp>
-#include <intel_gpu/primitives/batch_to_space.hpp>
-#include <intel_gpu/primitives/space_to_batch.hpp>
-#include <intel_gpu/primitives/reduce.hpp>
-#include <intel_gpu/primitives/crop.hpp>
+#include <opencl_gpu/primitives/input_layout.hpp>
+#include <opencl_gpu/primitives/quantize.hpp>
+#include <opencl_gpu/primitives/eltwise.hpp>
+#include <opencl_gpu/primitives/data.hpp>
+#include <opencl_gpu/primitives/mvn.hpp>
+#include <opencl_gpu/primitives/permute.hpp>
+#include <opencl_gpu/primitives/gather.hpp>
+#include <opencl_gpu/primitives/gather_nd.hpp>
+#include <opencl_gpu/primitives/gather_elements.hpp>
+#include <opencl_gpu/primitives/scatter_update.hpp>
+#include <opencl_gpu/primitives/scatter_nd_update.hpp>
+#include <opencl_gpu/primitives/scatter_elements_update.hpp>
+#include <opencl_gpu/primitives/depth_to_space.hpp>
+#include <opencl_gpu/primitives/space_to_depth.hpp>
+#include <opencl_gpu/primitives/batch_to_space.hpp>
+#include <opencl_gpu/primitives/space_to_batch.hpp>
+#include <opencl_gpu/primitives/reduce.hpp>
+#include <opencl_gpu/primitives/crop.hpp>
 
 #include <cmath>
 

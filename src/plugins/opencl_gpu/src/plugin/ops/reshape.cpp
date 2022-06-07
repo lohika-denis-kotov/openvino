@@ -2,19 +2,19 @@
 // SPDX-License-Identifier: Apache-2.0
 //
 
-#include "intel_gpu/plugin/program.hpp"
-#include "intel_gpu/plugin/common_utils.hpp"
+#include "opencl_gpu/plugin/program.hpp"
+#include "opencl_gpu/plugin/common_utils.hpp"
 
 #include "ngraph/op/reshape.hpp"
 #include "ngraph/op/squeeze.hpp"
 #include "ngraph/op/unsqueeze.hpp"
 
-#include "intel_gpu/primitives/reshape.hpp"
-#include "intel_gpu/primitives/reorder.hpp"
+#include "opencl_gpu/primitives/reshape.hpp"
+#include "opencl_gpu/primitives/reorder.hpp"
 
 namespace ov {
 namespace runtime {
-namespace intel_gpu {
+namespace opencl_gpu {
 
 static void CreateCommonReshapeOp(Program& p, const std::shared_ptr<ngraph::Node>& op) {
     p.ValidateInputs(op, {1, 2});
@@ -76,6 +76,6 @@ REGISTER_FACTORY_IMPL(v1, Reshape);
 REGISTER_FACTORY_IMPL(v0, Squeeze);
 REGISTER_FACTORY_IMPL(v0, Unsqueeze);
 
-}  // namespace intel_gpu
+}  // namespace opencl_gpu
 }  // namespace runtime
 }  // namespace ov

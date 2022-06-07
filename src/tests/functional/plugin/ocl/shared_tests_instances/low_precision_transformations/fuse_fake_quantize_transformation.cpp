@@ -106,7 +106,7 @@ const std::vector<FuseFakeQuantizeTransformationTestValues> testValues = {
 
 INSTANTIATE_TEST_SUITE_P(smoke_LPT, FuseFakeQuantizeTransformation,
     ::testing::Combine(
-        ::testing::Values(CommonTestUtils::DEVICE_GPU),
+        ::testing::Values(CommonTestUtils::DEVICE_OCL),
         ::testing::ValuesIn(testValues)),
     FuseFakeQuantizeTransformation::getTestCaseName);
 }  // namespace

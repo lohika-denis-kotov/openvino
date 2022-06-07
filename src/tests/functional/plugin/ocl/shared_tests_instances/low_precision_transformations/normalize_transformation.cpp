@@ -33,7 +33,7 @@ INSTANTIATE_TEST_SUITE_P(smoke_LPT, NormalizeL2Transformation,
     ::testing::Combine(
         ::testing::ValuesIn(precisions),
         ::testing::ValuesIn(inputAndQuantizationShapes),
-        ::testing::Values(CommonTestUtils::DEVICE_GPU),
+        ::testing::Values(CommonTestUtils::DEVICE_OCL),
         ::testing::ValuesIn(axes),
         ::testing::ValuesIn(fuseMultiplyValues),
         ::testing::ValuesIn(shiftValues)),

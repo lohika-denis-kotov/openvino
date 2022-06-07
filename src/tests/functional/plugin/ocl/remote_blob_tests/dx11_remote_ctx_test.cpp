@@ -155,7 +155,7 @@ TEST_F(DX11RemoteCtx_Test, smoke_make_shared_context) {
     ASSERT_NO_THROW(std::tie(device_ptr, ctx_ptr) =
         create_device_with_ctx(intel_adapters[0]));
     auto remote_context = make_shared_context(ie,
-        CommonTestUtils::DEVICE_GPU,
+        CommonTestUtils::DEVICE_OCL,
         device_ptr);
     ASSERT_TRUE(remote_context);
 
@@ -165,7 +165,7 @@ TEST_F(DX11RemoteCtx_Test, smoke_make_shared_context) {
 
         ASSERT_NO_THROW(std::tie(device_ptr, ctx_ptr) =
                         create_device_with_ctx(adapter));
-        ASSERT_THROW(make_shared_context(ie, CommonTestUtils::DEVICE_GPU,
+        ASSERT_THROW(make_shared_context(ie, CommonTestUtils::DEVICE_OCL,
                                          device_ptr),
                      std::runtime_error);
     }
@@ -177,7 +177,7 @@ TEST_F(DX11CachedTexture_Test, smoke_make_shared_nv12_blob_cached) {
     GTEST_SKIP();
 #endif
     auto ie = InferenceEngine::Core();
-    auto remote_context = make_shared_context(ie, CommonTestUtils::DEVICE_GPU,
+    auto remote_context = make_shared_context(ie, CommonTestUtils::DEVICE_OCL,
                                                   device_ptr);
     ASSERT_TRUE(remote_context);
     const size_t total_run_number = 4;
@@ -206,7 +206,7 @@ TEST_F(DX11CachedTexture_Test, _make_shared_nv12_blob_cached_inference) {
     net.getInputsInfo().begin()->second->setPrecision(Precision::U8);
     net.getInputsInfo().begin()->second->getPreProcess().setColorFormat(ColorFormat::NV12);
 
-    auto remote_context = make_shared_context(ie, CommonTestUtils::DEVICE_GPU, device_ptr);
+    auto remote_context = make_shared_context(ie, CommonTestUtils::DEVICE_OCL, device_ptr);
     Blob::Ptr nv12_blob = make_shared_blob_nv12(texture_description.Height,
                                             texture_description.Width,
                                             remote_context, dx11_textures[0]);

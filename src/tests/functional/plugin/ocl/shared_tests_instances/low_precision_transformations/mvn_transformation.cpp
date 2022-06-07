@@ -25,7 +25,7 @@ namespace {
         ::testing::Combine(
             ::testing::ValuesIn(precisions),
             ::testing::ValuesIn(inputAndQuantizationShapes),
-            ::testing::Values(CommonTestUtils::DEVICE_GPU),
+            ::testing::Values(CommonTestUtils::DEVICE_OCL),
             ::testing::ValuesIn(reductionAxes),
             ::testing::ValuesIn(normalizeVariance)),
         MVNTransformation::getTestCaseName);

@@ -7,11 +7,11 @@
 #include "test_utils.h"
 #include "program_helpers.h"
 
-#include <intel_gpu/primitives/input_layout.hpp>
-#include <intel_gpu/primitives/reshape.hpp>
-#include "intel_gpu/primitives/reorder.hpp"
-#include "intel_gpu/primitives/crop.hpp"
-#include <intel_gpu/primitives/data.hpp>
+#include <opencl_gpu/primitives/input_layout.hpp>
+#include <opencl_gpu/primitives/reshape.hpp>
+#include "opencl_gpu/primitives/reorder.hpp"
+#include "opencl_gpu/primitives/crop.hpp"
+#include <opencl_gpu/primitives/data.hpp>
 
 #include <cmath>
 #include <limits>

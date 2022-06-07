@@ -4,10 +4,10 @@
 
 #pragma once
 
-#include "intel_gpu/primitives/primitive.hpp"
-#include "intel_gpu/primitives/activation.hpp"
-#include "intel_gpu/primitives/implementation_desc.hpp"
-#include "intel_gpu/graph/program.hpp"
+#include "opencl_gpu/primitives/primitive.hpp"
+#include "opencl_gpu/primitives/activation.hpp"
+#include "opencl_gpu/primitives/implementation_desc.hpp"
+#include "opencl_gpu/graph/program.hpp"
 
 #include "kernel_selector_helper.h"
 #include "meta_utils.h"

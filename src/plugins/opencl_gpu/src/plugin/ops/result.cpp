@@ -2,18 +2,18 @@
 // SPDX-License-Identifier: Apache-2.0
 //
 
-#include "intel_gpu/plugin/program.hpp"
-#include "intel_gpu/plugin/common_utils.hpp"
+#include "opencl_gpu/plugin/program.hpp"
+#include "opencl_gpu/plugin/common_utils.hpp"
 
 #include "ngraph/op/result.hpp"
 
-#include "intel_gpu/primitives/reorder.hpp"
+#include "opencl_gpu/primitives/reorder.hpp"
 
 using namespace InferenceEngine;
 
 namespace ov {
 namespace runtime {
-namespace intel_gpu {
+namespace opencl_gpu {
 
 static void CreateResultOp(Program& p, const std::shared_ptr<ngraph::op::v0::Result>& op) {
     OutputsDataMap networkOutputs = p.GetNetworkOutputs();
@@ -82,6 +82,6 @@ static void CreateResultOp(Program& p, const std::shared_ptr<ngraph::op::v0::Res
 
 REGISTER_FACTORY_IMPL(v0, Result);
 
-}  // namespace intel_gpu
+}  // namespace opencl_gpu
 }  // namespace runtime
 }  // namespace ov

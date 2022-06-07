@@ -4,16 +4,16 @@
 
 #include "test_utils.h"
 
-#include "intel_gpu/runtime/engine.hpp"
-#include "intel_gpu/runtime/memory.hpp"
+#include "opencl_gpu/runtime/engine.hpp"
+#include "opencl_gpu/runtime/memory.hpp"
 
-#include "intel_gpu/graph/topology.hpp"
-#include "intel_gpu/graph/program.hpp"
+#include "opencl_gpu/graph/topology.hpp"
+#include "opencl_gpu/graph/program.hpp"
 #include "data_inst.h"
 #include "activation_inst.h"
 #include "convolution_inst.h"
 #include "crop_inst.h"
-#include "intel_gpu/graph/network.hpp"
+#include "opencl_gpu/graph/network.hpp"
 #include "reshape_inst.h"
 #include "pass_manager.h"
 

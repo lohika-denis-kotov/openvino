@@ -36,7 +36,7 @@ const auto batchNormParams = testing::Combine(
         testing::Values(InferenceEngine::Layout::ANY),
         testing::Values(InferenceEngine::Layout::ANY),
         testing::ValuesIn(inputShapes),
-        testing::Values(CommonTestUtils::DEVICE_GPU)
+        testing::Values(CommonTestUtils::DEVICE_OCL)
 );
 
 INSTANTIATE_TEST_SUITE_P(

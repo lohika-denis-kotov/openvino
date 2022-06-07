@@ -4,8 +4,8 @@
 
 #pragma once
 
-#include "intel_gpu/runtime/layout.hpp"
-#include "intel_gpu/runtime/tensor.hpp"
+#include "opencl_gpu/runtime/layout.hpp"
+#include "opencl_gpu/runtime/tensor.hpp"
 
 #include "meta_utils.h"
 

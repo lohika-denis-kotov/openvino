@@ -31,7 +31,7 @@ const auto normL2params = testing::Combine(
         testing::ValuesIn(epsMode),
         testing::Values(std::vector<size_t>{1, 3, 10, 5}),
         testing::ValuesIn(netPrecisions),
-        testing::Values(CommonTestUtils::DEVICE_GPU)
+        testing::Values(CommonTestUtils::DEVICE_OCL)
 );
 
 INSTANTIATE_TEST_SUITE_P(

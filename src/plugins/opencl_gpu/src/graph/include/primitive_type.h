@@ -5,7 +5,7 @@
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 #pragma once
 
-#include "intel_gpu/runtime/layout.hpp"
+#include "opencl_gpu/runtime/layout.hpp"
 
 #include <memory>
 #include <string>

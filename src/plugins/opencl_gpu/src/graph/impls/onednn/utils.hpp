@@ -6,10 +6,10 @@
 
 #include <oneapi/dnnl/dnnl.hpp>
 
-#include <intel_gpu/runtime/layout.hpp>
-#include <intel_gpu/runtime/engine.hpp>
-#include <intel_gpu/runtime/memory.hpp>
-#include <intel_gpu/primitives/activation.hpp>
+#include <opencl_gpu/runtime/layout.hpp>
+#include <opencl_gpu/runtime/engine.hpp>
+#include <opencl_gpu/runtime/memory.hpp>
+#include <opencl_gpu/primitives/activation.hpp>
 #include <data_inst.h>
 
 namespace cldnn {

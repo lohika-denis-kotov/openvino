@@ -4,7 +4,7 @@
 
 #include "test_utils.h"
 
-#include "intel_gpu/runtime/layout.hpp"
+#include "opencl_gpu/runtime/layout.hpp"
 
 using namespace cldnn;
 using namespace ::tests;

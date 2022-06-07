@@ -2,7 +2,7 @@
 // SPDX-License-Identifier: Apache-2.0
 //
 
-#include "intel_gpu/runtime/layout.hpp"
+#include "opencl_gpu/runtime/layout.hpp"
 
 #include <list>
 #include <vector>

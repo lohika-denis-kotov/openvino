@@ -2,9 +2,9 @@
 // SPDX-License-Identifier: Apache-2.0
 //
 
-#include "intel_gpu/plugin/custom_layer.hpp"
-#include "intel_gpu/plugin/simple_math.hpp"
-#include "intel_gpu/plugin/itt.hpp"
+#include "opencl_gpu/plugin/custom_layer.hpp"
+#include "opencl_gpu/plugin/simple_math.hpp"
+#include "opencl_gpu/plugin/itt.hpp"
 
 #include "xml_parse_utils.h"
 #include <description_buffer.hpp>
@@ -31,7 +31,7 @@ using namespace XMLParseUtils;
 
 namespace ov {
 namespace runtime {
-namespace intel_gpu {
+namespace opencl_gpu {
 
 void CustomLayer::LoadSingleLayer(const pugi::xml_node & node) {
     // Root checks
@@ -227,7 +227,7 @@ cldnn::format CustomLayer::FormatFromString(const std::string & str) {
 }
 
 void CustomLayer::LoadFromFile(const std::string configFile, CustomLayerMap& customLayers, bool can_be_missed) {
-    OV_ITT_SCOPED_TASK(itt::domains::intel_gpu_plugin, "CustomLayer::LoadFromFile");
+    OV_ITT_SCOPED_TASK(itt::domains::opencl_gpu_plugin, "CustomLayer::LoadFromFile");
     pugi::xml_document xmlDoc;
     pugi::xml_parse_result res = xmlDoc.load_file(configFile.c_str());
     if (res.status != pugi::status_ok) {
@@ -280,6 +280,6 @@ void CustomLayer::LoadFromFile(const std::string configFile, CustomLayerMap& cus
     }
 }
 
-}  // namespace intel_gpu
+}  // namespace opencl_gpu
 }  // namespace runtime
 }  // namespace ov

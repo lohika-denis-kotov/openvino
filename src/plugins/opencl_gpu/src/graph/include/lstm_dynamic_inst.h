@@ -4,7 +4,7 @@
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 #pragma once
-#include "intel_gpu/primitives/lstm_dynamic.hpp"
+#include "opencl_gpu/primitives/lstm_dynamic.hpp"
 #include "primitive_inst.h"
 
 #include <string>

@@ -17,7 +17,7 @@ namespace {
 
     INSTANTIATE_TEST_SUITE_P(smoke_BehaviorTests, ExecutableNetworkBaseTest,
                             ::testing::Combine(
-                                    ::testing::Values(CommonTestUtils::DEVICE_GPU),
+                                    ::testing::Values(CommonTestUtils::DEVICE_OCL),
                                     ::testing::ValuesIn(configs)),
                             ExecutableNetworkBaseTest::getTestCaseName);
 
@@ -43,18 +43,18 @@ const std::vector<std::map<std::string, std::string>> configsSetPrc = {
 };
 
 const std::vector<std::map<std::string, std::string>> multiConfig = {
-        {{InferenceEngine::MultiDeviceConfigParams::KEY_MULTI_DEVICE_PRIORITIES , CommonTestUtils::DEVICE_GPU}},
-        {{InferenceEngine::MultiDeviceConfigParams::KEY_MULTI_DEVICE_PRIORITIES , CommonTestUtils::DEVICE_GPU},
+        {{InferenceEngine::MultiDeviceConfigParams::KEY_MULTI_DEVICE_PRIORITIES , CommonTestUtils::DEVICE_OCL}},
+        {{InferenceEngine::MultiDeviceConfigParams::KEY_MULTI_DEVICE_PRIORITIES , CommonTestUtils::DEVICE_OCL},
                 {InferenceEngine::PluginConfigParams::KEY_GPU_THROUGHPUT_STREAMS, InferenceEngine::PluginConfigParams::GPU_THROUGHPUT_AUTO}}
 };
 
 const std::vector<std::map<std::string, std::string>> autoConfig = {
-        {{InferenceEngine::MultiDeviceConfigParams::KEY_MULTI_DEVICE_PRIORITIES , CommonTestUtils::DEVICE_GPU}},
+        {{InferenceEngine::MultiDeviceConfigParams::KEY_MULTI_DEVICE_PRIORITIES , CommonTestUtils::DEVICE_OCL}},
 };
 
 const std::vector<std::map<std::string, std::string>> autoBatchConfig = {
         // explicit batch size 4 to avoid fallback to no auto-batching (i.e. plain GPU)
-        {{CONFIG_KEY(AUTO_BATCH_DEVICE_CONFIG) , std::string(CommonTestUtils::DEVICE_GPU) + "(4)"},
+        {{CONFIG_KEY(AUTO_BATCH_DEVICE_CONFIG) , std::string(CommonTestUtils::DEVICE_OCL) + "(4)"},
                 // no timeout to avoid increasing the test time
                 {CONFIG_KEY(AUTO_BATCH_TIMEOUT) , "0 "}}
 };
@@ -62,7 +62,7 @@ const std::vector<std::map<std::string, std::string>> autoBatchConfig = {
 INSTANTIATE_TEST_SUITE_P(smoke_BehaviorTests, ExecNetSetPrecision,
                          ::testing::Combine(
                                  ::testing::ValuesIn(netPrecisions),
-                                 ::testing::Values(CommonTestUtils::DEVICE_GPU),
+                                 ::testing::Values(CommonTestUtils::DEVICE_OCL),
                                  ::testing::ValuesIn(configsSetPrc)),
                          ExecNetSetPrecision::getTestCaseName);
 

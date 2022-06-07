@@ -18,12 +18,12 @@ const std::vector<FuncTestUtils::BlobType> BlobTypes = {
 };
 
 const std::map<std::string, std::string> gpuConfig{}; //nothing special
-const std::map<std::string, std::string> multiConfig{{ MULTI_CONFIG_KEY(DEVICE_PRIORITIES) , CommonTestUtils::DEVICE_GPU}};
-const std::map<std::string, std::string> heteroConfig{{ "TARGET_FALLBACK", CommonTestUtils::DEVICE_GPU }};
+const std::map<std::string, std::string> multiConfig{{ MULTI_CONFIG_KEY(DEVICE_PRIORITIES) , CommonTestUtils::DEVICE_OCL}};
+const std::map<std::string, std::string> heteroConfig{{ "TARGET_FALLBACK", CommonTestUtils::DEVICE_OCL }};
 
 INSTANTIATE_TEST_SUITE_P(smoke_Behavior, InferRequestSetBlobByType,
     ::testing::Combine(::testing::ValuesIn(BlobTypes),
-                       ::testing::Values(CommonTestUtils::DEVICE_GPU),
+                       ::testing::Values(CommonTestUtils::DEVICE_OCL),
                        ::testing::Values(gpuConfig)),
     InferRequestSetBlobByType::getTestCaseName);
 

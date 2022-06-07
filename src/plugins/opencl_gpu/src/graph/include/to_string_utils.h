@@ -4,11 +4,11 @@
 
 #pragma once
 
-#include "intel_gpu/runtime/tensor.hpp"
-#include "intel_gpu/runtime/layout.hpp"
-#include "intel_gpu/runtime/device.hpp"
-#include "intel_gpu/primitives/primitive.hpp"
-#include "intel_gpu/primitives/activation.hpp"
+#include "opencl_gpu/runtime/tensor.hpp"
+#include "opencl_gpu/runtime/layout.hpp"
+#include "opencl_gpu/runtime/device.hpp"
+#include "opencl_gpu/primitives/primitive.hpp"
+#include "opencl_gpu/primitives/activation.hpp"
 
 #ifdef ENABLE_ONEDNN_FOR_GPU
 #include "program_node.h"

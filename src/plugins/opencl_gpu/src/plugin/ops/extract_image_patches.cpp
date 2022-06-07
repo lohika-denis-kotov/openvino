@@ -2,16 +2,16 @@
 // SPDX-License-Identifier: Apache-2.0
 //
 
-#include "intel_gpu/plugin/program.hpp"
-#include "intel_gpu/plugin/common_utils.hpp"
+#include "opencl_gpu/plugin/program.hpp"
+#include "opencl_gpu/plugin/common_utils.hpp"
 
 #include "ngraph/op/extractimagepatches.hpp"
 
-#include "intel_gpu/primitives/extract_image_patches.hpp"
+#include "opencl_gpu/primitives/extract_image_patches.hpp"
 
 namespace ov {
 namespace runtime {
-namespace intel_gpu {
+namespace opencl_gpu {
 
 static inline std::string PadToString(ngraph::op::PadType pad) {
     switch (pad) {
@@ -49,6 +49,6 @@ static void CreateExtractImagePatchesOp(Program& p, const std::shared_ptr<ngraph
 
 REGISTER_FACTORY_IMPL(v3, ExtractImagePatches);
 
-}  // namespace intel_gpu
+}  // namespace opencl_gpu
 }  // namespace runtime
 }  // namespace ov

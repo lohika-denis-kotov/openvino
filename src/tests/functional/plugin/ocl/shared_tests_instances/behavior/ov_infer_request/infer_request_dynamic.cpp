@@ -12,11 +12,11 @@ using namespace ov::test::behavior;
 namespace {
 
 const std::vector<ov::AnyMap> AutoConfigs = {
-    {ov::device::priorities(CommonTestUtils::DEVICE_GPU, CommonTestUtils::DEVICE_CPU)},
+    {ov::device::priorities(CommonTestUtils::DEVICE_OCL, CommonTestUtils::DEVICE_CPU)},
     {}
 };
 const std::vector<ov::AnyMap> AutoNotSupportConfigs = {
-    {ov::device::priorities(CommonTestUtils::DEVICE_GPU)}
+    {ov::device::priorities(CommonTestUtils::DEVICE_OCL)}
 };
 
 std::shared_ptr<ngraph::Function> getFunction2() {

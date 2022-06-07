@@ -45,7 +45,7 @@ INSTANTIATE_TEST_SUITE_P(smoke_maximum, MaxMinLayerTest,
                                 ::testing::Values(InferenceEngine::Layout::ANY),
                                 ::testing::Values(InferenceEngine::Layout::ANY),
                                 ::testing::ValuesIn(inputType),
-                                ::testing::Values(CommonTestUtils::DEVICE_GPU)),
+                                ::testing::Values(CommonTestUtils::DEVICE_OCL)),
                         MaxMinLayerTest::getTestCaseName);
 
 }  // namespace

@@ -2,17 +2,17 @@
 // SPDX-License-Identifier: Apache-2.0
 //
 
-#include "intel_gpu/plugin/program.hpp"
-#include "intel_gpu/plugin/common_utils.hpp"
+#include "opencl_gpu/plugin/program.hpp"
+#include "opencl_gpu/plugin/common_utils.hpp"
 
 #include "ngraph/op/lrn.hpp"
 #include "ngraph/op/constant.hpp"
 
-#include "intel_gpu/primitives/lrn.hpp"
+#include "opencl_gpu/primitives/lrn.hpp"
 
 namespace ov {
 namespace runtime {
-namespace intel_gpu {
+namespace opencl_gpu {
 
 static cldnn::lrn_norm_region GetNormRegion(std::vector<int64_t> axis_value) {
     if (axis_value.size() == 1 && axis_value[0] == 1) {
@@ -49,6 +49,6 @@ static void CreateLRNOp(Program& p, const std::shared_ptr<ngraph::op::v0::LRN>& 
 
 REGISTER_FACTORY_IMPL(v0, LRN);
 
-}  // namespace intel_gpu
+}  // namespace opencl_gpu
 }  // namespace runtime
 }  // namespace ov

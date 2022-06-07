@@ -2,7 +2,7 @@
 // SPDX-License-Identifier: Apache-2.0
 //
 
-#include "intel_gpu/plugin/simple_math.hpp"
+#include "opencl_gpu/plugin/simple_math.hpp"
 #include <cctype>
 #include <string>
 #include <set>

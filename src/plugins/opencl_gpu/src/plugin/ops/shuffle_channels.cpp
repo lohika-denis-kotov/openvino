@@ -2,16 +2,16 @@
 // SPDX-License-Identifier: Apache-2.0
 //
 
-#include "intel_gpu/plugin/program.hpp"
-#include "intel_gpu/plugin/common_utils.hpp"
+#include "opencl_gpu/plugin/program.hpp"
+#include "opencl_gpu/plugin/common_utils.hpp"
 
 #include "ngraph/op/shuffle_channels.hpp"
 
-#include "intel_gpu/primitives/shuffle_channels.hpp"
+#include "opencl_gpu/primitives/shuffle_channels.hpp"
 
 namespace ov {
 namespace runtime {
-namespace intel_gpu {
+namespace opencl_gpu {
 
 static void CreateShuffleChannelsOp(Program& p, const std::shared_ptr<ngraph::op::v0::ShuffleChannels>& op) {
     p.ValidateInputs(op, {1, 2});
@@ -47,6 +47,6 @@ static void CreateShuffleChannelsOp(Program& p, const std::shared_ptr<ngraph::op
 
 REGISTER_FACTORY_IMPL(v0, ShuffleChannels);
 
-}  // namespace intel_gpu
+}  // namespace opencl_gpu
 }  // namespace runtime
 }  // namespace ov

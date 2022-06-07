@@ -6,13 +6,13 @@
 
 #include "test_utils.h"
 
-#include <intel_gpu/primitives/input_layout.hpp>
-#include <intel_gpu/primitives/permute.hpp>
-#include <intel_gpu/primitives/reorder.hpp>
-#include <intel_gpu/primitives/data.hpp>
-#include <intel_gpu/primitives/fully_connected.hpp>
-#include <intel_gpu/primitives/reshape.hpp>
-#include <intel_gpu/primitives/crop.hpp>
+#include <opencl_gpu/primitives/input_layout.hpp>
+#include <opencl_gpu/primitives/permute.hpp>
+#include <opencl_gpu/primitives/reorder.hpp>
+#include <opencl_gpu/primitives/data.hpp>
+#include <opencl_gpu/primitives/fully_connected.hpp>
+#include <opencl_gpu/primitives/reshape.hpp>
+#include <opencl_gpu/primitives/crop.hpp>
 
 #include <cmath>
 #include <limits>

@@ -31,7 +31,7 @@ INSTANTIATE_TEST_SUITE_P(smoke_LPT, MatMulWithOptimizedConstantFakeQuantizeTrans
     ::testing::Combine(
         ::testing::ValuesIn(netPrecisions),
         ::testing::ValuesIn(inputShapes),
-        ::testing::Values(CommonTestUtils::DEVICE_GPU),
+        ::testing::Values(CommonTestUtils::DEVICE_OCL),
         ::testing::ValuesIn(params)),
     MatMulWithOptimizedConstantFakeQuantizeTransformation::getTestCaseName);
 }  // namespace

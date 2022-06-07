@@ -44,7 +44,7 @@ inline std::vector<preprocess_func> GPU_smoke_preprocess_functions() {
 INSTANTIATE_TEST_SUITE_P(smoke_PrePostProcess_GPU, PrePostProcessTest,
                          ::testing::Combine(
                                  ::testing::ValuesIn(GPU_smoke_preprocess_functions()),
-                                 ::testing::Values(CommonTestUtils::DEVICE_GPU)),
+                                 ::testing::Values(CommonTestUtils::DEVICE_OCL)),
                          PrePostProcessTest::getTestCaseName);
 
 }  // namespace

@@ -24,7 +24,7 @@ const auto testCase_values = ::testing::Combine(
     ::testing::ValuesIn(inTypes),
     ::testing::Bool(),
     ::testing::Bool(),
-    ::testing::Values(CommonTestUtils::DEVICE_GPU)
+    ::testing::Values(CommonTestUtils::DEVICE_OCL)
 );
 
 INSTANTIATE_TEST_SUITE_P(smoke_TestsConvertColorI420, ConvertColorI420LayerTest, testCase_values, ConvertColorI420LayerTest::getTestCaseName);
@@ -34,7 +34,7 @@ const auto testCase_accuracy_values = ::testing::Combine(
         ::testing::Values(ov::element::u8),
         ::testing::Bool(),
         ::testing::Bool(),
-        ::testing::Values(CommonTestUtils::DEVICE_GPU)
+        ::testing::Values(CommonTestUtils::DEVICE_OCL)
 );
 
 INSTANTIATE_TEST_SUITE_P(smoke_TestsConvertColorI420_acc,
@@ -47,7 +47,7 @@ const auto testCase_accuracy_values_nightly = ::testing::Combine(
         ::testing::Values(ov::element::u8),
         ::testing::Values(false),
         ::testing::Values(true),
-        ::testing::Values(CommonTestUtils::DEVICE_GPU)
+        ::testing::Values(CommonTestUtils::DEVICE_OCL)
 );
 
 INSTANTIATE_TEST_SUITE_P(nightly_TestsConvertColorI420_acc,

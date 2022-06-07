@@ -6,12 +6,12 @@
 
 #include "test_utils.h"
 
-#include <intel_gpu/primitives/input_layout.hpp>
-#include <intel_gpu/primitives/max_unpooling.hpp>
-#include <intel_gpu/primitives/reorder.hpp>
-#include <intel_gpu/primitives/data.hpp>
-#include <intel_gpu/primitives/mutable_data.hpp>
-#include <intel_gpu/primitives/pooling.hpp>
+#include <opencl_gpu/primitives/input_layout.hpp>
+#include <opencl_gpu/primitives/max_unpooling.hpp>
+#include <opencl_gpu/primitives/reorder.hpp>
+#include <opencl_gpu/primitives/data.hpp>
+#include <opencl_gpu/primitives/mutable_data.hpp>
+#include <opencl_gpu/primitives/pooling.hpp>
 
 using namespace cldnn;
 using namespace ::tests;

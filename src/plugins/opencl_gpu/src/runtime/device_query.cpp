@@ -2,7 +2,7 @@
 // SPDX-License-Identifier: Apache-2.0
 //
 
-#include "intel_gpu/runtime/device_query.hpp"
+#include "opencl_gpu/runtime/device_query.hpp"
 #include "ocl/ocl_device_detector.hpp"
 
 #include <map>

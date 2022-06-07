@@ -4,10 +4,10 @@
 
 #pragma once
 
-#include "intel_gpu/runtime/memory.hpp"
-#include "intel_gpu/runtime/engine.hpp"
-#include "intel_gpu/plugin/device_config.hpp"
-#include "intel_gpu/plugin/common_utils.hpp"
+#include "opencl_gpu/runtime/memory.hpp"
+#include "opencl_gpu/runtime/engine.hpp"
+#include "opencl_gpu/plugin/device_config.hpp"
+#include "opencl_gpu/plugin/common_utils.hpp"
 
 #include <ie_parameter.hpp>
 #include <cpp_interfaces/interface/ie_iplugin_internal.hpp>
@@ -31,7 +31,7 @@
 
 namespace ov {
 namespace runtime {
-namespace intel_gpu {
+namespace opencl_gpu {
 class RemoteAllocator;
 
 class RemoteBlobImpl : public InferenceEngine::gpu::details::param_map_obj_getter {
@@ -581,6 +581,6 @@ inline ExecutionContextImpl* getContextImpl(InferenceEngine::gpu::ClContext::Ptr
     return nullptr;
 }
 
-}  // namespace intel_gpu
+}  // namespace opencl_gpu
 }  // namespace runtime
 }  // namespace ov

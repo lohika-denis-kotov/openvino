@@ -31,7 +31,7 @@ const auto params2D = testing::Combine(
     ::testing::Values(ov::element::undefined),
     testing::ValuesIn(ov::test::static_shapes_to_test_representation(inputShapes2D)),
     testing::ValuesIn(axis2D),
-    testing::Values(CommonTestUtils::DEVICE_GPU),
+    testing::Values(CommonTestUtils::DEVICE_OCL),
     testing::Values(ov::AnyMap())
 );
 
@@ -56,7 +56,7 @@ const auto params4D = testing::Combine(
     ::testing::Values(ov::element::undefined),
     testing::ValuesIn(ov::test::static_shapes_to_test_representation(inputShapes4D)),
     testing::ValuesIn(axis4D),
-    testing::Values(CommonTestUtils::DEVICE_GPU),
+    testing::Values(CommonTestUtils::DEVICE_OCL),
     testing::Values(ov::AnyMap())
 );
 

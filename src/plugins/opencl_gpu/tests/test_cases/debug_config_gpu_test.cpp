@@ -5,7 +5,7 @@
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 
 #include "test_utils/test_utils.h"
-#include "intel_gpu/runtime/debug_configuration.hpp"
+#include "opencl_gpu/runtime/debug_configuration.hpp"
 
 using namespace cldnn;
 using namespace ::tests;

@@ -2,17 +2,17 @@
 // SPDX-License-Identifier: Apache-2.0
 //
 
-#include "intel_gpu/plugin/program.hpp"
-#include "intel_gpu/plugin/common_utils.hpp"
+#include "opencl_gpu/plugin/program.hpp"
+#include "opencl_gpu/plugin/common_utils.hpp"
 
 #include "ngraph/op/convert.hpp"
 #include "ngraph/op/convert_like.hpp"
 
-#include "intel_gpu/primitives/reorder.hpp"
+#include "opencl_gpu/primitives/reorder.hpp"
 
 namespace ov {
 namespace runtime {
-namespace intel_gpu {
+namespace opencl_gpu {
 
 static void CreateConvertLikeOp(Program& p, const std::shared_ptr<ngraph::op::v1::ConvertLike>& op) {
     p.ValidateInputs(op, {2});
@@ -54,6 +54,6 @@ static void CreateConvertOp(Program& p, const std::shared_ptr<ngraph::op::v0::Co
 REGISTER_FACTORY_IMPL(v0, Convert);
 REGISTER_FACTORY_IMPL(v1, ConvertLike);
 
-}  // namespace intel_gpu
+}  // namespace opencl_gpu
 }  // namespace runtime
 }  // namespace ov

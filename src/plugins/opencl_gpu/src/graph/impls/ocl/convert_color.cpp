@@ -8,7 +8,7 @@
 #include "kernel_selector_helper.h"
 #include "convert_color/convert_color_kernel_selector.h"
 #include "convert_color/convert_color_kernel_base.h"
-#include "intel_gpu/runtime/error_handler.hpp"
+#include "opencl_gpu/runtime/error_handler.hpp"
 #include "data_inst.h"
 #include <vector>
 

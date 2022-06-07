@@ -3,7 +3,7 @@
 //
 
 #include "ocl_command_queues_builder.hpp"
-#include "intel_gpu/runtime/error_handler.hpp"
+#include "opencl_gpu/runtime/error_handler.hpp"
 #include <string>
 
 namespace cldnn {

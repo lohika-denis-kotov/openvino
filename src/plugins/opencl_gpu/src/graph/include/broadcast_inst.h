@@ -5,7 +5,7 @@
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 #pragma once
 
-#include "intel_gpu/primitives/broadcast.hpp"
+#include "opencl_gpu/primitives/broadcast.hpp"
 
 #include "primitive_inst.h"
 #include <string>

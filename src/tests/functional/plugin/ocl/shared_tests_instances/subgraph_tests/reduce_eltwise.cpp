@@ -21,7 +21,7 @@ INSTANTIATE_TEST_SUITE_P(smoke_ReduceEltwise6D, ReduceEltwiseTest,
                                 testing::Values(CommonTestUtils::OpType::VECTOR),
                                 testing::Values(false),
                                 testing::ValuesIn(netPrecisions),
-                                testing::Values(CommonTestUtils::DEVICE_GPU)),
+                                testing::Values(CommonTestUtils::DEVICE_OCL)),
                         ReduceEltwiseTest::getTestCaseName);
 
 INSTANTIATE_TEST_SUITE_P(smoke_ReduceEltwise5D, ReduceEltwiseTest,
@@ -31,7 +31,7 @@ INSTANTIATE_TEST_SUITE_P(smoke_ReduceEltwise5D, ReduceEltwiseTest,
                                 testing::Values(CommonTestUtils::OpType::VECTOR),
                                 testing::Values(false),
                                 testing::ValuesIn(netPrecisions),
-                                testing::Values(CommonTestUtils::DEVICE_GPU)),
+                                testing::Values(CommonTestUtils::DEVICE_OCL)),
                         ReduceEltwiseTest::getTestCaseName);
 
 INSTANTIATE_TEST_SUITE_P(smoke_ReduceEltwise4D, ReduceEltwiseTest,
@@ -41,7 +41,7 @@ INSTANTIATE_TEST_SUITE_P(smoke_ReduceEltwise4D, ReduceEltwiseTest,
                                 testing::Values(CommonTestUtils::OpType::VECTOR),
                                 testing::Values(false),
                                 testing::ValuesIn(netPrecisions),
-                                testing::Values(CommonTestUtils::DEVICE_GPU)),
+                                testing::Values(CommonTestUtils::DEVICE_OCL)),
                         ReduceEltwiseTest::getTestCaseName);
 
 }  // namespace

@@ -31,7 +31,7 @@ protected:
 public:
     void SetUp() override {
         fn_ptr = ngraph::builder::subgraph::makeSplitMultiConvConcat();
-        deviceName = CommonTestUtils::DEVICE_GPU;
+        deviceName = CommonTestUtils::DEVICE_OCL;
         auto with_auto_batching = this->GetParam();
         if (with_auto_batching) { // BATCH:GPU
             deviceName = std::string(CommonTestUtils::DEVICE_BATCH) + ":" + deviceName;
@@ -485,7 +485,7 @@ TEST_P(BatchedBlob_Test, canInputNV12) {
     net_remote.getInputsInfo().begin()->second->getPreProcess().setColorFormat(ColorFormat::NV12);
 
     /* XXX: is it correct to set KEY_CLDNN_NV12_TWO_INPUTS in case of remote blob? */
-    auto exec_net_b = ie.LoadNetwork(net_remote, CommonTestUtils::DEVICE_GPU,
+    auto exec_net_b = ie.LoadNetwork(net_remote, CommonTestUtils::DEVICE_OCL,
                 { { GPUConfigParams::KEY_GPU_NV12_TWO_INPUTS, PluginConfigParams::YES} });
     auto inf_req_remote = exec_net_b.CreateInferRequest();
     auto cldnn_context = exec_net_b.GetContext();
@@ -555,7 +555,7 @@ TEST_P(BatchedBlob_Test, canInputNV12) {
     net_local.getInputsInfo().begin()->second->setPrecision(Precision::U8);
     net_local.getInputsInfo().begin()->second->getPreProcess().setColorFormat(ColorFormat::NV12);
 
-    auto exec_net_b1 = ie.LoadNetwork(net_local, CommonTestUtils::DEVICE_GPU);
+    auto exec_net_b1 = ie.LoadNetwork(net_local, CommonTestUtils::DEVICE_OCL);
 
     auto inf_req_local = exec_net_b1.CreateInferRequest();
 
@@ -625,7 +625,7 @@ TEST_P(TwoNets_Test, canInferTwoExecNets) {
         net.getInputsInfo().begin()->second->setLayout(Layout::NCHW);
         net.getInputsInfo().begin()->second->setPrecision(Precision::FP32);
 
-        auto exec_net = ie.LoadNetwork(net, CommonTestUtils::DEVICE_GPU,
+        auto exec_net = ie.LoadNetwork(net, CommonTestUtils::DEVICE_OCL,
                                        {{PluginConfigParams::KEY_GPU_THROUGHPUT_STREAMS, std::to_string(num_streams)}});
 
         for (int j = 0; j < num_streams * num_requests; j++) {

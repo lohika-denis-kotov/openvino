@@ -1,15 +1,15 @@
 // Copyright (C) 2018-2022 Intel Corporation
 // SPDX-License-Identifier: Apache-2.0
 //
-#include "intel_gpu/plugin/program.hpp"
-#include "intel_gpu/plugin/common_utils.hpp"
+#include "opencl_gpu/plugin/program.hpp"
+#include "opencl_gpu/plugin/common_utils.hpp"
 #include "ngraph/op/roi_align.hpp"
-#include "intel_gpu/primitives/roi_align.hpp"
+#include "opencl_gpu/primitives/roi_align.hpp"
 #include <memory>
 
 namespace ov {
 namespace runtime {
-namespace intel_gpu {
+namespace opencl_gpu {
 
 namespace {
 
@@ -41,6 +41,6 @@ void CreateROIAlignOp(Program& p, const std::shared_ptr<ngraph::op::v3::ROIAlign
 
 REGISTER_FACTORY_IMPL(v3, ROIAlign);
 
-}  // namespace intel_gpu
+}  // namespace opencl_gpu
 }  // namespace runtime
 }  // namespace ov

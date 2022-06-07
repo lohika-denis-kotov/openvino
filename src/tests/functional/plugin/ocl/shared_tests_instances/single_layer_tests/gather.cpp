@@ -87,7 +87,7 @@ const auto GatherAxes4i4b1 = testing::Combine(
         testing::Values(InferenceEngine::Precision::UNSPECIFIED),
         testing::Values(InferenceEngine::Layout::ANY),
         testing::Values(InferenceEngine::Layout::ANY),
-        testing::Values(CommonTestUtils::DEVICE_GPU)
+        testing::Values(CommonTestUtils::DEVICE_OCL)
 );
 
 const auto GatherAxes4i4b2 = testing::Combine(
@@ -99,7 +99,7 @@ const auto GatherAxes4i4b2 = testing::Combine(
         testing::Values(InferenceEngine::Precision::UNSPECIFIED),
         testing::Values(InferenceEngine::Layout::ANY),
         testing::Values(InferenceEngine::Layout::ANY),
-        testing::Values(CommonTestUtils::DEVICE_GPU)
+        testing::Values(CommonTestUtils::DEVICE_OCL)
 );
 
 const auto GatherAxes4i8b1 = testing::Combine(
@@ -111,7 +111,7 @@ const auto GatherAxes4i8b1 = testing::Combine(
         testing::Values(InferenceEngine::Precision::UNSPECIFIED),
         testing::Values(InferenceEngine::Layout::ANY),
         testing::Values(InferenceEngine::Layout::ANY),
-        testing::Values(CommonTestUtils::DEVICE_GPU)
+        testing::Values(CommonTestUtils::DEVICE_OCL)
 );
 
 const auto GatherAxes4i8b2 = testing::Combine(
@@ -123,7 +123,7 @@ const auto GatherAxes4i8b2 = testing::Combine(
         testing::Values(InferenceEngine::Precision::UNSPECIFIED),
         testing::Values(InferenceEngine::Layout::ANY),
         testing::Values(InferenceEngine::Layout::ANY),
-        testing::Values(CommonTestUtils::DEVICE_GPU)
+        testing::Values(CommonTestUtils::DEVICE_OCL)
 );
 
 INSTANTIATE_TEST_SUITE_P(
@@ -220,7 +220,7 @@ const auto Gather6dAxes5 = testing::Combine(
         testing::Values(InferenceEngine::Precision::UNSPECIFIED),
         testing::Values(InferenceEngine::Layout::ANY),
         testing::Values(InferenceEngine::Layout::ANY),
-        testing::Values(CommonTestUtils::DEVICE_GPU)
+        testing::Values(CommonTestUtils::DEVICE_OCL)
 );
 
 const std::vector<std::vector<size_t>> inputShapesAxes4 = {
@@ -257,7 +257,7 @@ const auto GatherAxes4 = testing::Combine(
         testing::Values(InferenceEngine::Precision::UNSPECIFIED),
         testing::Values(InferenceEngine::Layout::ANY),
         testing::Values(InferenceEngine::Layout::ANY),
-        testing::Values(CommonTestUtils::DEVICE_GPU)
+        testing::Values(CommonTestUtils::DEVICE_OCL)
 );
 
 INSTANTIATE_TEST_SUITE_P(
@@ -277,7 +277,7 @@ const auto Gather6dAxes4 = testing::Combine(
         testing::Values(InferenceEngine::Precision::UNSPECIFIED),
         testing::Values(InferenceEngine::Layout::ANY),
         testing::Values(InferenceEngine::Layout::ANY),
-        testing::Values(CommonTestUtils::DEVICE_GPU)
+        testing::Values(CommonTestUtils::DEVICE_OCL)
 );
 
 INSTANTIATE_TEST_SUITE_P(
@@ -325,7 +325,7 @@ const auto GatherAxes3 = testing::Combine(
         testing::Values(InferenceEngine::Precision::UNSPECIFIED),
         testing::Values(InferenceEngine::Layout::ANY),
         testing::Values(InferenceEngine::Layout::ANY),
-        testing::Values(CommonTestUtils::DEVICE_GPU)
+        testing::Values(CommonTestUtils::DEVICE_OCL)
 );
 
 INSTANTIATE_TEST_SUITE_P(
@@ -345,7 +345,7 @@ const auto Gather6dAxes3 = testing::Combine(
         testing::Values(InferenceEngine::Precision::UNSPECIFIED),
         testing::Values(InferenceEngine::Layout::ANY),
         testing::Values(InferenceEngine::Layout::ANY),
-        testing::Values(CommonTestUtils::DEVICE_GPU)
+        testing::Values(CommonTestUtils::DEVICE_OCL)
 );
 
 INSTANTIATE_TEST_SUITE_P(
@@ -394,7 +394,7 @@ const auto GatherAxes2 = testing::Combine(
         testing::Values(InferenceEngine::Precision::UNSPECIFIED),
         testing::Values(InferenceEngine::Layout::ANY),
         testing::Values(InferenceEngine::Layout::ANY),
-        testing::Values(CommonTestUtils::DEVICE_GPU)
+        testing::Values(CommonTestUtils::DEVICE_OCL)
 );
 
 INSTANTIATE_TEST_SUITE_P(
@@ -414,7 +414,7 @@ const auto Gather6dAxes2 = testing::Combine(
         testing::Values(InferenceEngine::Precision::UNSPECIFIED),
         testing::Values(InferenceEngine::Layout::ANY),
         testing::Values(InferenceEngine::Layout::ANY),
-        testing::Values(CommonTestUtils::DEVICE_GPU)
+        testing::Values(CommonTestUtils::DEVICE_OCL)
 );
 
 INSTANTIATE_TEST_SUITE_P(
@@ -464,7 +464,7 @@ const auto GatherAxes1 = testing::Combine(
         testing::Values(InferenceEngine::Precision::UNSPECIFIED),
         testing::Values(InferenceEngine::Layout::ANY),
         testing::Values(InferenceEngine::Layout::ANY),
-        testing::Values(CommonTestUtils::DEVICE_GPU)
+        testing::Values(CommonTestUtils::DEVICE_OCL)
 );
 
 INSTANTIATE_TEST_SUITE_P(
@@ -484,7 +484,7 @@ const auto Gather6dAxes1 = testing::Combine(
         testing::Values(InferenceEngine::Precision::UNSPECIFIED),
         testing::Values(InferenceEngine::Layout::ANY),
         testing::Values(InferenceEngine::Layout::ANY),
-        testing::Values(CommonTestUtils::DEVICE_GPU)
+        testing::Values(CommonTestUtils::DEVICE_OCL)
 );
 
 INSTANTIATE_TEST_SUITE_P(
@@ -535,7 +535,7 @@ const auto GatherAxes0 = testing::Combine(
         testing::Values(InferenceEngine::Precision::UNSPECIFIED),
         testing::Values(InferenceEngine::Layout::ANY),
         testing::Values(InferenceEngine::Layout::ANY),
-        testing::Values(CommonTestUtils::DEVICE_GPU)
+        testing::Values(CommonTestUtils::DEVICE_OCL)
 );
 
 INSTANTIATE_TEST_SUITE_P(
@@ -555,7 +555,7 @@ const auto Gather6dAxes0 = testing::Combine(
         testing::Values(InferenceEngine::Precision::UNSPECIFIED),
         testing::Values(InferenceEngine::Layout::ANY),
         testing::Values(InferenceEngine::Layout::ANY),
-        testing::Values(CommonTestUtils::DEVICE_GPU)
+        testing::Values(CommonTestUtils::DEVICE_OCL)
 );
 
 INSTANTIATE_TEST_SUITE_P(

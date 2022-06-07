@@ -4,9 +4,9 @@
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 #pragma once
-#include "intel_gpu/primitives/reshape.hpp"
+#include "opencl_gpu/primitives/reshape.hpp"
 #include "primitive_inst.h"
-#include "intel_gpu/runtime/error_handler.hpp"
+#include "opencl_gpu/runtime/error_handler.hpp"
 
 #include <string>
 #include <memory>

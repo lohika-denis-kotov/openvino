@@ -2,17 +2,17 @@
 // SPDX-License-Identifier: Apache-2.0
 //
 
-#include "intel_gpu/plugin/program.hpp"
-#include "intel_gpu/plugin/common_utils.hpp"
+#include "opencl_gpu/plugin/program.hpp"
+#include "opencl_gpu/plugin/common_utils.hpp"
 
 #include "ngraph/op/experimental_detectron_topkrois.hpp"
 
-#include "intel_gpu/primitives/experimental_detectron_topk_rois.hpp"
-#include "intel_gpu/primitives/arg_max_min.hpp"
+#include "opencl_gpu/primitives/experimental_detectron_topk_rois.hpp"
+#include "opencl_gpu/primitives/arg_max_min.hpp"
 
 namespace ov {
 namespace runtime {
-namespace intel_gpu {
+namespace opencl_gpu {
 
 namespace {
 
@@ -45,6 +45,6 @@ void CreateExperimentalDetectronTopKROIsOp(Program &p,
 
 REGISTER_FACTORY_IMPL(v6, ExperimentalDetectronTopKROIs);
 
-} // namespace intel_gpu
+} // namespace opencl_gpu
 } // namespace runtime
 } // namespace ov

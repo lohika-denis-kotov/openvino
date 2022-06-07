@@ -3,9 +3,9 @@
 //
 #pragma once
 
-#include <intel_gpu/primitives/roi_align.hpp>
+#include <opencl_gpu/primitives/roi_align.hpp>
 #include "primitive_inst.h"
-#include <intel_gpu/runtime/error_handler.hpp>
+#include <opencl_gpu/runtime/error_handler.hpp>
 
 namespace cldnn {
 

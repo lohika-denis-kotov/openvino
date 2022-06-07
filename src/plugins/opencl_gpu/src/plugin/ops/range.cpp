@@ -2,15 +2,15 @@
 // SPDX-License-Identifier: Apache-2.0
 //
 
-#include <intel_gpu/plugin/program.hpp>
-#include <intel_gpu/plugin/common_utils.hpp>
+#include <opencl_gpu/plugin/program.hpp>
+#include <opencl_gpu/plugin/common_utils.hpp>
 
-#include <intel_gpu/primitives/range.hpp>
+#include <opencl_gpu/primitives/range.hpp>
 #include <ngraph/op/range.hpp>
 
 namespace ov {
 namespace runtime {
-namespace intel_gpu {
+namespace opencl_gpu {
 
 static void CreateRangeOp(Program &p, const std::shared_ptr<ngraph::op::v4::Range> &op) {
     p.ValidateInputs(op, { 3 });
@@ -30,6 +30,6 @@ static void CreateRangeOp(Program &p, const std::shared_ptr<ngraph::op::v4::Rang
 
 REGISTER_FACTORY_IMPL(v4, Range);
 
-}  // namespace intel_gpu
+}  // namespace opencl_gpu
 }  // namespace runtime
 }  // namespace ov

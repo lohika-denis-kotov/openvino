@@ -31,7 +31,7 @@ const auto testCases = ::testing::Combine(::testing::ValuesIn(shuffleParameters)
                                           ::testing::Values(InferenceEngine::Layout::ANY),
                                           ::testing::Values(InferenceEngine::Layout::ANY),
                                           ::testing::ValuesIn(inputShapes),
-                                          ::testing::Values(CommonTestUtils::DEVICE_GPU));
+                                          ::testing::Values(CommonTestUtils::DEVICE_OCL));
 
 
 INSTANTIATE_TEST_SUITE_P(smoke_GPU_ShuffleChannels, ShuffleChannelsLayerTest, testCases, ShuffleChannelsLayerTest::getTestCaseName);
@@ -46,7 +46,7 @@ INSTANTIATE_TEST_SUITE_P(smoke_ShuffleChannels3D, ShuffleChannelsLayerTest,
                 ::testing::Values(InferenceEngine::Layout::ANY),
                 ::testing::Values(InferenceEngine::Layout::ANY),
                 ::testing::Values(std::vector<size_t >({18, 30, 36})),
-                ::testing::Values(CommonTestUtils::DEVICE_GPU)),
+                ::testing::Values(CommonTestUtils::DEVICE_OCL)),
         ShuffleChannelsLayerTest::getTestCaseName);
 
 INSTANTIATE_TEST_SUITE_P(smoke_ShuffleChannels2D, ShuffleChannelsLayerTest,
@@ -58,7 +58,7 @@ INSTANTIATE_TEST_SUITE_P(smoke_ShuffleChannels2D, ShuffleChannelsLayerTest,
                 ::testing::Values(InferenceEngine::Layout::ANY),
                 ::testing::Values(InferenceEngine::Layout::ANY),
                 ::testing::Values(std::vector<size_t >({18, 30})),
-                ::testing::Values(CommonTestUtils::DEVICE_GPU)),
+                ::testing::Values(CommonTestUtils::DEVICE_OCL)),
         ShuffleChannelsLayerTest::getTestCaseName);
 
 INSTANTIATE_TEST_SUITE_P(smoke_ShuffleChannels1D, ShuffleChannelsLayerTest,
@@ -70,5 +70,5 @@ INSTANTIATE_TEST_SUITE_P(smoke_ShuffleChannels1D, ShuffleChannelsLayerTest,
                 ::testing::Values(InferenceEngine::Layout::ANY),
                 ::testing::Values(InferenceEngine::Layout::ANY),
                 ::testing::Values(std::vector<size_t >({30})),
-                ::testing::Values(CommonTestUtils::DEVICE_GPU)),
+                ::testing::Values(CommonTestUtils::DEVICE_OCL)),
         ShuffleChannelsLayerTest::getTestCaseName);

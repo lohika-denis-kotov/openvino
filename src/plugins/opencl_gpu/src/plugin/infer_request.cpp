@@ -8,11 +8,11 @@
 #include <functional>
 #include <utility>
 #include <description_buffer.hpp>
-#include "intel_gpu/plugin/infer_request.hpp"
-#include "intel_gpu/plugin/remote_context.hpp"
-#include "intel_gpu/plugin/compiled_model.hpp"
-#include "intel_gpu/plugin/itt.hpp"
-#include "intel_gpu/runtime/debug_configuration.hpp"
+#include "opencl_gpu/plugin/infer_request.hpp"
+#include "opencl_gpu/plugin/remote_context.hpp"
+#include "opencl_gpu/plugin/compiled_model.hpp"
+#include "opencl_gpu/plugin/itt.hpp"
+#include "opencl_gpu/runtime/debug_configuration.hpp"
 #include "openvino/core/preprocess/input_tensor_info.hpp"
 #include <ie_algorithm.hpp>
 #include <debug.h>
@@ -48,7 +48,7 @@ void convertAndCopy(const InferenceEngine::Blob* src, dst_t* dst) {
 }
 
 template<typename src_dt, typename dst_dt>
-void copyResultToOutputBlob(cldnn::memory::ptr src, Blob::Ptr dst, ov::runtime::intel_gpu::buf_info* bi, cldnn::stream& stream) {
+void copyResultToOutputBlob(cldnn::memory::ptr src, Blob::Ptr dst, ov::runtime::opencl_gpu::buf_info* bi, cldnn::stream& stream) {
     size_t n = (bi == nullptr) ? dst->size() : bi->buf_size;
     size_t offset = (bi == nullptr) ? 0 : bi->buf_offset;
 
@@ -90,7 +90,7 @@ inline void checkAlloc(const Blob::Ptr& blob, const std::string& err_str) {
     if (!blob->is<gpu::ClBlob>()) {
         not_allocated = (blob->buffer() == nullptr);
     } else {
-        not_allocated = !ov::runtime::intel_gpu::getBlobImpl(blob->as<gpu::ClBlob>())->is_allocated();
+        not_allocated = !ov::runtime::opencl_gpu::getBlobImpl(blob->as<gpu::ClBlob>())->is_allocated();
     }
     if (not_allocated) {
         IE_THROW(NotAllocated) << err_str;
@@ -175,13 +175,13 @@ bool same_host_mem(cldnn::memory::ptr memPtr, uint8_t* hostPtr) {
 
 namespace ov {
 namespace runtime {
-namespace intel_gpu {
+namespace opencl_gpu {
 
 // ----------------------------------------------------------------------------------------- //
 // ---------------------------- IE API impl ------------------------------------------------ //
 // ----------------------------------------------------------------------------------------- //
 Blob::Ptr InferRequest::GetBlob(const std::string& name) {
-    OV_ITT_SCOPED_TASK(itt::domains::intel_gpu_plugin, "InferRequest::GetBlob");
+    OV_ITT_SCOPED_TASK(itt::domains::opencl_gpu_plugin, "InferRequest::GetBlob");
     Blob::Ptr data;
     InputInfo::Ptr foundInput;
     DataPtr foundOutput;
@@ -215,7 +215,7 @@ Blob::Ptr InferRequest::GetBlob(const std::string& name) {
 }
 
 void InferRequest::SetBlob(const std::string& name, const Blob::Ptr& data) {
-    OV_ITT_SCOPED_TASK(itt::domains::intel_gpu_plugin, "InferRequest::SetBlob");
+    OV_ITT_SCOPED_TASK(itt::domains::opencl_gpu_plugin, "InferRequest::SetBlob");
 
     // perform all common checks first
     if (name.empty()) {
@@ -472,7 +472,7 @@ void InferRequest::SetBlobs(const std::string& name, const std::vector<Blob::Ptr
 }
 
 void InferRequest::checkBlobs() {
-    OV_ITT_SCOPED_TASK(itt::domains::intel_gpu_plugin, "InferRequest::checkBlobs");
+    OV_ITT_SCOPED_TASK(itt::domains::opencl_gpu_plugin, "InferRequest::checkBlobs");
     for (auto const &input : _inputs) {
         InputInfo::Ptr foundInput = nullptr;
         auto foundInputPair = std::find_if(std::begin(_networkInputs), std::end(_networkInputs),
@@ -508,7 +508,7 @@ void InferRequest::checkBlobs() {
 }
 
 void InferRequest::SetGraph(std::shared_ptr<Graph> graph) {
-    OV_ITT_SCOPED_TASK(itt::domains::intel_gpu_plugin, "InferRequest::SetGraph");
+    OV_ITT_SCOPED_TASK(itt::domains::opencl_gpu_plugin, "InferRequest::SetGraph");
     m_graph = graph;
 
     if (m_graph == nullptr) {
@@ -526,7 +526,7 @@ void InferRequest::SetGraph(std::shared_ptr<Graph> graph) {
 }
 
 void InferRequest::SetBatch(int new_batch) {
-    OV_ITT_SCOPED_TASK(itt::domains::intel_gpu_plugin, "InferRequest::SetBatch");
+    OV_ITT_SCOPED_TASK(itt::domains::opencl_gpu_plugin, "InferRequest::SetBatch");
     if (m_graph->GetMaxDynamicBatchSize() < 0)
         IE_THROW() << "Dynamic batch is not enabled.";
 
@@ -872,7 +872,7 @@ void InferRequest::setup_stream_graph() {
 }
 
 Blob::Ptr InferRequest::create_host_blob(const TensorDesc& desc, std::shared_ptr<InferenceEngine::IAllocator> alloc) {
-    OV_ITT_SCOPED_TASK(itt::domains::intel_gpu_plugin, "InferRequest::create_host_blob");
+    OV_ITT_SCOPED_TASK(itt::domains::opencl_gpu_plugin, "InferRequest::create_host_blob");
     auto blob = make_blob_with_precision(desc, alloc ? alloc : CreateDefaultAllocator());
     blob->allocate();
     return blob;
@@ -895,7 +895,7 @@ Blob::Ptr InferRequest::create_shared_device_blob(const InferenceEngine::TensorD
 }
 
 void InferRequest::copy_output_data(cldnn::memory::ptr src, Blob::Ptr dst, buf_info* bi) {
-    OV_ITT_SCOPED_TASK(itt::domains::intel_gpu_plugin, "InferRequest::copy_output_data");
+    OV_ITT_SCOPED_TASK(itt::domains::opencl_gpu_plugin, "InferRequest::copy_output_data");
     auto& stream = m_graph->GetNetwork()->get_stream();
     switch (dst->getTensorDesc().getPrecision()) {
     case Precision::FP64: copyResultToOutputBlob<float, double>(src, dst, bi, stream);    break;
@@ -917,7 +917,7 @@ void InferRequest::copy_input_data(std::shared_ptr<cldnn::network> network,
                                         const cldnn::primitive_id &inputName,
                                         const cldnn::layout& inputLayout,
                                         const Blob &inputBlob, buf_info* bi) {
-    OV_ITT_SCOPED_TASK(itt::domains::intel_gpu_plugin, "InferRequest::copy_input_data");
+    OV_ITT_SCOPED_TASK(itt::domains::opencl_gpu_plugin, "InferRequest::copy_input_data");
 
     size_t offset = (bi == nullptr) ? 0 : bi->buf_offset;
 
@@ -965,7 +965,7 @@ void InferRequest::copy_input_data(std::shared_ptr<cldnn::network> network,
 }
 
 void InferRequest::allocate_inputs() {
-    OV_ITT_SCOPED_TASK(itt::domains::intel_gpu_plugin, "InferRequest::allocate_inputs");
+    OV_ITT_SCOPED_TASK(itt::domains::opencl_gpu_plugin, "InferRequest::allocate_inputs");
     auto inputLayouts = m_graph->GetInputLayouts();
 
     // allocate inputs
@@ -1024,7 +1024,7 @@ void InferRequest::allocate_inputs() {
 }
 
 void InferRequest::allocate_inputs_dynamic() {
-    OV_ITT_SCOPED_TASK(itt::domains::intel_gpu_plugin, "InferRequest::allocate_inputs_dynamic");
+    OV_ITT_SCOPED_TASK(itt::domains::opencl_gpu_plugin, "InferRequest::allocate_inputs_dynamic");
     // allocate inputs
     for (auto &input : m_graph->GetNetworkInputs()) {
         InputInfo::Ptr ni = _networkInputs.at(input.first);
@@ -1042,7 +1042,7 @@ void InferRequest::allocate_inputs_dynamic() {
 }
 
 void InferRequest::allocate_outputs() {
-    OV_ITT_SCOPED_TASK(itt::domains::intel_gpu_plugin, "InferRequest::allocate_outputs");
+    OV_ITT_SCOPED_TASK(itt::domains::opencl_gpu_plugin, "InferRequest::allocate_outputs");
     // allocate outputs
     for (auto& no : _networkOutputs) {
         std::string outputID = m_graph->MapOutputName(no.first);
@@ -1089,7 +1089,7 @@ void InferRequest::allocate_outputs() {
 }
 
 void InferRequest::allocate_outputs_dynamic() {
-    OV_ITT_SCOPED_TASK(itt::domains::intel_gpu_plugin, "InferRequest::allocate_outputs_dynamic");
+    OV_ITT_SCOPED_TASK(itt::domains::opencl_gpu_plugin, "InferRequest::allocate_outputs_dynamic");
     // allocate outputs
     for (auto& no : m_graph->GetNetworkOutputs()) {
         std::string outputID = m_graph->MapOutputName(no.first);
@@ -1103,7 +1103,7 @@ void InferRequest::allocate_outputs_dynamic() {
 }
 
 void InferRequest::InferImpl() {
-    OV_ITT_SCOPED_TASK(itt::domains::intel_gpu_plugin, "InferRequest::InferImpl");
+    OV_ITT_SCOPED_TASK(itt::domains::opencl_gpu_plugin, "InferRequest::InferImpl");
     setup_stream_graph();
     std::lock_guard<std::mutex> lk(m_graph->get_mutex());
     preprocess();
@@ -1112,7 +1112,7 @@ void InferRequest::InferImpl() {
 }
 
 std::map<std::string, InferenceEngineProfileInfo> InferRequest::GetPerformanceCounts() const {
-    OV_ITT_SCOPED_TASK(itt::domains::intel_gpu_plugin, "InferRequest::GetPerformanceCounts");
+    OV_ITT_SCOPED_TASK(itt::domains::opencl_gpu_plugin, "InferRequest::GetPerformanceCounts");
     if (!m_useProfiling) {
         IE_THROW() << "Performance counters were not enabled";
     } else {
@@ -1122,7 +1122,7 @@ std::map<std::string, InferenceEngineProfileInfo> InferRequest::GetPerformanceCo
 
 void InferRequest::prepare_input(const cldnn::primitive_id& inputName, Blob::Ptr& inputBlob,
                                       std::vector<cldnn::event::ptr>& dependencies) {
-    OV_ITT_SCOPED_TASK(itt::domains::intel_gpu_plugin, "InferRequest::prepare_input");
+    OV_ITT_SCOPED_TASK(itt::domains::opencl_gpu_plugin, "InferRequest::prepare_input");
     auto inputLayoutItr = m_graph->GetInputLayouts().find(inputName);
     if (inputLayoutItr == m_graph->GetInputLayouts().end()) {
         IE_THROW() << "Input name mismatch.";
@@ -1200,7 +1200,7 @@ void InferRequest::prepare_input(const cldnn::primitive_id& inputName, Blob::Ptr
 }
 
 void InferRequest::prepare_output(const cldnn::primitive_id& outputName, Blob::Ptr& outputBlob) {
-    OV_ITT_SCOPED_TASK(itt::domains::intel_gpu_plugin, "InferRequest::prepare_output");
+    OV_ITT_SCOPED_TASK(itt::domains::opencl_gpu_plugin, "InferRequest::prepare_output");
     Blob::Ptr reqBlob = _deviceOutputs.at(outputName);
     cldnn::primitive_id internalName = outputsMap[outputName];
     auto _nw_ptr = m_graph->GetNetwork();
@@ -1238,6 +1238,6 @@ InferenceEngine::Blob::Ptr InferRequest::create_device_blob(const InferenceEngin
     }
 }
 
-}  // namespace intel_gpu
+}  // namespace opencl_gpu
 }  // namespace runtime
 }  // namespace ov

@@ -496,7 +496,7 @@ INSTANTIATE_TEST_SUITE_P(smoke_LPT, GroupConvolutionQDqTransformation,
     ::testing::Combine(
         ::testing::ValuesIn(netPrecisions),
         ::testing::ValuesIn(shapes),
-        ::testing::Values(CommonTestUtils::DEVICE_GPU),
+        ::testing::Values(CommonTestUtils::DEVICE_OCL),
         ::testing::ValuesIn(trasformationParamValues),
         ::testing::ValuesIn(params)),
     GroupConvolutionQDqTransformation::getTestCaseName);

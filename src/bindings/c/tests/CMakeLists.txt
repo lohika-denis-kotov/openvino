@@ -35,7 +35,7 @@ if(ENABLE_INTEL_CPU)
 endif()
 
 if(ENABLE_INTEL_GPU)
-    add_dependencies(${TARGET_NAME} openvino_intel_gpu_plugin)
+#    add_dependencies(${TARGET_NAME} openvino_opencl_gpu_plugin)
 endif()
 
 add_cpplint_target(${TARGET_NAME}_cpplint FOR_TARGETS ${TARGET_NAME})

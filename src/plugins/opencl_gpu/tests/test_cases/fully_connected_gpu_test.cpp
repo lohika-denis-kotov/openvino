@@ -7,10 +7,10 @@
 #include "test_utils.h"
 #include "network_test.h"
 
-#include <intel_gpu/primitives/input_layout.hpp>
-#include "intel_gpu/primitives/fully_connected.hpp"
-#include <intel_gpu/primitives/quantize.hpp>
-#include <intel_gpu/primitives/data.hpp>
+#include <opencl_gpu/primitives/input_layout.hpp>
+#include "opencl_gpu/primitives/fully_connected.hpp"
+#include <opencl_gpu/primitives/quantize.hpp>
+#include <opencl_gpu/primitives/data.hpp>
 
 #include <cmath>
 

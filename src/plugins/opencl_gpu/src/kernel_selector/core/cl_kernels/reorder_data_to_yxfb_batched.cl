@@ -68,7 +68,7 @@ KERNEL (reorder_data_to_yxfb_batched)(
     #else
         MEAN_SUBTRACT_TYPE res = TO_MEAN_TYPE(input[input_idx]);
         uint8 msv = RESHAPE_DIMS(INPUT0, MEAN_SUBTRACT, b, f, 0, 0, y,x);
-        res = MEAN_OP(res, mean_subtract[GET_DATA_INDEX_SAFE(MEAN_SUBTRACT, msv[1], msv[2], msv[5], msv[6])]);
+        res = MEAN_OP(res, mean_subtract[GET_DATA_INDEX_SAFE(MEAN_SUBTRACT, msv.s1, msv.s2, msv.s5, msv.s6)]);
     #endif
     #else
         CALC_TYPE res = TO_CALC_TYPE(input[input_idx]);

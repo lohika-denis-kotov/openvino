@@ -2,7 +2,7 @@
 // SPDX-License-Identifier: Apache-2.0
 //
 
-#include "intel_gpu/plugin/program.hpp"
+#include "opencl_gpu/plugin/program.hpp"
 #include "transformations/utils/utils.hpp"
 
 #include "ngraph/op/tanh.hpp"
@@ -41,11 +41,11 @@
 #include "ngraph/op/hsigmoid.hpp"
 #include "ngraph/op/round.hpp"
 
-#include "intel_gpu/primitives/activation.hpp"
+#include "opencl_gpu/primitives/activation.hpp"
 
 namespace ov {
 namespace runtime {
-namespace intel_gpu {
+namespace opencl_gpu {
 
 void CreateUnaryEltwiseOp(Program& p, const std::shared_ptr<ngraph::Node>& op,
                           cldnn::activation_func func, cldnn::activation_additional_params params) {
@@ -323,6 +323,6 @@ REGISTER_FACTORY_IMPL(v0, Sign);
 REGISTER_FACTORY_IMPL(v5, HSigmoid);
 REGISTER_FACTORY_IMPL(v5, Round);
 
-}  // namespace intel_gpu
+}  // namespace opencl_gpu
 }  // namespace runtime
 }  // namespace ov

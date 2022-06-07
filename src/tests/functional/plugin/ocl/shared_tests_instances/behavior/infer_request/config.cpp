@@ -11,13 +11,13 @@ const std::vector<std::map<std::string, std::string>> configs = {
 };
 
 const std::vector<std::map<std::string, std::string>> multiConfigs = {
-        {{InferenceEngine::MultiDeviceConfigParams::KEY_MULTI_DEVICE_PRIORITIES, CommonTestUtils::DEVICE_GPU}}
+        {{InferenceEngine::MultiDeviceConfigParams::KEY_MULTI_DEVICE_PRIORITIES, CommonTestUtils::DEVICE_OCL}}
 };
 
 INSTANTIATE_TEST_SUITE_P(smoke_BehaviorTests, InferRequestConfigTest,
                         ::testing::Combine(
                                 ::testing::Values(1u),
-                                ::testing::Values(CommonTestUtils::DEVICE_GPU),
+                                ::testing::Values(CommonTestUtils::DEVICE_OCL),
                                 ::testing::ValuesIn(configs)),
                          InferRequestConfigTest::getTestCaseName);
 

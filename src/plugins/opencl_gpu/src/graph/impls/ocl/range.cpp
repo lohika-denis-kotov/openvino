@@ -8,7 +8,7 @@
 #include <kernel_selector_helper.h>
 #include <range/range_kernel_selector.h>
 #include <range/range_kernel_ref.h>
-#include <intel_gpu/runtime/error_handler.hpp>
+#include <opencl_gpu/runtime/error_handler.hpp>
 
 namespace cldnn {
 namespace ocl {

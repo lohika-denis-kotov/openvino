@@ -6,8 +6,8 @@
 
 #pragma once
 
-#include "intel_gpu/runtime/compounds.hpp"
-#include "intel_gpu/runtime/layout.hpp"
+#include "opencl_gpu/runtime/compounds.hpp"
+#include "opencl_gpu/runtime/layout.hpp"
 
 #include <algorithm>
 #include <string>

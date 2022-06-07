@@ -117,7 +117,7 @@ INSTANTIATE_TEST_SUITE_P(smoke_Interpolate_Basic, InterpolateLayerTest, ::testin
         ::testing::Values(InferenceEngine::Layout::ANY),
         ::testing::ValuesIn(inShapes),
         ::testing::ValuesIn(targetShapes),
-        ::testing::Values(CommonTestUtils::DEVICE_GPU),
+        ::testing::Values(CommonTestUtils::DEVICE_OCL),
         ::testing::Values(additional_config)),
     InterpolateLayerTest::getTestCaseName);
 
@@ -130,7 +130,7 @@ INSTANTIATE_TEST_SUITE_P(smoke_Interpolate_Nearest, InterpolateLayerTest, ::test
         ::testing::Values(InferenceEngine::Layout::ANY),
         ::testing::ValuesIn(inShapes),
         ::testing::ValuesIn(targetShapes),
-        ::testing::Values(CommonTestUtils::DEVICE_GPU),
+        ::testing::Values(CommonTestUtils::DEVICE_OCL),
         ::testing::Values(additional_config)),
     InterpolateLayerTest::getTestCaseName);
 

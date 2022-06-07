@@ -6,7 +6,7 @@
  * @brief a header that defines wrappers for internal GPU plugin-specific
  * OpenCL context and OpenCL shared memory tensors
  *
- * @file openvino/runtime/intel_gpu/ocl/ocl.hpp
+ * @file openvino/runtime/opencl_gpu/ocl/ocl.hpp
  */
 #pragma once
 
@@ -15,12 +15,12 @@
 
 #include "gpu/gpu_params.hpp"
 #include "openvino/runtime/core.hpp"
-#include "openvino/runtime/intel_gpu/ocl/ocl_wrapper.hpp"
+#include "openvino/runtime/opencl_gpu/ocl/ocl_wrapper.hpp"
 #include "openvino/runtime/remote_context.hpp"
 #include "openvino/runtime/remote_tensor.hpp"
 
 namespace ov {
-namespace intel_gpu {
+namespace opencl_gpu {
 
 /**
  * @defgroup ov_runtime_ocl_gpu_cpp_api Intel GPU OpenCL interoperability
@@ -334,5 +334,5 @@ public:
 };
 
 }  // namespace ocl
-}  // namespace intel_gpu
+}  // namespace opencl_gpu
 }  // namespace ov

@@ -2,18 +2,18 @@
 // SPDX-License-Identifier: Apache-2.0
 //
 
-#include "intel_gpu/plugin/program.hpp"
-#include "intel_gpu/plugin/common_utils.hpp"
+#include "opencl_gpu/plugin/program.hpp"
+#include "opencl_gpu/plugin/common_utils.hpp"
 
 #include "ngraph/op/topk.hpp"
 
-#include "intel_gpu/primitives/arg_max_min.hpp"
-#include "intel_gpu/primitives/mutable_data.hpp"
-#include "intel_gpu/runtime/debug_configuration.hpp"
+#include "opencl_gpu/primitives/arg_max_min.hpp"
+#include "opencl_gpu/primitives/mutable_data.hpp"
+#include "opencl_gpu/runtime/debug_configuration.hpp"
 
 namespace ov {
 namespace runtime {
-namespace intel_gpu {
+namespace opencl_gpu {
 
 static cldnn::arg_max_min::axis_name GetAxis(int32_t axis, size_t in_rank) {
     if (in_rank == 5) {
@@ -132,6 +132,6 @@ static void CreateTopKOp(Program& p, const std::shared_ptr<ngraph::op::v1::TopK>
 
 REGISTER_FACTORY_IMPL(v1, TopK);
 
-}  // namespace intel_gpu
+}  // namespace opencl_gpu
 }  // namespace runtime
 }  // namespace ov

@@ -20,7 +20,7 @@ namespace {
 
     INSTANTIATE_TEST_SUITE_P(smoke_BehaviorTests, HoldersTest,
             ::testing::Combine(
-            ::testing::Values(CommonTestUtils::DEVICE_GPU),
+            ::testing::Values(CommonTestUtils::DEVICE_OCL),
             ::testing::ValuesIn(orders)),
             HoldersTest::getTestCaseName);
 

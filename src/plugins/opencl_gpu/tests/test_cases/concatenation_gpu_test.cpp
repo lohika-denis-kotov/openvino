@@ -6,10 +6,10 @@
 
 #include "test_utils.h"
 
-#include <intel_gpu/primitives/input_layout.hpp>
-#include <intel_gpu/primitives/convolution.hpp>
-#include <intel_gpu/primitives/data.hpp>
-#include <intel_gpu/primitives/reorder.hpp>
+#include <opencl_gpu/primitives/input_layout.hpp>
+#include <opencl_gpu/primitives/convolution.hpp>
+#include <opencl_gpu/primitives/data.hpp>
+#include <opencl_gpu/primitives/reorder.hpp>
 
 #include <algorithm>
 #include <cmath>

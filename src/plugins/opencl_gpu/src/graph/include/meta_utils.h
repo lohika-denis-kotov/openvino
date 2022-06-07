@@ -4,7 +4,7 @@
 
 #pragma once
 
-#include "intel_gpu/runtime/utils.hpp"
+#include "opencl_gpu/runtime/utils.hpp"
 
 #include <type_traits>
 

@@ -2,15 +2,15 @@
 // SPDX-License-Identifier: Apache-2.0
 //
 
-#include "intel_gpu/plugin/program.hpp"
-#include "intel_gpu/plugin/common_utils.hpp"
+#include "opencl_gpu/plugin/program.hpp"
+#include "opencl_gpu/plugin/common_utils.hpp"
 
 #include "ngraph/op/parameter.hpp"
 
-#include "intel_gpu/primitives/input_layout.hpp"
-#include "intel_gpu/primitives/reorder.hpp"
-#include "intel_gpu/primitives/data.hpp"
-#include "intel_gpu/primitives/concatenation.hpp"
+#include "opencl_gpu/primitives/input_layout.hpp"
+#include "opencl_gpu/primitives/reorder.hpp"
+#include "opencl_gpu/primitives/data.hpp"
+#include "opencl_gpu/primitives/concatenation.hpp"
 
 #include "openvino/core/preprocess/input_tensor_info.hpp"
 
@@ -18,7 +18,7 @@ using namespace InferenceEngine;
 
 namespace ov {
 namespace runtime {
-namespace intel_gpu {
+namespace opencl_gpu {
 
 static void CreateParameterOp(Program& p, const std::shared_ptr<ngraph::op::v0::Parameter>& op) {
     auto networkInputs = p.GetNetworkInputs();
@@ -337,6 +337,6 @@ static void CreateParameterOp(Program& p, const std::shared_ptr<ngraph::op::v0::
 
 REGISTER_FACTORY_IMPL(v0, Parameter);
 
-}  // namespace intel_gpu
+}  // namespace opencl_gpu
 }  // namespace runtime
 }  // namespace ov

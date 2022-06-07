@@ -32,7 +32,7 @@ INSTANTIATE_TEST_SUITE_P(Basic_smoke, GatherTreeLayerTest,
         ::testing::Values(InferenceEngine::Precision::UNSPECIFIED),
         ::testing::Values(InferenceEngine::Layout::ANY),
         ::testing::Values(InferenceEngine::Layout::ANY),
-        ::testing::Values(CommonTestUtils::DEVICE_GPU)),
+        ::testing::Values(CommonTestUtils::DEVICE_OCL)),
         GatherTreeLayerTest::getTestCaseName);
 
 }  // namespace

@@ -7,7 +7,7 @@
 using namespace BehaviorTestsDefinitions;
 namespace {
 INSTANTIATE_TEST_SUITE_P(smoke_BehaviorTests, VersionTest,
-                                 ::testing::Values(CommonTestUtils::DEVICE_GPU),
+                                 ::testing::Values(CommonTestUtils::DEVICE_OCL),
                          VersionTest::getTestCaseName);
 
 INSTANTIATE_TEST_SUITE_P(smoke_Multi_BehaviorTests, VersionTest,

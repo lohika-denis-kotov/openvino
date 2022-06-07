@@ -2,18 +2,18 @@
 // SPDX-License-Identifier: Apache-2.0
 //
 
-#include "intel_gpu/plugin/program.hpp"
-#include "intel_gpu/plugin/common_utils.hpp"
+#include "opencl_gpu/plugin/program.hpp"
+#include "opencl_gpu/plugin/common_utils.hpp"
 
 #include "ngraph/op/select.hpp"
 
-#include "intel_gpu/primitives/select.hpp"
-#include "intel_gpu/primitives/reorder.hpp"
-#include "intel_gpu/primitives/reshape.hpp"
+#include "opencl_gpu/primitives/select.hpp"
+#include "opencl_gpu/primitives/reorder.hpp"
+#include "opencl_gpu/primitives/reshape.hpp"
 
 namespace ov {
 namespace runtime {
-namespace intel_gpu {
+namespace opencl_gpu {
 
 static void CreateSelectOp(Program& p, const std::shared_ptr<ngraph::op::v1::Select>& op) {
     p.ValidateInputs(op, {3});
@@ -91,6 +91,6 @@ static void CreateSelectOp(Program& p, const std::shared_ptr<ngraph::op::v1::Sel
 
 REGISTER_FACTORY_IMPL(v1, Select);
 
-}  // namespace intel_gpu
+}  // namespace opencl_gpu
 }  // namespace runtime
 }  // namespace ov

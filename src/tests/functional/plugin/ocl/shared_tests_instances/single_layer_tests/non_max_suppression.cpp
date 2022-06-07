@@ -36,7 +36,7 @@ const auto nmsParams = ::testing::Combine(::testing::ValuesIn(inShapeParams),
                                           ::testing::ValuesIn(encodType),
                                           ::testing::ValuesIn(sortResDesc),
                                           ::testing::ValuesIn(outType),
-                                          ::testing::Values(CommonTestUtils::DEVICE_GPU)
+                                          ::testing::Values(CommonTestUtils::DEVICE_OCL)
 );
 
 INSTANTIATE_TEST_SUITE_P(smoke_NmsLayerTest, NmsLayerTest, nmsParams, NmsLayerTest::getTestCaseName);

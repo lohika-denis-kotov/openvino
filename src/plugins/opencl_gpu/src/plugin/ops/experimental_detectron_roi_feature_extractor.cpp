@@ -2,17 +2,17 @@
 // SPDX-License-Identifier: Apache-2.0
 //
 
-#include "intel_gpu/plugin/program.hpp"
-#include "intel_gpu/plugin/common_utils.hpp"
+#include "opencl_gpu/plugin/program.hpp"
+#include "opencl_gpu/plugin/common_utils.hpp"
 
 #include "ngraph/op/experimental_detectron_roi_feature.hpp"
 
-#include "intel_gpu/primitives/mutable_data.hpp"
-#include "intel_gpu/primitives/experimental_detectron_roi_feature_extractor.hpp"
+#include "opencl_gpu/primitives/mutable_data.hpp"
+#include "opencl_gpu/primitives/experimental_detectron_roi_feature_extractor.hpp"
 
 namespace ov {
 namespace runtime {
-namespace intel_gpu {
+namespace opencl_gpu {
 
 static void CreateExperimentalDetectronROIFeatureExtractorOp(Program& p, const std::shared_ptr<ngraph::op::v6::ExperimentalDetectronROIFeatureExtractor>& op) {
     auto inputPrimitives = p.GetInputPrimitiveIDs(op);
@@ -56,6 +56,6 @@ static void CreateExperimentalDetectronROIFeatureExtractorOp(Program& p, const s
 
 REGISTER_FACTORY_IMPL(v6, ExperimentalDetectronROIFeatureExtractor);
 
-}  // namespace intel_gpu
+}  // namespace opencl_gpu
 }  // namespace runtime
 }  // namespace ov

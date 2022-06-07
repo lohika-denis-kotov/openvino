@@ -5,8 +5,8 @@
 #pragma once
 
 #include "ocl_common.hpp"
-#include "intel_gpu/runtime/event.hpp"
-#include "intel_gpu/runtime/utils.hpp"
+#include "opencl_gpu/runtime/event.hpp"
+#include "opencl_gpu/runtime/utils.hpp"
 
 #include <vector>
 #include <memory>

@@ -12,7 +12,7 @@
 #include <cctype>
 #include <memory>
 
-#include "intel_gpu/plugin/transformations_pipeline.hpp"
+#include "opencl_gpu/plugin/transformations_pipeline.hpp"
 
 #include "ie_metric_helpers.hpp"
 #include "ie_plugin_config.hpp"
@@ -88,7 +88,7 @@
 #include <low_precision/strided_slice.hpp>
 #include <low_precision/network_helper.hpp>
 
-#include "intel_gpu/plugin/itt.hpp"
+#include "opencl_gpu/plugin/itt.hpp"
 
 namespace {
 template<typename T>
@@ -105,10 +105,10 @@ static bool disableReduceDecomposition(const std::shared_ptr<const ngraph::Node>
 
 namespace ov {
 namespace runtime {
-namespace intel_gpu {
+namespace opencl_gpu {
 
 void TransformationsPipeline::apply(std::shared_ptr<ov::Model> func) {
-    OV_ITT_SCOPED_TASK(itt::domains::intel_gpu_plugin, "TransformationsPipeline::apply");
+    OV_ITT_SCOPED_TASK(itt::domains::opencl_gpu_plugin, "TransformationsPipeline::apply");
     using const_node_ptr = const std::shared_ptr<const ngraph::Node>;
 
     const auto defaultPrecisions = ngraph::pass::low_precision::precision_set::int8_support;
@@ -334,7 +334,7 @@ void TransformationsPipeline::apply(std::shared_ptr<ov::Model> func) {
     }
 
     if (enableInt8) {
-        OV_ITT_SCOPED_TASK(itt::domains::intel_gpu_plugin, "TransformationsPipeline::apply::lpt");
+        OV_ITT_SCOPED_TASK(itt::domains::opencl_gpu_plugin, "TransformationsPipeline::apply::lpt");
         using namespace ngraph::pass::low_precision;
 
         // Conversion to FP32 might be needed for quantized models that face any fp16 related issues (e.g. overflow) for non-quantized layers
@@ -448,7 +448,7 @@ void TransformationsPipeline::apply(std::shared_ptr<ov::Model> func) {
     }
 
     {
-        OV_ITT_SCOPED_TASK(itt::domains::intel_gpu_plugin, "TransformationsPipeline::apply::run_passes");
+        OV_ITT_SCOPED_TASK(itt::domains::opencl_gpu_plugin, "TransformationsPipeline::apply::run_passes");
         ngraph::pass::Manager manager;
         // This ConstantFolding pass is added to fold reshapes added for constant inputs on NMS internal operation which prevents upper-bound calculation
         // TODO: check why we have these reshapes
@@ -469,6 +469,6 @@ void TransformationsPipeline::apply(std::shared_ptr<ov::Model> func) {
         manager.run_passes(func);
     }
 }
-}  // namespace intel_gpu
+}  // namespace opencl_gpu
 }  // namespace runtime
 }  // namespace ov

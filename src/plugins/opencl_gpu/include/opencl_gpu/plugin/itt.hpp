@@ -13,12 +13,12 @@
 
 namespace ov {
 namespace runtime {
-namespace intel_gpu {
+namespace opencl_gpu {
 namespace itt {
 namespace domains {
-    OV_ITT_DOMAIN(intel_gpu_plugin);
+    OV_ITT_DOMAIN(opencl_gpu_plugin);
 }  // namespace domains
 }  // namespace itt
-}  // namespace intel_gpu
+}  // namespace opencl_gpu
 }  // namespace runtime
 }  // namespace ov

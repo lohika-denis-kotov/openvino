@@ -10,7 +10,7 @@ using namespace ExecutionGraphTests;
 namespace {
 
 INSTANTIATE_TEST_SUITE_P(smoke_removeParameter, ExecGraphRemoveParameterNode,
-                        ::testing::Values(CommonTestUtils::DEVICE_GPU),
+                        ::testing::Values(CommonTestUtils::DEVICE_OCL),
                         ExecGraphRemoveParameterNode::getTestCaseName);
 
 } // namespace

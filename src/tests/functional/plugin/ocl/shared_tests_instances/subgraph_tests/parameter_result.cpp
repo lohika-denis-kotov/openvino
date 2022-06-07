@@ -11,6 +11,6 @@ using namespace SubgraphTestsDefinitions;
 
 namespace {
     INSTANTIATE_TEST_SUITE_P(smoke_Check, ParameterResultSubgraphTest,
-                            ::testing::Values(CommonTestUtils::DEVICE_GPU),
+                            ::testing::Values(CommonTestUtils::DEVICE_OCL),
                             ParameterResultSubgraphTest::getTestCaseName);
 }  // namespace

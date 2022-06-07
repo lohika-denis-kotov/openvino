@@ -4,18 +4,18 @@
 
 #include "fusion_test_common.hpp"
 
-#include <intel_gpu/primitives/input_layout.hpp>
-#include <intel_gpu/primitives/convolution.hpp>
-#include <intel_gpu/primitives/quantize.hpp>
-#include <intel_gpu/primitives/eltwise.hpp>
-#include <intel_gpu/primitives/fully_connected.hpp>
-#include <intel_gpu/primitives/gemm.hpp>
-#include <intel_gpu/primitives/binary_convolution.hpp>
-#include <intel_gpu/primitives/data.hpp>
-#include <intel_gpu/primitives/resample.hpp>
-#include <intel_gpu/primitives/crop.hpp>
-#include <intel_gpu/primitives/mvn.hpp>
-#include <intel_gpu/primitives/permute.hpp>
+#include <opencl_gpu/primitives/input_layout.hpp>
+#include <opencl_gpu/primitives/convolution.hpp>
+#include <opencl_gpu/primitives/quantize.hpp>
+#include <opencl_gpu/primitives/eltwise.hpp>
+#include <opencl_gpu/primitives/fully_connected.hpp>
+#include <opencl_gpu/primitives/gemm.hpp>
+#include <opencl_gpu/primitives/binary_convolution.hpp>
+#include <opencl_gpu/primitives/data.hpp>
+#include <opencl_gpu/primitives/resample.hpp>
+#include <opencl_gpu/primitives/crop.hpp>
+#include <opencl_gpu/primitives/mvn.hpp>
+#include <opencl_gpu/primitives/permute.hpp>
 
 #include <cmath>
 

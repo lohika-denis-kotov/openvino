@@ -43,7 +43,7 @@ namespace {
                             ::testing::Combine(
                                     ::testing::ValuesIn(inputs_squeeze),
                                     ::testing::ValuesIn(netPrecisions),
-                                    ::testing::Values(CommonTestUtils::DEVICE_GPU),
+                                    ::testing::Values(CommonTestUtils::DEVICE_OCL),
                                     ::testing::ValuesIn(opTypes)),
                             ReshapeSqueezeReshapeRelu::getTestCaseName);
 }  // namespace

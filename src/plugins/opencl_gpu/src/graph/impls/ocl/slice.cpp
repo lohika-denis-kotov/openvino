@@ -5,7 +5,7 @@
 #include <slice_inst.h>
 #include <slice/slice_kernel_ref.h>
 #include <data_inst.h>
-#include <intel_gpu/runtime/error_handler.hpp>
+#include <opencl_gpu/runtime/error_handler.hpp>
 #include <impls/implementation_map.hpp>
 #include <slice/slice_kernel_selector.h>
 #include "primitive_base.hpp"

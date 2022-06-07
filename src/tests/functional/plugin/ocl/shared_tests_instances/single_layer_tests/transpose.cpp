@@ -43,7 +43,7 @@ const auto params = testing::Combine(
         testing::Values(InferenceEngine::Layout::ANY),
         testing::Values(InferenceEngine::Layout::ANY),
         testing::ValuesIn(inputShapes),
-        testing::Values(CommonTestUtils::DEVICE_GPU)
+        testing::Values(CommonTestUtils::DEVICE_OCL)
 );
 
 INSTANTIATE_TEST_SUITE_P(
@@ -79,7 +79,7 @@ const auto params5D = testing::Combine(
         testing::Values(InferenceEngine::Layout::ANY),
         testing::Values(InferenceEngine::Layout::ANY),
         testing::ValuesIn(inputShapes5D),
-        testing::Values(CommonTestUtils::DEVICE_GPU)
+        testing::Values(CommonTestUtils::DEVICE_OCL)
 );
 
 INSTANTIATE_TEST_SUITE_P(
@@ -115,7 +115,7 @@ const auto params6D = testing::Combine(
         testing::Values(InferenceEngine::Layout::ANY),
         testing::Values(InferenceEngine::Layout::ANY),
         testing::ValuesIn(inputShapes6D),
-        testing::Values(CommonTestUtils::DEVICE_GPU)
+        testing::Values(CommonTestUtils::DEVICE_OCL)
 );
 
 INSTANTIATE_TEST_SUITE_P(

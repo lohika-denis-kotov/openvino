@@ -16,7 +16,7 @@
 #include <memory>
 #include <string>
 #include <utility>
-#include "intel_gpu/runtime/error_handler.hpp"
+#include "opencl_gpu/runtime/error_handler.hpp"
 
 void pre_replace_deconv::run(program& p) {
     bool update_processing_order = false;

@@ -5,10 +5,10 @@
 #include "test_utils.h"
 #include "opencl_helper_instance.hpp"
 
-#include <intel_gpu/primitives/input_layout.hpp>
-#include <intel_gpu/primitives/data.hpp>
-#include <intel_gpu/primitives/convert_color.hpp>
-#include <intel_gpu/runtime/device_query.hpp>
+#include <opencl_gpu/primitives/input_layout.hpp>
+#include <opencl_gpu/primitives/data.hpp>
+#include <opencl_gpu/primitives/convert_color.hpp>
+#include <opencl_gpu/runtime/device_query.hpp>
 
 #include <ocl/ocl_wrapper.hpp>
 

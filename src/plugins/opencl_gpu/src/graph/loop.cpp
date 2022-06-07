@@ -7,8 +7,8 @@
 
 #include "json_object.h"
 #include "primitive_type_base.h"
-#include "intel_gpu/primitives/data.hpp"
-#include "intel_gpu/primitives/mutable_data.hpp"
+#include "opencl_gpu/primitives/data.hpp"
+#include "opencl_gpu/primitives/mutable_data.hpp"
 #include <string>
 #include <exception>
 #include <algorithm>

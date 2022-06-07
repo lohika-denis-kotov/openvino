@@ -47,7 +47,7 @@ const auto MvnCases = ::testing::Combine(
     ::testing::ValuesIn(acrossChannels),
     ::testing::ValuesIn(normalizeVariance),
     ::testing::ValuesIn(epsilon),
-    ::testing::Values(CommonTestUtils::DEVICE_GPU)
+    ::testing::Values(CommonTestUtils::DEVICE_OCL)
 );
 
 INSTANTIATE_TEST_SUITE_P(smoke_CLDNN_TestsMVN, Mvn1LayerTest, MvnCases, Mvn1LayerTest::getTestCaseName);
@@ -80,7 +80,7 @@ INSTANTIATE_TEST_SUITE_P(smoke_MVN_5D, Mvn6LayerTest,
                             ::testing::ValuesIn(normalizeVariance),
                             ::testing::ValuesIn(epsilonF),
                             ::testing::ValuesIn(epsMode),
-                            ::testing::Values(CommonTestUtils::DEVICE_GPU)),
+                            ::testing::Values(CommonTestUtils::DEVICE_OCL)),
                         Mvn6LayerTest::getTestCaseName);
 
 INSTANTIATE_TEST_SUITE_P(smoke_MVN_4D, Mvn6LayerTest,
@@ -92,7 +92,7 @@ INSTANTIATE_TEST_SUITE_P(smoke_MVN_4D, Mvn6LayerTest,
                             ::testing::ValuesIn(normalizeVariance),
                             ::testing::ValuesIn(epsilonF),
                             ::testing::ValuesIn(epsMode),
-                            ::testing::Values(CommonTestUtils::DEVICE_GPU)),
+                            ::testing::Values(CommonTestUtils::DEVICE_OCL)),
                         Mvn6LayerTest::getTestCaseName);
 
 INSTANTIATE_TEST_SUITE_P(smoke_MVN_3D, Mvn6LayerTest,
@@ -104,7 +104,7 @@ INSTANTIATE_TEST_SUITE_P(smoke_MVN_3D, Mvn6LayerTest,
                             ::testing::ValuesIn(normalizeVariance),
                             ::testing::ValuesIn(epsilonF),
                             ::testing::ValuesIn(epsMode),
-                            ::testing::Values(CommonTestUtils::DEVICE_GPU)),
+                            ::testing::Values(CommonTestUtils::DEVICE_OCL)),
                         Mvn6LayerTest::getTestCaseName);
 
 INSTANTIATE_TEST_SUITE_P(smoke_MVN_2D, Mvn6LayerTest,
@@ -116,7 +116,7 @@ INSTANTIATE_TEST_SUITE_P(smoke_MVN_2D, Mvn6LayerTest,
                             ::testing::ValuesIn(normalizeVariance),
                             ::testing::ValuesIn(epsilonF),
                             ::testing::ValuesIn(epsMode),
-                            ::testing::Values(CommonTestUtils::DEVICE_GPU)),
+                            ::testing::Values(CommonTestUtils::DEVICE_OCL)),
                         Mvn6LayerTest::getTestCaseName);
 
 INSTANTIATE_TEST_SUITE_P(smoke_Decomposition_1D, Mvn6LayerTest,
@@ -128,7 +128,7 @@ INSTANTIATE_TEST_SUITE_P(smoke_Decomposition_1D, Mvn6LayerTest,
                             ::testing::ValuesIn(normalizeVariance),
                             ::testing::ValuesIn(epsilonF),
                             ::testing::ValuesIn(epsMode),
-                            ::testing::Values(CommonTestUtils::DEVICE_GPU)),
+                            ::testing::Values(CommonTestUtils::DEVICE_OCL)),
                         Mvn6LayerTest::getTestCaseName);
 
 INSTANTIATE_TEST_SUITE_P(smoke_Decomposition_3D, Mvn6LayerTest,
@@ -140,7 +140,7 @@ INSTANTIATE_TEST_SUITE_P(smoke_Decomposition_3D, Mvn6LayerTest,
                             ::testing::ValuesIn(normalizeVariance),
                             ::testing::ValuesIn(epsilonF),
                             ::testing::ValuesIn(epsMode),
-                            ::testing::Values(CommonTestUtils::DEVICE_GPU)),
+                            ::testing::Values(CommonTestUtils::DEVICE_OCL)),
                         Mvn6LayerTest::getTestCaseName);
 
 INSTANTIATE_TEST_SUITE_P(smoke_Decomposition_4D, Mvn6LayerTest,
@@ -152,7 +152,7 @@ INSTANTIATE_TEST_SUITE_P(smoke_Decomposition_4D, Mvn6LayerTest,
                             ::testing::ValuesIn(normalizeVariance),
                             ::testing::ValuesIn(epsilonF),
                             ::testing::ValuesIn(epsMode),
-                            ::testing::Values(CommonTestUtils::DEVICE_GPU)),
+                            ::testing::Values(CommonTestUtils::DEVICE_OCL)),
                         Mvn6LayerTest::getTestCaseName);
 
 INSTANTIATE_TEST_SUITE_P(smoke_Decomposition_6D, Mvn6LayerTest,
@@ -164,5 +164,5 @@ INSTANTIATE_TEST_SUITE_P(smoke_Decomposition_6D, Mvn6LayerTest,
                             ::testing::ValuesIn(normalizeVariance),
                             ::testing::ValuesIn(epsilonF),
                             ::testing::ValuesIn(epsMode),
-                            ::testing::Values(CommonTestUtils::DEVICE_GPU)),
+                            ::testing::Values(CommonTestUtils::DEVICE_OCL)),
                         Mvn6LayerTest::getTestCaseName);

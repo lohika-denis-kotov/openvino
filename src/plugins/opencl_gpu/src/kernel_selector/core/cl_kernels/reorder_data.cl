@@ -117,7 +117,7 @@ KERNEL (reorder_data)(
 #else
     uint8 ov = RESHAPE_DIMS(INPUT0, OUTPUT, b, f, w, z, y, x);
     const uint input_idx  = FUNC_CALL(get_input_index)(b, f, w, z, y, x);
-    const uint output_idx = FUNC_CALL(get_output_index)(ov[1],ov[2],ov[3],ov[4], ov[5], ov[6]);
+    const uint output_idx = FUNC_CALL(get_output_index)(ov.s1,ov.s2,ov.s3,ov.s4,ov.s5,ov.s6);
 
 #if defined MEAN_SUBTRACT_INSIDE_PARAMS
     float res = TO_MEAN_TYPE(input[input_idx]);
@@ -139,27 +139,27 @@ KERNEL (reorder_data)(
 
 #if defined INPUT0_LAYOUT_NV12
     uint8 ov = RESHAPE_DIMS(INPUT0, OUTPUT, b, 0, w, z, y, x);
-    uint output_idx = FUNC_CALL(get_output_index)(ov[1], ov[2], ov[3], ov[4], ov[5], ov[6]);
+    uint output_idx = FUNC_CALL(get_output_index)(ov.s1, ov.s2, ov.s3, ov.s4, ov.s5, ov.s6);
     output[output_idx] = ACTIVATION_FUNC_TYPED(OUTPUT_REORDER, TO_OUTPUT_REORDER_TYPE(R), NL_M, NL_N);
     ov = RESHAPE_DIMS(INPUT0, OUTPUT, b, 1, w, z, y, x);
-    output_idx = FUNC_CALL(get_output_index)(ov[1], ov[2], ov[3], ov[4], ov[5], ov[6]);
+    output_idx = FUNC_CALL(get_output_index)(ov.s1, ov.s2, ov.s3, ov.s4, ov.s5, ov.s6);
     output[output_idx] = ACTIVATION_FUNC_TYPED(OUTPUT_REORDER, TO_OUTPUT_REORDER_TYPE(G), NL_M, NL_N);
     ov = RESHAPE_DIMS(INPUT0, OUTPUT, b, 2, w, z, y, x);
-    output_idx = FUNC_CALL(get_output_index)(ov[1], ov[2], ov[3], ov[4], ov[5], ov[6]);
+    output_idx = FUNC_CALL(get_output_index)(ov.s1, ov.s2, ov.s3, ov.s4, ov.s5, ov.s6);
     output[output_idx] = ACTIVATION_FUNC_TYPED(OUTPUT_REORDER, TO_OUTPUT_REORDER_TYPE(B), NL_M, NL_N);
 #elif INPUT0_LAYOUT_IMAGE_2D_RGBA
     uint8 ov = RESHAPE_DIMS(INPUT0, OUTPUT, b, 0, w, z, y, x);
-    uint output_idx = FUNC_CALL(get_output_index)(ov[1], ov[2], ov[3], ov[4], ov[5], ov[6]);
+    uint output_idx = FUNC_CALL(get_output_index)(ov.s1, ov.s2, ov.s3, ov.s4, ov.s5, ov.s6);
     output[output_idx] = ACTIVATION_FUNC_TYPED(OUTPUT_REORDER, TO_OUTPUT_REORDER_TYPE(colorRGBA.s0), NL_M, NL_N);
     ov = RESHAPE_DIMS(INPUT0, OUTPUT, b, 1, w, z, y, x);
-    output_idx = FUNC_CALL(get_output_index)(ov[1], ov[2], ov[3], ov[4], ov[5], ov[6]);
+    output_idx = FUNC_CALL(get_output_index)(ov.s1, ov.s2, ov.s3, ov.s4, ov.s5, ov.s6);
     output[output_idx] = ACTIVATION_FUNC_TYPED(OUTPUT_REORDER, TO_OUTPUT_REORDER_TYPE(colorRGBA.s1), NL_M, NL_N);
     ov = RESHAPE_DIMS(INPUT0, OUTPUT, b, 2, w, z, y, x);
-    output_idx = FUNC_CALL(get_output_index)(ov[1], ov[2], ov[3], ov[4], ov[5], ov[6]);
+    output_idx = FUNC_CALL(get_output_index)(ov.s1, ov.s2, ov.s3, ov.s4, ov.s5, ov.s6);
     output[output_idx] = ACTIVATION_FUNC_TYPED(OUTPUT_REORDER, TO_OUTPUT_REORDER_TYPE(colorRGBA.s2), NL_M, NL_N);
 #if INPUT0_FEATURE_NUM == 4
     ov = RESHAPE_DIMS(INPUT0, OUTPUT, b, 3, w, z, y, x);
-    output_idx = FUNC_CALL(get_output_index)(ov[1], ov[2], ov[3], ov[4], ov[5], ov[6]);
+    output_idx = FUNC_CALL(get_output_index)(ov.s1, ov.s2, ov.s3, ov.s4, ov.s5, ov.s6);
     output[output_idx] = ACTIVATION_FUNC_TYPED(OUTPUT_REORDER, TO_OUTPUT_REORDER_TYPE(colorRGBA.s3), NL_M, NL_N);
 #endif
 #elif OUTPUT_LAYOUT_IMAGE_2D_RGBA

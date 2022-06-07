@@ -36,8 +36,8 @@ INSTANTIATE_TEST_SUITE_P(nightly_OVClassExecutableNetworkGetMetricTest,
 
 const std::vector<ov::AnyMap> multiDevicePriorityConfigs = {
         {ov::device::priorities(CommonTestUtils::DEVICE_CPU)},
-        {ov::device::priorities(CommonTestUtils::DEVICE_GPU)},
-        {ov::device::priorities(CommonTestUtils::DEVICE_CPU, CommonTestUtils::DEVICE_GPU)}};
+        {ov::device::priorities(CommonTestUtils::DEVICE_OCL)},
+        {ov::device::priorities(CommonTestUtils::DEVICE_CPU, CommonTestUtils::DEVICE_OCL)}};
 
 INSTANTIATE_TEST_SUITE_P(nightly_OVClassExecutableNetworkGetMetricTest,
                          OVClassExecutableNetworkGetMetricTest_DEVICE_PRIORITY,

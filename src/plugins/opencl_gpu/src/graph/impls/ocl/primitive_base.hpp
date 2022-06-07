@@ -7,10 +7,10 @@
 
 #include <thread>
 #include "primitive_inst.h"
-#include "intel_gpu/graph/program.hpp"
-#include "intel_gpu/runtime/error_handler.hpp"
+#include "opencl_gpu/graph/program.hpp"
+#include "opencl_gpu/runtime/error_handler.hpp"
 #include "kernel_selector_helper.h"
-#include "intel_gpu/graph/network.hpp"
+#include "opencl_gpu/graph/network.hpp"
 #include "register.hpp"
 #include <vector>
 #include <list>

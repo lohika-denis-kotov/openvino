@@ -4,7 +4,7 @@
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 #pragma once
-#include "intel_gpu/primitives/convolution.hpp"
+#include "opencl_gpu/primitives/convolution.hpp"
 #include "primitive_inst.h"
 
 #include <memory>

@@ -5,7 +5,7 @@
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 #pragma once
 #include "primitive.hpp"
-#include "intel_gpu/graph/topology.hpp"
+#include "opencl_gpu/graph/topology.hpp"
 #include <vector>
 
 namespace cldnn {

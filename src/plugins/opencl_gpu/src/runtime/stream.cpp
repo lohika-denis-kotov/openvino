@@ -2,7 +2,7 @@
 // SPDX-License-Identifier: Apache-2.0
 //
 
-#include "intel_gpu/runtime/stream.hpp"
+#include "opencl_gpu/runtime/stream.hpp"
 
 #include "ocl/ocl_stream.hpp"
 

@@ -2,7 +2,7 @@
 # SPDX-License-Identifier: Apache-2.0
 #
 
-set(TARGET_NAME gpuFuncTests)
+set(TARGET_NAME oclFuncTests)
 
 addIeTargetTest(
         NAME
@@ -12,13 +12,13 @@ addIeTargetTest(
         INCLUDES
             ${CMAKE_CURRENT_SOURCE_DIR}
         DEPENDENCIES
-            openvino_intel_gpu_plugin
+            openvino_opencl_gpu_plugin
         LINK_LIBRARIES
             funcSharedTests
             OpenCL
         ADD_CPPLINT
         LABELS
-            GPU
+            OCL
 )
 
 # try to find VA libraries

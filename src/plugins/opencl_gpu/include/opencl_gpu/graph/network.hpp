@@ -4,13 +4,13 @@
 
 #pragma once
 
-#include "intel_gpu/graph/topology.hpp"
-#include "intel_gpu/graph/program.hpp"
-#include "intel_gpu/runtime/compounds.hpp"
-#include "intel_gpu/runtime/memory.hpp"
-#include "intel_gpu/runtime/engine.hpp"
-#include "intel_gpu/runtime/event.hpp"
-#include "intel_gpu/runtime/stream.hpp"
+#include "opencl_gpu/graph/topology.hpp"
+#include "opencl_gpu/graph/program.hpp"
+#include "opencl_gpu/runtime/compounds.hpp"
+#include "opencl_gpu/runtime/memory.hpp"
+#include "opencl_gpu/runtime/engine.hpp"
+#include "opencl_gpu/runtime/event.hpp"
+#include "opencl_gpu/runtime/stream.hpp"
 
 #include <map>
 #include <vector>

@@ -27,6 +27,6 @@ namespace {
                                     ::testing::ValuesIn(LoadNetworkCacheTestBase::getStandardFunctions()),
                                     ::testing::ValuesIn(precisionsGPU),
                                     ::testing::ValuesIn(batchSizesGPU),
-                                    ::testing::Values(CommonTestUtils::DEVICE_GPU)),
+                                    ::testing::Values(CommonTestUtils::DEVICE_OCL)),
                             LoadNetworkCacheTestBase::getTestCaseName);
 } // namespace

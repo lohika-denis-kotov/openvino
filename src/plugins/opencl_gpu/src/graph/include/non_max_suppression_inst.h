@@ -4,7 +4,7 @@
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 #pragma once
-#include "intel_gpu/primitives/non_max_suppression.hpp"
+#include "opencl_gpu/primitives/non_max_suppression.hpp"
 #include "primitive_inst.h"
 
 #include <memory>
