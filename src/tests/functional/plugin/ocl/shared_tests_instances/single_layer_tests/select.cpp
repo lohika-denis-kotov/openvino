@@ -29,7 +29,7 @@ const auto noneCases = ::testing::Combine(
     ::testing::ValuesIn(noneShapes),
     ::testing::ValuesIn(inputPrecision),
     ::testing::Values(ngraph::op::AutoBroadcastType::NONE),
-    ::testing::Values(CommonTestUtils::DEVICE_GPU)
+    ::testing::Values(CommonTestUtils::DEVICE_OCL)
 );
 
 const std::vector<std::vector<std::vector<size_t>>> numpyShapes = {
@@ -60,7 +60,7 @@ const auto numpyCases = ::testing::Combine(
     ::testing::ValuesIn(numpyShapes),
     ::testing::ValuesIn(inputPrecision),
     ::testing::Values(ngraph::op::AutoBroadcastType::NUMPY),
-    ::testing::Values(CommonTestUtils::DEVICE_GPU)
+    ::testing::Values(CommonTestUtils::DEVICE_OCL)
 );
 
 INSTANTIATE_TEST_SUITE_P(smoke_CLDNN_TestsSelect_none, SelectLayerTest, noneCases, SelectLayerTest::getTestCaseName);

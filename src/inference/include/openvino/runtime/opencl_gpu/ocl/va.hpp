@@ -7,7 +7,7 @@
  * shared Video Acceleration device contexts
  * and shared memory tensors which contain Video Acceleration surfaces
  *
- * @file openvino/runtime/intel_gpu/ocl/va.hpp
+ * @file openvino/runtime/opencl_gpu/ocl/va.hpp
  */
 #pragma once
 
@@ -18,14 +18,14 @@
 #include <memory>
 #include <string>
 
-#include "openvino/runtime/intel_gpu/ocl/ocl.hpp"
+#include "openvino/runtime/opencl_gpu/ocl/ocl.hpp"
 
 // clang-format off
 #include <va/va.h>
 // clang-format on
 
 namespace ov {
-namespace intel_gpu {
+namespace opencl_gpu {
 namespace ocl {
 
 /**
@@ -148,5 +148,5 @@ public:
     }
 };
 }  // namespace ocl
-}  // namespace intel_gpu
+}  // namespace opencl_gpu
 }  // namespace ov

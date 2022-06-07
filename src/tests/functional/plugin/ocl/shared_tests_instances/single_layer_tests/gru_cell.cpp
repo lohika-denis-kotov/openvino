@@ -31,7 +31,7 @@ namespace {
             ::testing::ValuesIn(clip),
             ::testing::ValuesIn(linear_before_reset),
             ::testing::ValuesIn(netPrecisions),
-            ::testing::Values(CommonTestUtils::DEVICE_GPU)),
+            ::testing::Values(CommonTestUtils::DEVICE_OCL)),
             GRUCellTest::getTestCaseName);
 
 }  // namespace

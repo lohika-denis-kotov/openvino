@@ -4,12 +4,12 @@
 
 #include "test_utils.h"
 
-#include <intel_gpu/primitives/input_layout.hpp>
-#include <intel_gpu/primitives/region_yolo.hpp>
-#include <intel_gpu/primitives/reorder.hpp>
-#include <intel_gpu/graph/topology.hpp>
-#include <intel_gpu/graph/network.hpp>
-#include <intel_gpu/runtime/memory.hpp>
+#include <opencl_gpu/primitives/input_layout.hpp>
+#include <opencl_gpu/primitives/region_yolo.hpp>
+#include <opencl_gpu/primitives/reorder.hpp>
+#include <opencl_gpu/graph/topology.hpp>
+#include <opencl_gpu/graph/network.hpp>
+#include <opencl_gpu/runtime/memory.hpp>
 
 #include <cstddef>
 

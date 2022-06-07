@@ -3,9 +3,9 @@
 //
 
 #include "test_utils.h"
-#include <intel_gpu/primitives/input_layout.hpp>
-#include <intel_gpu/primitives/activation.hpp>
-#include <intel_gpu/primitives/experimental_detectron_topk_rois.hpp>
+#include <opencl_gpu/primitives/input_layout.hpp>
+#include <opencl_gpu/primitives/activation.hpp>
+#include <opencl_gpu/primitives/experimental_detectron_topk_rois.hpp>
 
 #include <cstddef>
 #include <string>

@@ -6,26 +6,26 @@
 
 #pragma once
 
-#include <intel_gpu/runtime/memory.hpp>
-#include <intel_gpu/runtime/tensor.hpp>
-#include <intel_gpu/runtime/engine.hpp>
-#include <intel_gpu/runtime/stream.hpp>
-#include <intel_gpu/graph/program.hpp>
-#include <intel_gpu/graph/network.hpp>
-#include <intel_gpu/graph/topology.hpp>
-#include <intel_gpu/primitives/primitive.hpp>
-#include <intel_gpu/primitives/concatenation.hpp>
-#include <intel_gpu/primitives/lrn.hpp>
-#include <intel_gpu/primitives/roi_pooling.hpp>
-#include <intel_gpu/primitives/scale.hpp>
-#include <intel_gpu/primitives/softmax.hpp>
-#include <intel_gpu/primitives/reorder.hpp>
-#include <intel_gpu/primitives/normalize.hpp>
-#include <intel_gpu/primitives/convolution.hpp>
-#include <intel_gpu/primitives/activation.hpp>
-#include <intel_gpu/primitives/pooling.hpp>
-#include <intel_gpu/primitives/input_layout.hpp>
-#include <intel_gpu/primitives/data.hpp>
+#include <opencl_gpu/runtime/memory.hpp>
+#include <opencl_gpu/runtime/tensor.hpp>
+#include <opencl_gpu/runtime/engine.hpp>
+#include <opencl_gpu/runtime/stream.hpp>
+#include <opencl_gpu/graph/program.hpp>
+#include <opencl_gpu/graph/network.hpp>
+#include <opencl_gpu/graph/topology.hpp>
+#include <opencl_gpu/primitives/primitive.hpp>
+#include <opencl_gpu/primitives/concatenation.hpp>
+#include <opencl_gpu/primitives/lrn.hpp>
+#include <opencl_gpu/primitives/roi_pooling.hpp>
+#include <opencl_gpu/primitives/scale.hpp>
+#include <opencl_gpu/primitives/softmax.hpp>
+#include <opencl_gpu/primitives/reorder.hpp>
+#include <opencl_gpu/primitives/normalize.hpp>
+#include <opencl_gpu/primitives/convolution.hpp>
+#include <opencl_gpu/primitives/activation.hpp>
+#include <opencl_gpu/primitives/pooling.hpp>
+#include <opencl_gpu/primitives/input_layout.hpp>
+#include <opencl_gpu/primitives/data.hpp>
 
 #include <gtest/gtest.h>
 #include <gmock/gmock.h>

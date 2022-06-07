@@ -5,11 +5,11 @@
 #include "test_utils.h"
 #include "fusion_test_common.hpp"
 
-#include <intel_gpu/primitives/input_layout.hpp>
-#include <intel_gpu/primitives/quantize.hpp>
-#include <intel_gpu/primitives/eltwise.hpp>
-#include <intel_gpu/primitives/data.hpp>
-#include <intel_gpu/primitives/space_to_batch.hpp>
+#include <opencl_gpu/primitives/input_layout.hpp>
+#include <opencl_gpu/primitives/quantize.hpp>
+#include <opencl_gpu/primitives/eltwise.hpp>
+#include <opencl_gpu/primitives/data.hpp>
+#include <opencl_gpu/primitives/space_to_batch.hpp>
 
 #include <cmath>
 

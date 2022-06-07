@@ -5,7 +5,7 @@
 #include "resample_inst.h"
 #include "primitive_base.hpp"
 #include "impls/implementation_map.hpp"
-#include "intel_gpu/runtime/error_handler.hpp"
+#include "opencl_gpu/runtime/error_handler.hpp"
 #include "kernel_selector_helper.h"
 #include "kernel_selector/core/actual_kernels/resample/resample_kernel_selector.h"
 #include "kernel_selector/core/actual_kernels/resample/resample_kernel_base.h"

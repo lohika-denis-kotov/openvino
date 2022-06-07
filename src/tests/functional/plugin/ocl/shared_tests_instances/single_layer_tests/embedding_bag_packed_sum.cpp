@@ -44,6 +44,6 @@ INSTANTIATE_TEST_SUITE_P(
     ::testing::Combine(embBagPackedSumArgSet,
                        ::testing::ValuesIn(netPrecisions),
                        ::testing::ValuesIn(indPrecisions),
-                       ::testing::Values(CommonTestUtils::DEVICE_GPU)),
+                       ::testing::Values(CommonTestUtils::DEVICE_OCL)),
     EmbeddingBagPackedSumLayerTest::getTestCaseName);
 }  // namespace

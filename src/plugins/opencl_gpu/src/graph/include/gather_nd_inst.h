@@ -3,7 +3,7 @@
 //
 
 #pragma once
-#include "intel_gpu/primitives/gather_nd.hpp"
+#include "opencl_gpu/primitives/gather_nd.hpp"
 #include "primitive_inst.h"
 #include <string>
 

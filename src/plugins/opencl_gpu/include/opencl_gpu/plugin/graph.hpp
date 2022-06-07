@@ -17,18 +17,18 @@
 #include "ie_blob.h"
 #include "cpp/ie_cnn_network.h"
 
-#include "intel_gpu/graph/network.hpp"
-#include "intel_gpu/graph/topology.hpp"
+#include "opencl_gpu/graph/network.hpp"
+#include "opencl_gpu/graph/topology.hpp"
 
 #include <cpp_interfaces/impl/ie_executable_network_thread_safe_default.hpp>
-#include "intel_gpu/plugin/custom_layer.hpp"
-#include "intel_gpu/plugin/device_config.hpp"
-#include "intel_gpu/plugin/remote_context.hpp"
-#include "intel_gpu/plugin/program.hpp"
+#include "opencl_gpu/plugin/custom_layer.hpp"
+#include "opencl_gpu/plugin/device_config.hpp"
+#include "opencl_gpu/plugin/remote_context.hpp"
+#include "opencl_gpu/plugin/program.hpp"
 
 namespace ov {
 namespace runtime {
-namespace intel_gpu {
+namespace opencl_gpu {
 
 class Graph {
 public:
@@ -108,6 +108,6 @@ protected:
                                                                        bool filter_const_primitives = true);
 };
 
-}  // namespace intel_gpu
+}  // namespace opencl_gpu
 }  // namespace runtime
 }  // namespace ov

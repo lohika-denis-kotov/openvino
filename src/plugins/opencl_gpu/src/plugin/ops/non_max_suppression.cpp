@@ -2,21 +2,21 @@
 // SPDX-License-Identifier: Apache-2.0
 //
 
-#include "intel_gpu/plugin/program.hpp"
-#include "intel_gpu/plugin/common_utils.hpp"
+#include "opencl_gpu/plugin/program.hpp"
+#include "opencl_gpu/plugin/common_utils.hpp"
 
 #include "ngraph/op/non_max_suppression.hpp"
 #include <ngraph/opsets/opset3.hpp>
 #include <ngraph_ops/nms_ie_internal.hpp>
 
-#include "intel_gpu/primitives/reorder.hpp"
-#include "intel_gpu/primitives/mutable_data.hpp"
-#include "intel_gpu/primitives/non_max_suppression.hpp"
-#include "intel_gpu/runtime/debug_configuration.hpp"
+#include "opencl_gpu/primitives/reorder.hpp"
+#include "opencl_gpu/primitives/mutable_data.hpp"
+#include "opencl_gpu/primitives/non_max_suppression.hpp"
+#include "opencl_gpu/runtime/debug_configuration.hpp"
 
 namespace ov {
 namespace runtime {
-namespace intel_gpu {
+namespace opencl_gpu {
 
 static bool GetCenterPointBox(ngraph::op::v5::NonMaxSuppression::BoxEncodingType encoding) {
     switch (encoding) {
@@ -177,6 +177,6 @@ static void CreateNonMaxSuppressionIEInternalOp(Program& p, const std::shared_pt
 
 REGISTER_FACTORY_IMPL(internal, NonMaxSuppressionIEInternal);
 
-}  // namespace intel_gpu
+}  // namespace opencl_gpu
 }  // namespace runtime
 }  // namespace ov

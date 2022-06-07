@@ -8,10 +8,10 @@
 
 #include "test_utils.h"
 
-#include <intel_gpu/primitives/arg_max_min.hpp>
-#include <intel_gpu/primitives/mutable_data.hpp>
-#include <intel_gpu/primitives/reshape.hpp>
-#include <intel_gpu/primitives/concatenation.hpp>
+#include <opencl_gpu/primitives/arg_max_min.hpp>
+#include <opencl_gpu/primitives/mutable_data.hpp>
+#include <opencl_gpu/primitives/reshape.hpp>
+#include <opencl_gpu/primitives/concatenation.hpp>
 
 using namespace cldnn;
 using namespace tests;

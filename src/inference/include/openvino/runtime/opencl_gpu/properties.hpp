@@ -6,7 +6,7 @@
  * @brief A header for advanced hardware related properties for GPU plugin
  *        To use in set_property, compile_model, import_model, get_property methods
  *
- * @file openvino/runtime/intel_gpu/properties.hpp
+ * @file openvino/runtime/opencl_gpu/properties.hpp
  */
 #pragma once
 
@@ -23,7 +23,7 @@ namespace ov {
 /**
  * @brief Namespace with Intel GPU specific properties
  */
-namespace intel_gpu {
+namespace opencl_gpu {
 
 /**
  * @brief Read-only property which defines size of memory in bytes available for the device. For iGPU it returns host
@@ -65,7 +65,7 @@ static constexpr Property<bool> enable_loop_unrolling{"GPU_ENABLE_LOOP_UNROLLING
 
 namespace hint {
 /**
- * @brief This enum represents the possible value of ov::intel_gpu::hint::queue_throttle property:
+ * @brief This enum represents the possible value of ov::opencl_gpu::hint::queue_throttle property:
  * - LOW is used for CL_QUEUE_THROTTLE_LOW_KHR OpenCL throttle hint
  * - MEDIUM (DEFAULT) is used for CL_QUEUE_THROTTLE_MED_KHR OpenCL throttle hint
  * - HIGH is used for CL_QUEUE_THROTTLE_HIGH_KHR OpenCL throttle hint
@@ -76,7 +76,7 @@ using ThrottleLevel = ov::hint::Priority;
 /**
  * @brief This key instructs the GPU plugin to use OpenCL queue throttle hints
  * as defined in https://www.khronos.org/registry/OpenCL/specs/opencl-2.1-extensions.pdf,
- * chapter 9.19. This option should be used with ov::intel_gpu::hint::ThrottleLevel values.
+ * chapter 9.19. This option should be used with ov::opencl_gpu::hint::ThrottleLevel values.
  * @ingroup ov_runtime_ocl_gpu_prop_cpp_api
  */
 static constexpr Property<ThrottleLevel> queue_throttle{"GPU_QUEUE_THROTTLE"};
@@ -140,5 +140,5 @@ namespace capability {
 constexpr static const auto HW_MATMUL = "GPU_HW_MATMUL";
 
 }  // namespace capability
-}  // namespace intel_gpu
+}  // namespace opencl_gpu
 }  // namespace ov

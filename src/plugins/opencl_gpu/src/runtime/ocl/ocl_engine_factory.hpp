@@ -4,9 +4,9 @@
 
 #pragma once
 
-#include "intel_gpu/runtime/device.hpp"
-#include "intel_gpu/runtime/engine.hpp"
-#include "intel_gpu/runtime/stream.hpp"
+#include "opencl_gpu/runtime/device.hpp"
+#include "opencl_gpu/runtime/engine.hpp"
+#include "opencl_gpu/runtime/stream.hpp"
 
 namespace cldnn {
 namespace ocl {

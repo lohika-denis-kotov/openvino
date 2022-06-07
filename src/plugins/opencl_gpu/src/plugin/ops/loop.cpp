@@ -3,9 +3,9 @@
 //
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
-#include "intel_gpu/plugin/program.hpp"
-#include "intel_gpu/plugin/common_utils.hpp"
-#include "intel_gpu/plugin/plugin.hpp"
+#include "opencl_gpu/plugin/program.hpp"
+#include "opencl_gpu/plugin/common_utils.hpp"
+#include "opencl_gpu/plugin/plugin.hpp"
 
 #include <cpp/ie_cnn_network.h>
 
@@ -15,11 +15,11 @@
 #include "transformations/utils/utils.hpp"
 #include "ie_ngraph_utils.hpp"
 
-#include "intel_gpu/primitives/loop.hpp"
-#include "intel_gpu/primitives/mutable_data.hpp"
-#include "intel_gpu/primitives/data.hpp"
-#include "intel_gpu/primitives/reorder.hpp"
-#include "intel_gpu/graph/topology.hpp"
+#include "opencl_gpu/primitives/loop.hpp"
+#include "opencl_gpu/primitives/mutable_data.hpp"
+#include "opencl_gpu/primitives/data.hpp"
+#include "opencl_gpu/primitives/reorder.hpp"
+#include "opencl_gpu/graph/topology.hpp"
 
 #include <vector>
 #include <algorithm>
@@ -28,7 +28,7 @@ using Loop = ngraph::op::v5::Loop;
 
 namespace ov {
 namespace runtime {
-namespace intel_gpu {
+namespace opencl_gpu {
 
 template<class DATA_TYPE>
 static DATA_TYPE CreateScalarData(Program &p, const cldnn::primitive_id& id, int64_t num, const cldnn::primitive_id& ext_prim_id) {
@@ -226,6 +226,6 @@ static void CreateLoopOp(Program& p, const std::shared_ptr<Loop>& op) {
 
 REGISTER_FACTORY_IMPL(v5, Loop);
 
-}  // namespace intel_gpu
+}  // namespace opencl_gpu
 }  // namespace runtime
 }  // namespace ov

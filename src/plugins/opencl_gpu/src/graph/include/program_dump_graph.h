@@ -4,7 +4,7 @@
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 
-#include "intel_gpu/graph/program.hpp"
+#include "opencl_gpu/graph/program.hpp"
 #include "program_node.h"
 #include <fstream>
 #include <string>

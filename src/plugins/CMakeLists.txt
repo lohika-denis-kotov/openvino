@@ -11,7 +11,11 @@ if(ENABLE_INTEL_CPU)
 endif()
 
 if(ENABLE_INTEL_GPU)
-    add_subdirectory(intel_gpu)
+#    add_subdirectory(intel_gpu)
+endif()
+
+if(ENABLE_OPENCL_GPU)
+    add_subdirectory(opencl_gpu)
 endif()
 
 if(ENABLE_INTEL_GNA)
@@ -20,6 +24,10 @@ endif()
 
 if(ENABLE_INTEL_MYRIAD_COMMON)
     add_subdirectory(intel_myriad)
+endif()
+
+if(ENABLE_OPENCL_GPU)
+#    add_subdirectory(opencl_gpu)
 endif()
 
 if(ENABLE_AUTO OR ENABLE_MULTI)

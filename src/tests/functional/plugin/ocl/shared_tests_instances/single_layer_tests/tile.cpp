@@ -30,7 +30,7 @@ INSTANTIATE_TEST_SUITE_P(smoke_Tile, TileLayerTest,
                 ::testing::Values(InferenceEngine::Layout::ANY),
                 ::testing::Values(InferenceEngine::Layout::ANY),
                 ::testing::Values(std::vector<size_t>({2, 3, 4})),
-                ::testing::Values(CommonTestUtils::DEVICE_GPU)),
+                ::testing::Values(CommonTestUtils::DEVICE_OCL)),
         TileLayerTest::getTestCaseName);
 
 INSTANTIATE_TEST_SUITE_P(smoke_Tile6d, TileLayerTest,
@@ -42,7 +42,7 @@ INSTANTIATE_TEST_SUITE_P(smoke_Tile6d, TileLayerTest,
                 ::testing::Values(InferenceEngine::Layout::ANY),
                 ::testing::Values(InferenceEngine::Layout::ANY),
                 ::testing::Values(std::vector<size_t>({1, 4, 3, 1, 3, 1})),
-                ::testing::Values(CommonTestUtils::DEVICE_GPU)),
+                ::testing::Values(CommonTestUtils::DEVICE_OCL)),
         TileLayerTest::getTestCaseName);
 
 }  // namespace

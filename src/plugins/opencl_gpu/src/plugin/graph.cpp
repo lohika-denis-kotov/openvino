@@ -2,15 +2,15 @@
 // SPDX-License-Identifier: Apache-2.0
 //
 
-#include "intel_gpu/graph/network.hpp"
-#include "intel_gpu/runtime/profiling.hpp"
-#include "intel_gpu/runtime/debug_configuration.hpp"
+#include "opencl_gpu/graph/network.hpp"
+#include "opencl_gpu/runtime/profiling.hpp"
+#include "opencl_gpu/runtime/debug_configuration.hpp"
 
-#include "intel_gpu/plugin/graph.hpp"
-#include "intel_gpu/plugin/simple_math.hpp"
+#include "opencl_gpu/plugin/graph.hpp"
+#include "opencl_gpu/plugin/simple_math.hpp"
 #include <cldnn/cldnn_config.hpp>
-#include "intel_gpu/plugin/infer_request.hpp"
-#include "intel_gpu/plugin/itt.hpp"
+#include "opencl_gpu/plugin/infer_request.hpp"
+#include "opencl_gpu/plugin/itt.hpp"
 
 #include <description_buffer.hpp>
 #include <threading/ie_executor_manager.hpp>
@@ -40,7 +40,7 @@ using namespace InferenceEngine::details;
 
 namespace ov {
 namespace runtime {
-namespace intel_gpu {
+namespace opencl_gpu {
 
 Graph::Graph(InferenceEngine::CNNNetwork& network, gpu::ClContext::Ptr context, Config config, uint16_t stream_id)
     : m_context(context)
@@ -65,7 +65,7 @@ Graph::Graph(std::shared_ptr<Graph> graph, uint16_t stream_id)
 }
 
 void Graph::UpdateLayersMaps() {
-    OV_ITT_SCOPED_TASK(itt::domains::intel_gpu_plugin, "Graph::UpdateLayersMaps");
+    OV_ITT_SCOPED_TASK(itt::domains::opencl_gpu_plugin, "Graph::UpdateLayersMaps");
     primitiveIDs = m_program->primitiveIDs;
     prevPrimitiveIDs = m_program->prevPrimitiveIDs;
     profilingIDs = m_program->profilingIDs;
@@ -74,7 +74,7 @@ void Graph::UpdateLayersMaps() {
 }
 
 void Graph::Build() {
-    OV_ITT_SCOPED_TASK(itt::domains::intel_gpu_plugin, "Graph::Build");
+    OV_ITT_SCOPED_TASK(itt::domains::opencl_gpu_plugin, "Graph::Build");
     UpdateLayersMaps();
 
     if (GetMaxDynamicBatchSize() > 1) {
@@ -102,7 +102,7 @@ bool Graph::use_external_queue() const {
 }
 
 std::shared_ptr<cldnn::network> Graph::BuildNetwork(std::shared_ptr<cldnn::program> program) {
-    OV_ITT_SCOPED_TASK(itt::domains::intel_gpu_plugin, "Graph::BuildNetwork");
+    OV_ITT_SCOPED_TASK(itt::domains::opencl_gpu_plugin, "Graph::BuildNetwork");
     std::shared_ptr<cldnn::network> network = nullptr;
 
     auto impl = getContextImpl(m_context);
@@ -135,7 +135,7 @@ std::shared_ptr<cldnn::network> Graph::BuildNetwork(std::shared_ptr<cldnn::progr
 
 std::shared_ptr<ngraph::Function> Graph::GetExecGraphInfoByPrimitivesInfo(std::vector<cldnn::primitive_info>& primitives_info,
                                                                           bool filter_const_primitives) {
-    OV_ITT_SCOPED_TASK(itt::domains::intel_gpu_plugin, "Graph::GetExecGraphInfoByPrimitivesInfo");
+    OV_ITT_SCOPED_TASK(itt::domains::opencl_gpu_plugin, "Graph::GetExecGraphInfoByPrimitivesInfo");
     if (m_config.useProfiling) {
         try {
             // Update may throw an exception for step-by-step runtime graph dump,
@@ -474,7 +474,7 @@ std::shared_ptr<ngraph::Function> Graph::GetExecGraphInfo() {
 
 
 void Graph::UpdatePerfStatistics() {
-    OV_ITT_SCOPED_TASK(itt::domains::intel_gpu_plugin, "Graph::UpdatePerfStatistics");
+    OV_ITT_SCOPED_TASK(itt::domains::opencl_gpu_plugin, "Graph::UpdatePerfStatistics");
     if (GetNetworksCount() == 0) {
         return;
     }
@@ -546,7 +546,7 @@ bool Graph::IsLoaded() const {
 }
 
 std::map<std::string, InferenceEngine::InferenceEngineProfileInfo> Graph::GetPerformanceCounts() const {
-    OV_ITT_SCOPED_TASK(itt::domains::intel_gpu_plugin, "Graph::GetPerformanceCounts");
+    OV_ITT_SCOPED_TASK(itt::domains::opencl_gpu_plugin, "Graph::GetPerformanceCounts");
     std::map<std::string, InferenceEngine::InferenceEngineProfileInfo> result;
     bool combinePrimByIRLayers = false;
     unsigned i = 0;
@@ -765,6 +765,6 @@ InferenceEngine::SizeVector Graph::GetOutputSize(std::string outName) const {
     return sz;
 }
 
-}  // namespace intel_gpu
+}  // namespace opencl_gpu
 }  // namespace runtime
 }  // namespace ov

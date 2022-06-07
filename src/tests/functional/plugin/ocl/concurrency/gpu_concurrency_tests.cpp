@@ -54,7 +54,7 @@ TEST_P(OVConcurrencyTest, canInferTwoExecNets) {
     for (size_t i = 0; i < fn_ptrs.size(); ++i) {
         auto fn = fn_ptrs[i];
 
-        auto exec_net = ie.compile_model(fn_ptrs[i], CommonTestUtils::DEVICE_GPU,
+        auto exec_net = ie.compile_model(fn_ptrs[i], CommonTestUtils::DEVICE_OCL,
                                          {{ov::ie::PluginConfigParams::KEY_GPU_THROUGHPUT_STREAMS, std::to_string(num_streams)}});
 
         auto input = fn_ptrs[i]->get_parameters().at(0);

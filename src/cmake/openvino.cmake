@@ -48,7 +48,7 @@ ie_mark_target_as_cc(${TARGET_NAME})
 set_target_properties(${TARGET_NAME} PROPERTIES INTERPROCEDURAL_OPTIMIZATION_RELEASE ${ENABLE_LTO})
 
 ie_register_plugins(MAIN_TARGET ${TARGET_NAME}
-                    POSSIBLE_PLUGINS openvino_auto_plugin openvino_auto_batch_plugin openvino_hetero_plugin openvino_intel_gpu_plugin openvino_intel_gna_plugin openvino_intel_cpu_plugin openvino_intel_myriad_plugin)
+                    POSSIBLE_PLUGINS openvino_auto_plugin openvino_auto_batch_plugin openvino_hetero_plugin openvino_intel_gna_plugin openvino_intel_cpu_plugin openvino_intel_myriad_plugin)
 
 # Export for build tree
 

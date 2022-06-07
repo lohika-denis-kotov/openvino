@@ -2,21 +2,21 @@
 // SPDX-License-Identifier: Apache-2.0
 //
 
-#include "intel_gpu/plugin/program.hpp"
-#include "intel_gpu/plugin/common_utils.hpp"
+#include "opencl_gpu/plugin/program.hpp"
+#include "opencl_gpu/plugin/common_utils.hpp"
 
 #include "ngraph/op/embedding_segments_sum.hpp"
 #include "ngraph/op/embeddingbag_offsets_sum.hpp"
 #include "ngraph/op/embeddingbag_packedsum.hpp"
 
-#include "intel_gpu/primitives/embedding_bag.hpp"
-#include "intel_gpu/primitives/reorder.hpp"
+#include "opencl_gpu/primitives/embedding_bag.hpp"
+#include "opencl_gpu/primitives/reorder.hpp"
 
 #include "transformations/utils/utils.hpp"
 
 namespace ov {
 namespace runtime {
-namespace intel_gpu {
+namespace opencl_gpu {
 
 static void CreateEmbeddingBagOffsetsSumOp(Program& p, const std::shared_ptr<ngraph::op::v3::EmbeddingBagOffsetsSum>& op) {
     p.ValidateInputs(op, {3, 4, 5});
@@ -178,6 +178,6 @@ REGISTER_FACTORY_IMPL(v3, EmbeddingBagOffsetsSum);
 REGISTER_FACTORY_IMPL(v3, EmbeddingBagPackedSum);
 REGISTER_FACTORY_IMPL(v3, EmbeddingSegmentsSum);
 
-}  // namespace intel_gpu
+}  // namespace opencl_gpu
 }  // namespace runtime
 }  // namespace ov

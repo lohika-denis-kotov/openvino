@@ -2,18 +2,18 @@
 // SPDX-License-Identifier: Apache-2.0
 //
 
-#include "intel_gpu/plugin/program.hpp"
-#include "intel_gpu/plugin/common_utils.hpp"
+#include "opencl_gpu/plugin/program.hpp"
+#include "opencl_gpu/plugin/common_utils.hpp"
 #include "caseless.hpp"
 
 #include "ngraph/op/interpolate.hpp"
 #include "ngraph/op/constant.hpp"
 
-#include "intel_gpu/primitives/resample.hpp"
+#include "opencl_gpu/primitives/resample.hpp"
 
 namespace ov {
 namespace runtime {
-namespace intel_gpu {
+namespace opencl_gpu {
 
 static cldnn::coordinate_transformation_mode GetCoordinateTransformationMode(ngraph::op::v4::Interpolate::CoordinateTransformMode mode) {
     switch (mode) {
@@ -204,6 +204,6 @@ static void CreateInterpolateOp(Program& p, const std::shared_ptr<ngraph::op::v4
 
 REGISTER_FACTORY_IMPL(v4, Interpolate);
 
-}  // namespace intel_gpu
+}  // namespace opencl_gpu
 }  // namespace runtime
 }  // namespace ov

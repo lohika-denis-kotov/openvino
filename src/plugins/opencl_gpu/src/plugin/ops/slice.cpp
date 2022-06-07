@@ -2,18 +2,18 @@
 // SPDX-License-Identifier: Apache-2.0
 //
 
-#include "intel_gpu/plugin/program.hpp"
-#include "intel_gpu/plugin/common_utils.hpp"
+#include "opencl_gpu/plugin/program.hpp"
+#include "opencl_gpu/plugin/common_utils.hpp"
 
 #include "ngraph/op/slice.hpp"
 
-#include "intel_gpu/primitives/slice.hpp"
+#include "opencl_gpu/primitives/slice.hpp"
 
 #include <memory>
 
 namespace ov {
 namespace runtime {
-namespace intel_gpu {
+namespace opencl_gpu {
 
 namespace {
 
@@ -32,6 +32,6 @@ static void CreateSliceOp(Program& p, const std::shared_ptr<ngraph::op::v8::Slic
 
 REGISTER_FACTORY_IMPL(v8, Slice);
 
-}  // namespace intel_gpu
+}  // namespace opencl_gpu
 }  // namespace runtime
 }  // namespace ov

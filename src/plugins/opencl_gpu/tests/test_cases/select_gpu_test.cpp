@@ -6,8 +6,8 @@
 
 #include "test_utils.h"
 
-#include <intel_gpu/primitives/input_layout.hpp>
-#include "intel_gpu/primitives/select.hpp"
+#include <opencl_gpu/primitives/input_layout.hpp>
+#include "opencl_gpu/primitives/select.hpp"
 
 using namespace cldnn;
 using namespace ::tests;

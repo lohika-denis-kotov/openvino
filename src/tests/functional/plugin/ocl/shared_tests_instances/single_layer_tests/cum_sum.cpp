@@ -33,7 +33,7 @@ INSTANTIATE_TEST_SUITE_P(smoke_CumSum1D, CumSumLayerTest,
                                 ::testing::ValuesIn(axis1d),
                                 ::testing::ValuesIn(exclusive),
                                 ::testing::ValuesIn(reverse),
-                                ::testing::Values(CommonTestUtils::DEVICE_GPU)),
+                                ::testing::Values(CommonTestUtils::DEVICE_OCL)),
                         CumSumLayerTest::getTestCaseName);
 
 INSTANTIATE_TEST_SUITE_P(smoke_CumSum, CumSumLayerTest,
@@ -43,6 +43,6 @@ INSTANTIATE_TEST_SUITE_P(smoke_CumSum, CumSumLayerTest,
                                 ::testing::ValuesIn(axes),
                                 ::testing::ValuesIn(exclusive),
                                 ::testing::ValuesIn(reverse),
-                                ::testing::Values(CommonTestUtils::DEVICE_GPU)),
+                                ::testing::Values(CommonTestUtils::DEVICE_OCL)),
                         CumSumLayerTest::getTestCaseName);
 }  // namespace

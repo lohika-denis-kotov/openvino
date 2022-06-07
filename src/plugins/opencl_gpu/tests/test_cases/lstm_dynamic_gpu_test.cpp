@@ -4,14 +4,14 @@
 
 #include "test_utils.h"
 
-#include <intel_gpu/primitives/mutable_data.hpp>
-#include <intel_gpu/primitives/input_layout.hpp>
-#include <intel_gpu/primitives/lstm.hpp>
-#include <intel_gpu/primitives/lstm_dynamic.hpp>
-#include <intel_gpu/primitives/reorder.hpp>
-#include <intel_gpu/primitives/data.hpp>
-#include <intel_gpu/primitives/lstm_dynamic_input.hpp>
-#include <intel_gpu/primitives/lstm_dynamic_timeloop.hpp>
+#include <opencl_gpu/primitives/mutable_data.hpp>
+#include <opencl_gpu/primitives/input_layout.hpp>
+#include <opencl_gpu/primitives/lstm.hpp>
+#include <opencl_gpu/primitives/lstm_dynamic.hpp>
+#include <opencl_gpu/primitives/reorder.hpp>
+#include <opencl_gpu/primitives/data.hpp>
+#include <opencl_gpu/primitives/lstm_dynamic_input.hpp>
+#include <opencl_gpu/primitives/lstm_dynamic_timeloop.hpp>
 
 #include <chrono>
 #include <sstream>

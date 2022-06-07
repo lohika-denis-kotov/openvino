@@ -9,12 +9,12 @@
 #include <vector>
 #include <memory>
 #include <atomic>
-#include "intel_gpu/plugin/graph.hpp"
+#include "opencl_gpu/plugin/graph.hpp"
 #include <threading/ie_istreams_executor.hpp>
 
 namespace ov {
 namespace runtime {
-namespace intel_gpu {
+namespace opencl_gpu {
 
 struct buf_info {
     size_t buf_offset;
@@ -108,6 +108,6 @@ private:
     std::vector<std::map<cldnn::primitive_id, cldnn::network_output>> internal_outputs_dynamic;
 };
 
-}  // namespace intel_gpu
+}  // namespace opencl_gpu
 }  // namespace runtime
 }  // namespace ov

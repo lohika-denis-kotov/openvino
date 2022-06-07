@@ -4,12 +4,12 @@
 
 #include "test_utils.h"
 
-#include "intel_gpu/runtime/engine.hpp"
+#include "opencl_gpu/runtime/engine.hpp"
 
-#include "intel_gpu/graph/program.hpp"
+#include "opencl_gpu/graph/program.hpp"
 #include "data_inst.h"
 #include "eltwise_inst.h"
-#include "intel_gpu/graph/network.hpp"
+#include "opencl_gpu/graph/network.hpp"
 #include "pass_manager.h"
 #include "to_string_utils.h"
 

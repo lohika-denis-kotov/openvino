@@ -4,7 +4,7 @@
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 #pragma once
-#include "intel_gpu/primitives/scatter_update.hpp"
+#include "opencl_gpu/primitives/scatter_update.hpp"
 #include "primitive_inst.h"
 
 #include <string>

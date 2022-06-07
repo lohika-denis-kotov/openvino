@@ -19,7 +19,7 @@
 #include "ie_ngraph_utils.hpp"
 #include "ie_performance_hints.hpp"
 #include "openvino/pass/manager.hpp"
-#include "openvino/runtime/intel_gpu/properties.hpp"
+#include "openvino/runtime/opencl_gpu/properties.hpp"
 #include "transformations/common_optimizations/dimension_tracking.hpp"
 #include "transformations/init_node_info.hpp"
 #include "transformations/utils/utils.hpp"
@@ -919,7 +919,7 @@ InferenceEngine::IExecutableNetworkInternal::Ptr AutoBatchInferencePlugin::LoadN
         size_t footprint = 0;
         // TODO: use the per-network metric (22.2) rather than plugin-level
         auto stats =
-            pCore->GetMetric(device, ov::intel_gpu::memory_statistics.name()).as<std::map<std::string, uint64_t>>();
+            pCore->GetMetric(device, ov::opencl_gpu::memory_statistics.name()).as<std::map<std::string, uint64_t>>();
         for (auto s : stats)
             footprint += s.second;
         return footprint;

@@ -82,7 +82,7 @@ const auto paramsOneAxis = testing::Combine(
         testing::Values(InferenceEngine::Precision::UNSPECIFIED),
         testing::Values(InferenceEngine::Layout::ANY),
         testing::ValuesIn(inputShapesOneAxis),
-        testing::Values(CommonTestUtils::DEVICE_GPU)
+        testing::Values(CommonTestUtils::DEVICE_OCL)
 );
 
 const auto paramsOneAxisLogical = testing::Combine(
@@ -95,7 +95,7 @@ const auto paramsOneAxisLogical = testing::Combine(
         testing::Values(InferenceEngine::Precision::UNSPECIFIED),
         testing::Values(InferenceEngine::Layout::ANY),
         testing::ValuesIn(inputShapes),
-        testing::Values(CommonTestUtils::DEVICE_GPU)
+        testing::Values(CommonTestUtils::DEVICE_OCL)
 );
 
 const auto params_Precisions = testing::Combine(
@@ -109,7 +109,7 @@ const auto params_Precisions = testing::Combine(
         testing::Values(InferenceEngine::Precision::UNSPECIFIED),
         testing::Values(InferenceEngine::Layout::ANY),
         testing::Values(std::vector<size_t>{2, 2, 2, 2}),
-        testing::Values(CommonTestUtils::DEVICE_GPU)
+        testing::Values(CommonTestUtils::DEVICE_OCL)
 );
 
 const auto params_InputShapes = testing::Combine(
@@ -127,7 +127,7 @@ const auto params_InputShapes = testing::Combine(
                         std::vector<size_t>{2, 4, 6, 8},
                         std::vector<size_t>{2, 2, 2, 2, 2},
                         std::vector<size_t>{2, 2, 2, 2, 2, 2}),
-        testing::Values(CommonTestUtils::DEVICE_GPU)
+        testing::Values(CommonTestUtils::DEVICE_OCL)
 );
 
 const auto params_Axes = testing::Combine(
@@ -140,7 +140,7 @@ const auto params_Axes = testing::Combine(
         testing::Values(InferenceEngine::Precision::UNSPECIFIED),
         testing::Values(InferenceEngine::Layout::ANY),
         testing::ValuesIn(inputShapes),
-        testing::Values(CommonTestUtils::DEVICE_GPU)
+        testing::Values(CommonTestUtils::DEVICE_OCL)
 );
 
 const auto params_ReductionTypes = testing::Combine(
@@ -153,7 +153,7 @@ const auto params_ReductionTypes = testing::Combine(
         testing::Values(InferenceEngine::Precision::UNSPECIFIED),
         testing::Values(InferenceEngine::Layout::ANY),
         testing::Values(std::vector<size_t>{2, 9, 2, 9}),
-        testing::Values(CommonTestUtils::DEVICE_GPU)
+        testing::Values(CommonTestUtils::DEVICE_OCL)
 );
 
 const auto params_ReductionTypesLogical = testing::Combine(
@@ -166,7 +166,7 @@ const auto params_ReductionTypesLogical = testing::Combine(
         testing::Values(InferenceEngine::Precision::UNSPECIFIED),
         testing::Values(InferenceEngine::Layout::ANY),
         testing::Values(std::vector<size_t>{2, 9, 2, 9}),
-        testing::Values(CommonTestUtils::DEVICE_GPU)
+        testing::Values(CommonTestUtils::DEVICE_OCL)
 );
 
 INSTANTIATE_TEST_SUITE_P(
@@ -232,7 +232,7 @@ INSTANTIATE_TEST_SUITE_P(
                 testing::Values(InferenceEngine::Precision::UNSPECIFIED),
                 testing::Values(InferenceEngine::Layout::ANY),
                 testing::Values(std::vector<size_t> {2, 10}),
-                testing::Values(CommonTestUtils::DEVICE_GPU)),
+                testing::Values(CommonTestUtils::DEVICE_OCL)),
         ReduceOpsLayerWithSpecificInputTest::getTestCaseName
 );
 

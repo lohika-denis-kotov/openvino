@@ -10,18 +10,18 @@
 using namespace BehaviorTestsDefinitions;
 namespace {
     const std::vector<std::map<std::string, std::string>> configs = {
-            {{InferenceEngine::MultiDeviceConfigParams::KEY_MULTI_DEVICE_PRIORITIES, CommonTestUtils::DEVICE_GPU}}
+            {{InferenceEngine::MultiDeviceConfigParams::KEY_MULTI_DEVICE_PRIORITIES, CommonTestUtils::DEVICE_OCL}}
     };
 
     const std::vector<std::map<std::string, std::string>> autoconfigs = {
-            {{InferenceEngine::MultiDeviceConfigParams::KEY_MULTI_DEVICE_PRIORITIES, CommonTestUtils::DEVICE_GPU}},
+            {{InferenceEngine::MultiDeviceConfigParams::KEY_MULTI_DEVICE_PRIORITIES, CommonTestUtils::DEVICE_OCL}},
             {{InferenceEngine::MultiDeviceConfigParams::KEY_MULTI_DEVICE_PRIORITIES,
-                std::string(CommonTestUtils::DEVICE_CPU) + "," + CommonTestUtils::DEVICE_GPU}}
+                std::string(CommonTestUtils::DEVICE_CPU) + "," + CommonTestUtils::DEVICE_OCL}}
     };
 
     INSTANTIATE_TEST_SUITE_P(smoke_BehaviorTests, InferRequestIOBBlobTest,
                             ::testing::Combine(
-                                    ::testing::Values(CommonTestUtils::DEVICE_GPU),
+                                    ::testing::Values(CommonTestUtils::DEVICE_OCL),
                                     ::testing::Values(std::map<std::string, std::string>({}))),
                             InferRequestIOBBlobTest::getTestCaseName);
 
@@ -59,7 +59,7 @@ std::vector<InferenceEngine::Precision> prcs = {
 INSTANTIATE_TEST_SUITE_P(smoke_BehaviorTests, InferRequestIOBBlobSetPrecisionTest,
                          ::testing::Combine(
                                  ::testing::ValuesIn(prcs),
-                                 ::testing::Values(CommonTestUtils::DEVICE_GPU),
+                                 ::testing::Values(CommonTestUtils::DEVICE_OCL),
                                  ::testing::Values(std::map<std::string, std::string>{})),
                          InferRequestIOBBlobSetPrecisionTest::getTestCaseName);
 
@@ -100,7 +100,7 @@ std::vector<InferenceEngine::Layout> layouts = {
 INSTANTIATE_TEST_SUITE_P(smoke_BehaviorTests, InferRequestIOBBlobSetLayoutTest,
                          ::testing::Combine(
                                  ::testing::ValuesIn(layouts),
-                                 ::testing::Values(CommonTestUtils::DEVICE_GPU),
+                                 ::testing::Values(CommonTestUtils::DEVICE_OCL),
                                  ::testing::Values(std::map<std::string, std::string>{})),
                          InferRequestIOBBlobSetLayoutTest::getTestCaseName);
 

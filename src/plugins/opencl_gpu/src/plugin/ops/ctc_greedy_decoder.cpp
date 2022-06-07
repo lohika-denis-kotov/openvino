@@ -2,22 +2,22 @@
 // SPDX-License-Identifier: Apache-2.0
 //
 
-#include "intel_gpu/plugin/program.hpp"
-#include "intel_gpu/plugin/common_utils.hpp"
+#include "opencl_gpu/plugin/program.hpp"
+#include "opencl_gpu/plugin/common_utils.hpp"
 
 #include "ngraph/op/ctc_greedy_decoder.hpp"
 #include "ngraph/op/ctc_greedy_decoder_seq_len.hpp"
 
-#include "intel_gpu/primitives/ctc_greedy_decoder.hpp"
-#include "intel_gpu/primitives/reorder.hpp"
-#include "intel_gpu/primitives/mutable_data.hpp"
-#include "intel_gpu/runtime/debug_configuration.hpp"
+#include "opencl_gpu/primitives/ctc_greedy_decoder.hpp"
+#include "opencl_gpu/primitives/reorder.hpp"
+#include "opencl_gpu/primitives/mutable_data.hpp"
+#include "opencl_gpu/runtime/debug_configuration.hpp"
 
 #include "transformations/utils/utils.hpp"
 
 namespace ov {
 namespace runtime {
-namespace intel_gpu {
+namespace opencl_gpu {
 
 static void CreateCommonCTCGreedyDecoderOp(Program& p, const std::shared_ptr<ngraph::Node>& op, bool ctc_merge_repeated) {
     p.ValidateInputs(op, {2, 3});
@@ -133,6 +133,6 @@ static void CreateCTCGreedyDecoderSeqLenOp(Program& p, const std::shared_ptr<ngr
 REGISTER_FACTORY_IMPL(v0, CTCGreedyDecoder);
 REGISTER_FACTORY_IMPL(v6, CTCGreedyDecoderSeqLen);
 
-}  // namespace intel_gpu
+}  // namespace opencl_gpu
 }  // namespace runtime
 }  // namespace ov

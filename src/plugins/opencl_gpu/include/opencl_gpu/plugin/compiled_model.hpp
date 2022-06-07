@@ -13,13 +13,13 @@
 #include "ie_blob.h"
 #include "cpp/ie_cnn_network.h"
 #include <cpp_interfaces/impl/ie_executable_network_thread_safe_default.hpp>
-#include "intel_gpu/plugin/graph.hpp"
-#include "intel_gpu/plugin/device_config.hpp"
-#include "intel_gpu/plugin/remote_context.hpp"
+#include "opencl_gpu/plugin/graph.hpp"
+#include "opencl_gpu/plugin/device_config.hpp"
+#include "opencl_gpu/plugin/remote_context.hpp"
 
 namespace ov {
 namespace runtime {
-namespace intel_gpu {
+namespace opencl_gpu {
 
 class CompiledModel : public InferenceEngine::ExecutableNetworkThreadSafeDefault {
 public:
@@ -45,6 +45,6 @@ public:
     InferenceEngine::ITaskExecutor::Ptr m_waitExecutor;
 };
 
-}  // namespace intel_gpu
+}  // namespace opencl_gpu
 }  // namespace runtime
 }  // namespace ov

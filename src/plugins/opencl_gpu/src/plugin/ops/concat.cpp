@@ -2,16 +2,16 @@
 // SPDX-License-Identifier: Apache-2.0
 //
 
-#include "intel_gpu/plugin/program.hpp"
-#include "intel_gpu/plugin/common_utils.hpp"
+#include "opencl_gpu/plugin/program.hpp"
+#include "opencl_gpu/plugin/common_utils.hpp"
 
 #include "ngraph/op/concat.hpp"
 
-#include "intel_gpu/primitives/concatenation.hpp"
+#include "opencl_gpu/primitives/concatenation.hpp"
 
 namespace ov {
 namespace runtime {
-namespace intel_gpu {
+namespace opencl_gpu {
 
 static cldnn::concatenation::concatenation_axis GetConcatAxis(int32_t axis, size_t rank) {
     unsigned cldnn_axis = axis >= 0 ? axis : axis + static_cast<int32_t>(rank);
@@ -56,6 +56,6 @@ static void CreateConcatOp(Program& p, const std::shared_ptr<ngraph::op::v0::Con
 
 REGISTER_FACTORY_IMPL(v0, Concat);
 
-}  // namespace intel_gpu
+}  // namespace opencl_gpu
 }  // namespace runtime
 }  // namespace ov

@@ -2,17 +2,17 @@
 // SPDX-License-Identifier: Apache-2.0
 //
 
-#include "intel_gpu/plugin/program.hpp"
-#include "intel_gpu/plugin/common_utils.hpp"
+#include "opencl_gpu/plugin/program.hpp"
+#include "opencl_gpu/plugin/common_utils.hpp"
 
 #include "ngraph/op/gather_elements.hpp"
 #include "ngraph/op/constant.hpp"
 
-#include "intel_gpu/primitives/gather_elements.hpp"
+#include "opencl_gpu/primitives/gather_elements.hpp"
 
 namespace ov {
 namespace runtime {
-namespace intel_gpu {
+namespace opencl_gpu {
 
 static cldnn::gather_elements::gather_elements_axis GetGatherAxis(int axis, unsigned rank) {
     if (axis < 0)
@@ -66,6 +66,6 @@ static void CreateGatherElementsOp(Program& p, const std::shared_ptr<ngraph::op:
 
 REGISTER_FACTORY_IMPL(v6, GatherElements);
 
-}  // namespace intel_gpu
+}  // namespace opencl_gpu
 }  // namespace runtime
 }  // namespace ov

@@ -8,7 +8,7 @@
 #include "kernel_selector_helper.h"
 #include "reshape/reshape_kernel_ref.h"
 #include "reshape/reshape_kernel_selector.h"
-#include "intel_gpu/runtime/error_handler.hpp"
+#include "opencl_gpu/runtime/error_handler.hpp"
 
 namespace cldnn {
 namespace ocl {

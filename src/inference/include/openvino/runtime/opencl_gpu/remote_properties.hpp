@@ -6,14 +6,14 @@
  * @brief A header for properties of shared device contexts and shared device memory blobs for GPU plugin
  *        To use in constructors of Remote objects
  *
- * @file openvino/runtime/intel_gpu/remote_properties.hpp
+ * @file openvino/runtime/opencl_gpu/remote_properties.hpp
  */
 #pragma once
 
 #include "openvino/runtime/properties.hpp"
 
 namespace ov {
-namespace intel_gpu {
+namespace opencl_gpu {
 
 using gpu_handle_param = void*;
 
@@ -185,5 +185,5 @@ static constexpr Property<uint32_t> dev_object_handle{"DEV_OBJECT_HANDLE"};
  */
 static constexpr Property<uint32_t> va_plane{"VA_PLANE"};
 
-}  // namespace intel_gpu
+}  // namespace opencl_gpu
 }  // namespace ov

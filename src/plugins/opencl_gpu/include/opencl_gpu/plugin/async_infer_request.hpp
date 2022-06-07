@@ -7,11 +7,11 @@
 #include <string>
 #include <map>
 #include <cpp_interfaces/impl/ie_infer_async_request_thread_safe_default.hpp>
-#include "intel_gpu/plugin/infer_request.hpp"
+#include "opencl_gpu/plugin/infer_request.hpp"
 
 namespace ov {
 namespace runtime {
-namespace intel_gpu {
+namespace opencl_gpu {
 
 class AsyncInferRequest : public InferenceEngine::AsyncInferRequestThreadSafeDefault {
 public:
@@ -31,6 +31,6 @@ private:
     InferenceEngine::ITaskExecutor::Ptr _waitExecutor;
 };
 
-}  // namespace intel_gpu
+}  // namespace opencl_gpu
 }  // namespace runtime
 }  // namespace ov

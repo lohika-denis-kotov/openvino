@@ -7,8 +7,8 @@
 #pragma once
 
 #include "program_node.h"
-#include "intel_gpu/runtime/engine.hpp"
-#include "intel_gpu/graph/program.hpp"
+#include "opencl_gpu/runtime/engine.hpp"
+#include "opencl_gpu/graph/program.hpp"
 #include "data_inst.h"
 #include "eltwise_inst.h"
 

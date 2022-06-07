@@ -2,7 +2,7 @@
 # SPDX-License-Identifier: Apache-2.0
 #
 
-set (TARGET_NAME "openvino_intel_gpu_plugin")
+set (TARGET_NAME "openvino_opencl_gpu_plugin")
 
 if(CMAKE_COMPILER_IS_GNUCXX)
     ie_add_compiler_flags(-Wno-all -Wno-missing-declarations)
@@ -24,19 +24,19 @@ add_subdirectory(src/runtime)
 add_subdirectory(src/kernel_selector)
 add_subdirectory(src/graph)
 
-file(GLOB_RECURSE PLUGIN_SOURCES ${CMAKE_CURRENT_SOURCE_DIR}/src/plugin/*.cpp ${CMAKE_CURRENT_SOURCE_DIR}/include/intel_gpu/plugin/*.hpp)
+file(GLOB_RECURSE PLUGIN_SOURCES ${CMAKE_CURRENT_SOURCE_DIR}/src/plugin/*.cpp ${CMAKE_CURRENT_SOURCE_DIR}/include/opencl_gpu/plugin/*.hpp)
 
 addVersionDefines(src/plugin/plugin.cpp CI_BUILD_NUMBER)
 
 ie_add_plugin(NAME ${TARGET_NAME}
-              DEVICE_NAME "GPU"
+              DEVICE_NAME "OCL"
               SOURCES ${PLUGIN_SOURCES}
               VERSION_DEFINES_FOR src/plugin/plugin.cpp)
 
 target_compile_options(${TARGET_NAME} PRIVATE
     $<$<CONFIG:Release>:$<IF:$<CXX_COMPILER_ID:MSVC>,/Os,-Os>>)
 
-target_link_libraries(${TARGET_NAME} PRIVATE openvino_intel_gpu_graph
+target_link_libraries(${TARGET_NAME} PRIVATE openvino_opencl_gpu_graph
                                              pugixml::static)
 
 target_include_directories(${TARGET_NAME} PRIVATE

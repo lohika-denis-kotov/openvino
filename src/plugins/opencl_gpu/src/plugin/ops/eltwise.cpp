@@ -2,8 +2,8 @@
 // SPDX-License-Identifier: Apache-2.0
 //
 
-#include "intel_gpu/plugin/program.hpp"
-#include "intel_gpu/plugin/common_utils.hpp"
+#include "opencl_gpu/plugin/program.hpp"
+#include "opencl_gpu/plugin/common_utils.hpp"
 #include "transformations/utils/utils.hpp"
 
 #include "ngraph/op/add.hpp"
@@ -25,14 +25,14 @@
 #include "ngraph/op/power.hpp"
 #include "ngraph/op/floor_mod.hpp"
 
-#include "intel_gpu/primitives/activation.hpp"
-#include "intel_gpu/primitives/eltwise.hpp"
-#include "intel_gpu/primitives/reorder.hpp"
-#include "intel_gpu/primitives/reshape.hpp"
+#include "opencl_gpu/primitives/activation.hpp"
+#include "opencl_gpu/primitives/eltwise.hpp"
+#include "opencl_gpu/primitives/reorder.hpp"
+#include "opencl_gpu/primitives/reshape.hpp"
 
 namespace ov {
 namespace runtime {
-namespace intel_gpu {
+namespace opencl_gpu {
 
 void CreateElementwiseOp(Program& p, const std::shared_ptr<ngraph::Node>& op, cldnn::eltwise_mode mode) {
     auto inputPrimitives = p.GetInputPrimitiveIDs(op);
@@ -196,6 +196,6 @@ REGISTER_FACTORY_IMPL(v1, Power);
 REGISTER_FACTORY_IMPL(v1, FloorMod);
 REGISTER_FACTORY_IMPL(v1, Mod);
 
-}  // namespace intel_gpu
+}  // namespace opencl_gpu
 }  // namespace runtime
 }  // namespace ov

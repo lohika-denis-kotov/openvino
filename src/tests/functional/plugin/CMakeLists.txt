@@ -9,7 +9,11 @@ if (ENABLE_INTEL_CPU)
 endif()
 
 if (ENABLE_INTEL_GPU)
-    add_subdirectory(gpu)
+#    add_subdirectory(gpu)
+endif()
+
+if (ENABLE_OPENCL_GPU)
+    add_subdirectory(ocl)
 endif()
 
 if (ENABLE_INTEL_GNA)

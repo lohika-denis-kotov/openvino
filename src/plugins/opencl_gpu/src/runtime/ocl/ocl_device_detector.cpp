@@ -23,8 +23,7 @@
 namespace {
 bool does_device_match_config(bool out_of_order, const cl::Device& device) {
 // Is it intel gpu
-if (device.getInfo<CL_DEVICE_TYPE>() != CL_DEVICE_TYPE_GPU ||
-    device.getInfo<CL_DEVICE_VENDOR_ID>() != 0x8086) {
+if (device.getInfo<CL_DEVICE_TYPE>() != CL_DEVICE_TYPE_GPU) {
     return false;
 }
 
@@ -156,10 +155,6 @@ std::vector<device::ptr> ocl_device_detector::create_device_list(bool out_out_or
     std::vector<device::ptr> ret;
     for (auto& id : platform_ids) {
         cl::Platform platform = cl::Platform(id);
-
-        if (platform.getInfo<CL_PLATFORM_VENDOR>() != INTEL_PLATFORM_VENDOR)
-            continue;
-
         std::vector<cl::Device> devices;
         platform.getDevices(CL_DEVICE_TYPE_ALL, &devices);
         for (auto& device : devices) {

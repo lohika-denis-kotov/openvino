@@ -5,14 +5,14 @@
 #pragma once
 
 #include <ie_layouts.h>
-#include "intel_gpu/runtime/layout.hpp"
+#include "opencl_gpu/runtime/layout.hpp"
 #include "openvino/core/layout.hpp"
 
 #include "ngraph/type/element_type.hpp"
 
 namespace ov {
 namespace runtime {
-namespace intel_gpu {
+namespace opencl_gpu {
 
 #define TensorValue(val) static_cast<cldnn::tensor::value_type>(val)
 
@@ -209,6 +209,6 @@ inline InferenceEngine::Layout InferenceEngineLayoutFromOVLayout(ov::Layout l) {
     IE_THROW() << "The plugin does not support " << l.to_string() << " layout";
 }
 
-}  // namespace intel_gpu
+}  // namespace opencl_gpu
 }  // namespace runtime
 }  // namespace ov

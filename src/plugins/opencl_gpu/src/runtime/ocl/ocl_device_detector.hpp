@@ -4,7 +4,7 @@
 
 #pragma once
 
-#include "intel_gpu/runtime/device.hpp"
+#include "opencl_gpu/runtime/device.hpp"
 
 #include <list>
 #include <string>

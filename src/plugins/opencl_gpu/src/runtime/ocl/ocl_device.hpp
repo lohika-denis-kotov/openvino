@@ -4,8 +4,8 @@
 
 #pragma once
 
-#include "intel_gpu/runtime/engine.hpp"
-#include "intel_gpu/runtime/device.hpp"
+#include "opencl_gpu/runtime/engine.hpp"
+#include "opencl_gpu/runtime/device.hpp"
 #include "ocl_common.hpp"
 
 #include <map>

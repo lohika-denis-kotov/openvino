@@ -51,7 +51,7 @@ INSTANTIATE_TEST_SUITE_P(smoke_ScaleShift, ScaleShiftLayerTest,
                         ::testing::Combine(
                                 ::testing::ValuesIn(inShapes),
                                 ::testing::ValuesIn(netPrecisions),
-                                ::testing::Values(CommonTestUtils::DEVICE_GPU),
+                                ::testing::Values(CommonTestUtils::DEVICE_OCL),
                                 ::testing::ValuesIn(Scales),
                                 ::testing::ValuesIn(Shifts)),
                         ScaleShiftLayerTest::getTestCaseName);

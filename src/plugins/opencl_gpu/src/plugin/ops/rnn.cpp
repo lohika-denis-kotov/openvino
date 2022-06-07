@@ -2,22 +2,22 @@
 // SPDX-License-Identifier: Apache-2.0
 //
 
-#include "intel_gpu/plugin/program.hpp"
-#include "intel_gpu/plugin/common_utils.hpp"
+#include "opencl_gpu/plugin/program.hpp"
+#include "opencl_gpu/plugin/common_utils.hpp"
 
 #include "ngraph/op/lstm_cell.hpp"
 #include "ngraph/op/lstm_sequence.hpp"
 
-#include "intel_gpu/primitives/reshape.hpp"
-#include "intel_gpu/primitives/reorder.hpp"
-#include "intel_gpu/primitives/fully_connected.hpp"
-#include "intel_gpu/primitives/lstm.hpp"
-#include "intel_gpu/primitives/crop.hpp"
-#include "intel_gpu/primitives/concatenation.hpp"
+#include "opencl_gpu/primitives/reshape.hpp"
+#include "opencl_gpu/primitives/reorder.hpp"
+#include "opencl_gpu/primitives/fully_connected.hpp"
+#include "opencl_gpu/primitives/lstm.hpp"
+#include "opencl_gpu/primitives/crop.hpp"
+#include "opencl_gpu/primitives/concatenation.hpp"
 
 namespace ov {
 namespace runtime {
-namespace intel_gpu {
+namespace opencl_gpu {
 static cldnn::activation_func GetActivationFunc(std::string name) {
     static const std::map<std::string, cldnn::activation_func> name_mapping = {
         {"sigmoid", cldnn::activation_func::logistic},
@@ -355,6 +355,6 @@ static void CreateLSTMSequenceOp(Program& p, const std::shared_ptr<ngraph::op::v
 REGISTER_FACTORY_IMPL(v4, LSTMCell);
 REGISTER_FACTORY_IMPL(v5, LSTMSequence);
 
-}  // namespace intel_gpu
+}  // namespace opencl_gpu
 }  // namespace runtime
 }  // namespace ov

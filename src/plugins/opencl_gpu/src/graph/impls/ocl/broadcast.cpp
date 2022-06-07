@@ -9,7 +9,7 @@
 #include "kernel_selector_helper.h"
 #include "broadcast/broadcast_kernel_selector.h"
 #include "broadcast/broadcast_kernel_base.h"
-#include "intel_gpu/runtime/error_handler.hpp"
+#include "opencl_gpu/runtime/error_handler.hpp"
 
 namespace cldnn {
 namespace ocl {

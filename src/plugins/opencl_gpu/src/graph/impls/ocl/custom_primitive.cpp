@@ -3,11 +3,11 @@
 //
 
 #include "custom_gpu_primitive_inst.h"
-#include "intel_gpu/runtime/engine.hpp"
+#include "opencl_gpu/runtime/engine.hpp"
 #include "impls/implementation_map.hpp"
 #include "kernel_selector_helper.h"
 #include "jitter.h"
-#include "intel_gpu/runtime/error_handler.hpp"
+#include "opencl_gpu/runtime/error_handler.hpp"
 #include "register.hpp"
 
 #include <map>

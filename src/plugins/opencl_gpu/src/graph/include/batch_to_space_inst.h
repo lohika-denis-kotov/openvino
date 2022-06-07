@@ -4,7 +4,7 @@
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 #pragma once
-#include "intel_gpu/primitives/batch_to_space.hpp"
+#include "opencl_gpu/primitives/batch_to_space.hpp"
 #include "primitive_inst.h"
 
 #include <string>

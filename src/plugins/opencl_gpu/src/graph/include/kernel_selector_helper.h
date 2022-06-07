@@ -4,13 +4,13 @@
 
 #pragma once
 
-#include "intel_gpu/runtime/utils.hpp"
-#include "intel_gpu/runtime/tensor.hpp"
-#include "intel_gpu/runtime/error_handler.hpp"
-#include "intel_gpu/primitives/eltwise.hpp"
-#include "intel_gpu/primitives/scale.hpp"
-#include "intel_gpu/primitives/quantize.hpp"
-#include "intel_gpu/primitives/activation.hpp"
+#include "opencl_gpu/runtime/utils.hpp"
+#include "opencl_gpu/runtime/tensor.hpp"
+#include "opencl_gpu/runtime/error_handler.hpp"
+#include "opencl_gpu/primitives/eltwise.hpp"
+#include "opencl_gpu/primitives/scale.hpp"
+#include "opencl_gpu/primitives/quantize.hpp"
+#include "opencl_gpu/primitives/activation.hpp"
 
 #include "kernel_selector_params.h"
 #include "kernel_selector_common.h"

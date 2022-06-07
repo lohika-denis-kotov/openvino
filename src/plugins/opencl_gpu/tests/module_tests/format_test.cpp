@@ -4,7 +4,7 @@
 
 #include "test_utils.h"
 
-#include "intel_gpu/runtime/format.hpp"
+#include "opencl_gpu/runtime/format.hpp"
 
 TEST(format, to_string) {
     typedef std::underlying_type<cldnn::format::type>::type format_underlying_type;

@@ -4,7 +4,7 @@
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 #pragma once
-#include "intel_gpu/primitives/region_yolo.hpp"
+#include "opencl_gpu/primitives/region_yolo.hpp"
 #include "primitive_inst.h"
 
 #include <string>

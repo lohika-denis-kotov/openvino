@@ -4,9 +4,9 @@
 
 #include "test_utils.h"
 
-#include <intel_gpu/primitives/input_layout.hpp>
-#include <intel_gpu/primitives/batch_to_space.hpp>
-#include <intel_gpu/primitives/data.hpp>
+#include <opencl_gpu/primitives/input_layout.hpp>
+#include <opencl_gpu/primitives/batch_to_space.hpp>
+#include <opencl_gpu/primitives/data.hpp>
 
 #include <cstddef>
 

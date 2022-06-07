@@ -7,7 +7,7 @@
 #include "ocl_common.hpp"
 #include "ocl_engine.hpp"
 #include "ocl_stream.hpp"
-#include "intel_gpu/runtime/memory.hpp"
+#include "opencl_gpu/runtime/memory.hpp"
 
 #include <cassert>
 #include <iterator>

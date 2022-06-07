@@ -32,7 +32,7 @@ INSTANTIATE_TEST_SUITE_P(smoke_NoReshape, ConversionLayerTest,
                                 ::testing::ValuesIn(netPrecisions),
                                 ::testing::Values(InferenceEngine::Layout::ANY),
                                 ::testing::Values(InferenceEngine::Layout::ANY),
-                                ::testing::Values(CommonTestUtils::DEVICE_GPU)),
+                                ::testing::Values(CommonTestUtils::DEVICE_OCL)),
                         ConversionLayerTest::getTestCaseName);
 
 }  // namespace

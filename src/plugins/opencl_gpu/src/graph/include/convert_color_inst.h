@@ -3,7 +3,7 @@
 //
 #pragma once
 
-#include "intel_gpu/primitives/convert_color.hpp"
+#include "opencl_gpu/primitives/convert_color.hpp"
 #include "primitive_inst.h"
 #include <string>
 

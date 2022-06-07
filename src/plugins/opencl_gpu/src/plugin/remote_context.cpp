@@ -3,10 +3,10 @@
 //
 
 #include <memory>
-#include "intel_gpu/plugin/remote_context.hpp"
-#include "intel_gpu/plugin/itt.hpp"
-#include "intel_gpu/plugin/plugin.hpp"
-#include "intel_gpu/runtime/device_query.hpp"
+#include "opencl_gpu/plugin/remote_context.hpp"
+#include "opencl_gpu/plugin/itt.hpp"
+#include "opencl_gpu/plugin/plugin.hpp"
+#include "opencl_gpu/runtime/device_query.hpp"
 
 using namespace InferenceEngine;
 using namespace InferenceEngine::gpu;
@@ -14,7 +14,7 @@ using namespace InferenceEngine::details;
 
 namespace ov {
 namespace runtime {
-namespace intel_gpu {
+namespace opencl_gpu {
 RemoteAllocator RemoteBlobImpl::m_allocator;
 
 RemoteBlobImpl::RemoteBlobImpl(ClContext::Ptr context,
@@ -117,7 +117,7 @@ bool RemoteBlobImpl::is_locked() const noexcept {
 }
 
 void RemoteBlobImpl::allocate() {
-    OV_ITT_SCOPED_TASK(itt::domains::intel_gpu_plugin, "RemoteBlobImpl::Allocate");
+    OV_ITT_SCOPED_TASK(itt::domains::opencl_gpu_plugin, "RemoteBlobImpl::Allocate");
     assert(m_memObject == nullptr);
 
     auto _impl = getContextImpl(m_context.lock());
@@ -379,6 +379,6 @@ std::string ExecutionContextImpl::getDeviceName() const noexcept {
     return devName;
 }
 
-}  // namespace intel_gpu
+}  // namespace opencl_gpu
 }  // namespace runtime
 }  // namespace ov

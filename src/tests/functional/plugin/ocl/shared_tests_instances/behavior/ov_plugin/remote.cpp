@@ -16,12 +16,12 @@ std::vector<std::pair<ov::AnyMap, ov::AnyMap>> generate_remote_params() {
 }
 
 const std::vector<ov::AnyMap> MultiConfigs = {
-        {ov::device::priorities(CommonTestUtils::DEVICE_GPU)}
+        {ov::device::priorities(CommonTestUtils::DEVICE_OCL)}
 };
 
 const std::vector<ov::AnyMap> AutoBatchConfigs = {
         // explicit batch size 4 to avoid fallback to no auto-batching (i.e. plain GPU)
-        {{CONFIG_KEY(AUTO_BATCH_DEVICE_CONFIG) , std::string(CommonTestUtils::DEVICE_GPU) + "(4)"},
+        {{CONFIG_KEY(AUTO_BATCH_DEVICE_CONFIG) , std::string(CommonTestUtils::DEVICE_OCL) + "(4)"},
                 // no timeout to avoid increasing the test time
                 {CONFIG_KEY(AUTO_BATCH_TIMEOUT) , "0 "}}
 };
@@ -29,7 +29,7 @@ const std::vector<ov::AnyMap> AutoBatchConfigs = {
 INSTANTIATE_TEST_SUITE_P(DISABLED_smoke_BehaviorTests, OVRemoteTest,
                         ::testing::Combine(
                                 ::testing::Values(ngraph::element::f32),
-                                ::testing::Values(::CommonTestUtils::DEVICE_GPU),
+                                ::testing::Values(::CommonTestUtils::DEVICE_OCL),
                                 ::testing::ValuesIn(configs),
                                 ::testing::ValuesIn(generate_remote_params())),
                         OVRemoteTest::getTestCaseName);

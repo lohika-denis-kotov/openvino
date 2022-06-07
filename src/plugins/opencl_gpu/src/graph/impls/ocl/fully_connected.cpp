@@ -11,11 +11,11 @@
 #include "fully_connected/fully_connected_kernel_selector.h"
 #include "fully_connected/fully_connected_params.h"
 
-#include "intel_gpu/runtime/error_handler.hpp"
+#include "opencl_gpu/runtime/error_handler.hpp"
 #include "kernel_runner.h"
 
-#include "intel_gpu/primitives/reorder.hpp"
-#include "intel_gpu/primitives/input_layout.hpp"
+#include "opencl_gpu/primitives/reorder.hpp"
+#include "opencl_gpu/primitives/input_layout.hpp"
 #include <memory>
 
 namespace cldnn {

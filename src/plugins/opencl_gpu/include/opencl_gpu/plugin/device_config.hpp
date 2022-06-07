@@ -7,15 +7,15 @@
 #include <map>
 #include <string>
 
-#include "intel_gpu/plugin/custom_layer.hpp"
-#include "intel_gpu/graph/network.hpp"
-#include "openvino/runtime/intel_gpu/properties.hpp"
+#include "opencl_gpu/plugin/custom_layer.hpp"
+#include "opencl_gpu/graph/network.hpp"
+#include "openvino/runtime/opencl_gpu/properties.hpp"
 #include <ie_performance_hints.hpp>
 #include <threading/ie_cpu_streams_executor.hpp>
 
 namespace ov {
 namespace runtime {
-namespace intel_gpu {
+namespace opencl_gpu {
 
 
 struct Config {
@@ -102,6 +102,6 @@ private:
     std::map<std::string, Config> configs;
 };
 
-}  // namespace intel_gpu
+}  // namespace opencl_gpu
 }  // namespace runtime
 }  // namespace ov

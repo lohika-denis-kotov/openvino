@@ -2,19 +2,19 @@
 // SPDX-License-Identifier: Apache-2.0
 //
 
-#include "intel_gpu/plugin/program.hpp"
-#include "intel_gpu/plugin/common_utils.hpp"
+#include "opencl_gpu/plugin/program.hpp"
+#include "opencl_gpu/plugin/common_utils.hpp"
 
 #include "ngraph/op/broadcast.hpp"
 #include "ngraph/op/constant.hpp"
 
-#include "intel_gpu/primitives/broadcast.hpp"
-#include "intel_gpu/primitives/reorder.hpp"
-#include "intel_gpu/primitives/reshape.hpp"
+#include "opencl_gpu/primitives/broadcast.hpp"
+#include "opencl_gpu/primitives/reorder.hpp"
+#include "opencl_gpu/primitives/reshape.hpp"
 
 namespace ov {
 namespace runtime {
-namespace intel_gpu {
+namespace opencl_gpu {
 
 static void CreateCommonBroadcastOp(Program& p, const std::shared_ptr<ngraph::Node>& op, const ngraph::AxisSet axis_mapping) {
     auto inputPrimitives = p.GetInputPrimitiveIDs(op);
@@ -121,6 +121,6 @@ static void CreateBroadcastOp(Program& p, const std::shared_ptr<ngraph::op::v3::
 REGISTER_FACTORY_IMPL(v1, Broadcast);
 REGISTER_FACTORY_IMPL(v3, Broadcast);
 
-}  // namespace intel_gpu
+}  // namespace opencl_gpu
 }  // namespace runtime
 }  // namespace ov

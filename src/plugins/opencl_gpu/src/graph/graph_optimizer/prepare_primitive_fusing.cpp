@@ -50,7 +50,7 @@
 #include <string>
 #include <utility>
 #include <deque>
-#include "intel_gpu/runtime/error_handler.hpp"
+#include "opencl_gpu/runtime/error_handler.hpp"
 
 void prepare_primitive_fusing::run(program& p) {
     fuse_reorders(p);

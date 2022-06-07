@@ -2,8 +2,8 @@
 // SPDX-License-Identifier: Apache-2.0
 //
 
-#include "intel_gpu/runtime/event.hpp"
-#include "intel_gpu/runtime/engine.hpp"
+#include "opencl_gpu/runtime/event.hpp"
+#include "opencl_gpu/runtime/engine.hpp"
 
 #include <list>
 #include <vector>

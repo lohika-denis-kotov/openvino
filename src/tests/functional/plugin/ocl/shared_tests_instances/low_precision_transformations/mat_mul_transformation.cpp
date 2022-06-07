@@ -34,7 +34,7 @@ INSTANTIATE_TEST_SUITE_P(smoke_LPT, MatMulTransformation,
     ::testing::Combine(
         ::testing::ValuesIn(precisions),
         ::testing::Values(ngraph::PartialShape({ 1, 384, 1024 })),
-        ::testing::Values(CommonTestUtils::DEVICE_GPU),
+        ::testing::Values(CommonTestUtils::DEVICE_OCL),
         ::testing::ValuesIn(testValues)),
     MatMulTransformation::getTestCaseName);
 }  // namespace

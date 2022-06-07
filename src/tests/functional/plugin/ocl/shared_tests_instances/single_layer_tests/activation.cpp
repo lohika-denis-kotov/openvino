@@ -85,7 +85,7 @@ const auto basicCases = ::testing::Combine(
         ::testing::Values(InferenceEngine::Layout::ANY),
         ::testing::Values(InferenceEngine::Layout::ANY),
         ::testing::ValuesIn(CommonTestUtils::combineParams(basic)),
-        ::testing::Values(CommonTestUtils::DEVICE_GPU)
+        ::testing::Values(CommonTestUtils::DEVICE_OCL)
 );
 
 const auto basicPreluCases = ::testing::Combine(
@@ -96,7 +96,7 @@ const auto basicPreluCases = ::testing::Combine(
         ::testing::Values(InferenceEngine::Layout::ANY),
         ::testing::Values(InferenceEngine::Layout::ANY),
         ::testing::ValuesIn(CommonTestUtils::combineParams(preluBasic)),
-        ::testing::Values(CommonTestUtils::DEVICE_GPU)
+        ::testing::Values(CommonTestUtils::DEVICE_OCL)
 );
 
 

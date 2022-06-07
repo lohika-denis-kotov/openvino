@@ -4,12 +4,12 @@
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 #pragma once
-#include "intel_gpu/primitives/primitive.hpp"
-#include "intel_gpu/primitives/concatenation.hpp"
-#include "intel_gpu/runtime/error_handler.hpp"
-#include "intel_gpu/runtime/event.hpp"
-#include "intel_gpu/runtime/memory.hpp"
-#include "intel_gpu/graph/network.hpp"
+#include "opencl_gpu/primitives/primitive.hpp"
+#include "opencl_gpu/primitives/concatenation.hpp"
+#include "opencl_gpu/runtime/error_handler.hpp"
+#include "opencl_gpu/runtime/event.hpp"
+#include "opencl_gpu/runtime/memory.hpp"
+#include "opencl_gpu/graph/network.hpp"
 #include "kernel_selector_helper.h"
 #include "meta_utils.h"
 #include "program_node.h"

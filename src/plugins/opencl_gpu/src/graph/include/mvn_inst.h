@@ -4,7 +4,7 @@
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 #pragma once
-#include "intel_gpu/primitives/mvn.hpp"
+#include "opencl_gpu/primitives/mvn.hpp"
 #include "primitive_inst.h"
 
 #include <string>

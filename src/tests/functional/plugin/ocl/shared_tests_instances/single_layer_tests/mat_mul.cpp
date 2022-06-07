@@ -54,7 +54,7 @@ INSTANTIATE_TEST_SUITE_P(smoke_MatMul, MatMulTest,
                 ::testing::Values(InferenceEngine::Precision::UNSPECIFIED),
                 ::testing::Values(InferenceEngine::Layout::ANY),
                 ::testing::ValuesIn(secondaryInputTypes),
-                ::testing::Values(CommonTestUtils::DEVICE_GPU),
+                ::testing::Values(CommonTestUtils::DEVICE_OCL),
                 ::testing::Values(additional_config)),
         MatMulTest::getTestCaseName);
 

@@ -10,12 +10,12 @@
 #include "arg_max_min_inst.h"
 #include "experimental_detectron_roi_feature_extractor_inst.hpp"
 
-#include "intel_gpu/graph/network.hpp"
-#include "intel_gpu/runtime/engine.hpp"
-#include "intel_gpu/runtime/memory.hpp"
+#include "opencl_gpu/graph/network.hpp"
+#include "opencl_gpu/runtime/engine.hpp"
+#include "opencl_gpu/runtime/memory.hpp"
 
-#include "intel_gpu/runtime/error_handler.hpp"
-#include "intel_gpu/runtime/debug_configuration.hpp"
+#include "opencl_gpu/runtime/error_handler.hpp"
+#include "opencl_gpu/runtime/debug_configuration.hpp"
 #include "json_object.h"
 #include <string>
 #include <stack>

@@ -2,18 +2,18 @@
 // SPDX-License-Identifier: Apache-2.0
 //
 
-#include "intel_gpu/plugin/program.hpp"
-#include "intel_gpu/plugin/common_utils.hpp"
+#include "opencl_gpu/plugin/program.hpp"
+#include "opencl_gpu/plugin/common_utils.hpp"
 
 #include "ngraph/op/max_pool.hpp"
 #include "ngraph/op/avg_pool.hpp"
 
-#include "intel_gpu/primitives/mutable_data.hpp"
-#include "intel_gpu/primitives/pooling.hpp"
+#include "opencl_gpu/primitives/mutable_data.hpp"
+#include "opencl_gpu/primitives/pooling.hpp"
 
 namespace ov {
 namespace runtime {
-namespace intel_gpu {
+namespace opencl_gpu {
 
 struct PoolingParameters {
     cldnn::tensor kernel;
@@ -171,6 +171,6 @@ REGISTER_FACTORY_IMPL(v1, MaxPool);
 REGISTER_FACTORY_IMPL(v8, MaxPool);
 REGISTER_FACTORY_IMPL(v1, AvgPool);
 
-}  // namespace intel_gpu
+}  // namespace opencl_gpu
 }  // namespace runtime
 }  // namespace ov

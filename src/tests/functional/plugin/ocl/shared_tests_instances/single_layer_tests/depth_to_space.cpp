@@ -31,7 +31,7 @@ const auto DepthToSpaceBS2 = ::testing::Combine(
         ::testing::ValuesIn(inputPrecisions),
         ::testing::ValuesIn(modes),
         ::testing::Values(2),
-        ::testing::Values(CommonTestUtils::DEVICE_GPU)
+        ::testing::Values(CommonTestUtils::DEVICE_OCL)
 );
 
 INSTANTIATE_TEST_SUITE_P(smoke_DepthToSpaceBS2, DepthToSpaceLayerTest, DepthToSpaceBS2, DepthToSpaceLayerTest::getTestCaseName);
@@ -45,7 +45,7 @@ const auto DepthToSpaceBS3 = ::testing::Combine(
         ::testing::ValuesIn(inputPrecisions),
         ::testing::ValuesIn(modes),
         ::testing::Values(3),
-        ::testing::Values(CommonTestUtils::DEVICE_GPU)
+        ::testing::Values(CommonTestUtils::DEVICE_OCL)
 );
 
 INSTANTIATE_TEST_SUITE_P(smoke_DepthToSpaceBS3, DepthToSpaceLayerTest, DepthToSpaceBS3, DepthToSpaceLayerTest::getTestCaseName);

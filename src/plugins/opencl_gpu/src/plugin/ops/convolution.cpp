@@ -2,8 +2,8 @@
 // SPDX-License-Identifier: Apache-2.0
 //
 
-#include "intel_gpu/plugin/program.hpp"
-#include "intel_gpu/plugin/common_utils.hpp"
+#include "opencl_gpu/plugin/program.hpp"
+#include "opencl_gpu/plugin/common_utils.hpp"
 
 #include "ngraph/op/convolution.hpp"
 #include "ngraph/op/binary_convolution.hpp"
@@ -13,15 +13,15 @@
 #include "ngraph/op/fake_quantize.hpp"
 #include "ngraph/op/util/op_types.hpp"
 
-#include "intel_gpu/primitives/convolution.hpp"
-#include "intel_gpu/primitives/deconvolution.hpp"
-#include "intel_gpu/primitives/binary_convolution.hpp"
-#include "intel_gpu/primitives/permute.hpp"
-#include "intel_gpu/primitives/reorder.hpp"
+#include "opencl_gpu/primitives/convolution.hpp"
+#include "opencl_gpu/primitives/deconvolution.hpp"
+#include "opencl_gpu/primitives/binary_convolution.hpp"
+#include "opencl_gpu/primitives/permute.hpp"
+#include "opencl_gpu/primitives/reorder.hpp"
 
 namespace ov {
 namespace runtime {
-namespace intel_gpu {
+namespace opencl_gpu {
 
 struct ConvolutionParameters {
     cldnn::tensor stride;
@@ -356,6 +356,6 @@ REGISTER_FACTORY_IMPL(v1, DeformableConvolution);
 REGISTER_FACTORY_IMPL(v8, DeformableConvolution);
 REGISTER_FACTORY_IMPL(v1, BinaryConvolution);
 
-}  // namespace intel_gpu
+}  // namespace opencl_gpu
 }  // namespace runtime
 }  // namespace ov

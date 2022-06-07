@@ -2,19 +2,19 @@
 // SPDX-License-Identifier: Apache-2.0
 //
 
-#include "intel_gpu/plugin/program.hpp"
-#include "intel_gpu/plugin/common_utils.hpp"
-#include "intel_gpu/plugin/simple_math.hpp"
+#include "opencl_gpu/plugin/program.hpp"
+#include "opencl_gpu/plugin/common_utils.hpp"
+#include "opencl_gpu/plugin/simple_math.hpp"
 
 #include "ngraph/attribute_visitor.hpp"
 #include "ngraph/node.hpp"
 
-#include "intel_gpu/primitives/custom_gpu_primitive.hpp"
-#include "intel_gpu/primitives/reorder.hpp"
+#include "opencl_gpu/primitives/custom_gpu_primitive.hpp"
+#include "opencl_gpu/primitives/reorder.hpp"
 
 namespace ov {
 namespace runtime {
-namespace intel_gpu {
+namespace opencl_gpu {
 
 template<typename T>
 static inline std::string vecToString(std::vector<T> vec) {
@@ -257,6 +257,6 @@ void CreateCustomOp(Program& p, const std::shared_ptr<ngraph::Node>& op, CustomL
     p.primitiveIDs[genericLayerName] = prevLayerName;
 }
 
-}  // namespace intel_gpu
+}  // namespace opencl_gpu
 }  // namespace runtime
 }  // namespace ov

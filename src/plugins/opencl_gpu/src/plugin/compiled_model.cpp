@@ -3,12 +3,12 @@
 //
 
 #include "ie_metric_helpers.hpp"
-#include "intel_gpu/plugin/graph.hpp"
-#include "intel_gpu/plugin/itt.hpp"
-#include "intel_gpu/plugin/infer_request.hpp"
-#include "intel_gpu/plugin/compiled_model.hpp"
-#include "intel_gpu/plugin/async_infer_request.hpp"
-#include "openvino/runtime/intel_gpu/properties.hpp"
+#include "opencl_gpu/plugin/graph.hpp"
+#include "opencl_gpu/plugin/itt.hpp"
+#include "opencl_gpu/plugin/infer_request.hpp"
+#include "opencl_gpu/plugin/compiled_model.hpp"
+#include "opencl_gpu/plugin/async_infer_request.hpp"
+#include "openvino/runtime/opencl_gpu/properties.hpp"
 
 #include <description_buffer.hpp>
 #include <threading/ie_executor_manager.hpp>
@@ -31,7 +31,7 @@ using namespace InferenceEngine::details;
 
 namespace ov {
 namespace runtime {
-namespace intel_gpu {
+namespace opencl_gpu {
 
 CompiledModel::CompiledModel(InferenceEngine::CNNNetwork &network, std::shared_ptr<InferenceEngine::RemoteContext> context, Config config) :
     InferenceEngine::ExecutableNetworkThreadSafeDefault{[&]() -> InferenceEngine::ITaskExecutor::Ptr {
@@ -66,7 +66,7 @@ CompiledModel::CompiledModel(InferenceEngine::CNNNetwork &network, std::shared_p
 
 IInferRequestInternal::Ptr CompiledModel::CreateInferRequestImpl(InputsDataMap networkInputs,
                                                                  OutputsDataMap networkOutputs) {
-    OV_ITT_SCOPED_TASK(itt::domains::intel_gpu_plugin, "CompiledModel::CreateInferRequestImpl");
+    OV_ITT_SCOPED_TASK(itt::domains::opencl_gpu_plugin, "CompiledModel::CreateInferRequestImpl");
     auto ptr = std::make_shared<InferRequest>(networkInputs, networkOutputs,
                                               std::static_pointer_cast<CompiledModel>(shared_from_this()));
     if (m_config.throughput_streams > 1) {
@@ -84,7 +84,7 @@ IInferRequestInternal::Ptr CompiledModel::CreateInferRequestImpl(InputsDataMap n
 
 IInferRequestInternal::Ptr CompiledModel::CreateInferRequestImpl(const std::vector<std::shared_ptr<const ov::Node>>& inputs,
                                                                  const std::vector<std::shared_ptr<const ov::Node>>& outputs) {
-    OV_ITT_SCOPED_TASK(itt::domains::intel_gpu_plugin, "CompiledModel::CreateInferRequestImpl");
+    OV_ITT_SCOPED_TASK(itt::domains::opencl_gpu_plugin, "CompiledModel::CreateInferRequestImpl");
     auto ptr = std::make_shared<InferRequest>(inputs, outputs,
                                               std::static_pointer_cast<CompiledModel>(shared_from_this()));
     if (m_config.throughput_streams > 1) {
@@ -102,7 +102,7 @@ IInferRequestInternal::Ptr CompiledModel::CreateInferRequestImpl(const std::vect
 }
 
 IInferRequestInternal::Ptr CompiledModel::CreateInferRequest() {
-    OV_ITT_SCOPED_TASK(itt::domains::intel_gpu_plugin, "CompiledModel::CreateInferRequest");
+    OV_ITT_SCOPED_TASK(itt::domains::opencl_gpu_plugin, "CompiledModel::CreateInferRequest");
     InferenceEngine::IInferRequestInternal::Ptr internalRequest;
     if (m_graphs.empty()) {
         IE_THROW(NetworkNotLoaded);
@@ -149,13 +149,13 @@ InferenceEngine::Parameter CompiledModel::GetConfig(const std::string &name) con
                 return val == PluginConfigParams::YES ? true : false;
             } else if (name == ov::hint::model_priority) {
                 return ov::util::from_string(val, ov::hint::model_priority);
-            } else if (name == ov::intel_gpu::hint::host_task_priority) {
-                return ov::util::from_string(val, ov::intel_gpu::hint::host_task_priority);
-            } else if (name == ov::intel_gpu::hint::queue_priority) {
-                return ov::util::from_string(val, ov::intel_gpu::hint::queue_priority);
-            } else if (name == ov::intel_gpu::hint::queue_throttle) {
-                return ov::util::from_string(val, ov::intel_gpu::hint::queue_throttle);
-            } else if (name == ov::intel_gpu::enable_loop_unrolling) {
+            } else if (name == ov::opencl_gpu::hint::host_task_priority) {
+                return ov::util::from_string(val, ov::opencl_gpu::hint::host_task_priority);
+            } else if (name == ov::opencl_gpu::hint::queue_priority) {
+                return ov::util::from_string(val, ov::opencl_gpu::hint::queue_priority);
+            } else if (name == ov::opencl_gpu::hint::queue_throttle) {
+                return ov::util::from_string(val, ov::opencl_gpu::hint::queue_throttle);
+            } else if (name == ov::opencl_gpu::enable_loop_unrolling) {
                 return val == PluginConfigParams::YES ? true : false;
             } else if (name == ov::cache_dir) {
                 return ov::util::from_string(val, ov::cache_dir);
@@ -195,10 +195,10 @@ InferenceEngine::Parameter CompiledModel::GetMetric(const std::string &name) con
             // Configs
             ov::PropertyName{ov::enable_profiling.name(), PropertyMutability::RO},
             ov::PropertyName{ov::hint::model_priority.name(), PropertyMutability::RO},
-            ov::PropertyName{ov::intel_gpu::hint::host_task_priority.name(), PropertyMutability::RO},
-            ov::PropertyName{ov::intel_gpu::hint::queue_priority.name(), PropertyMutability::RO},
-            ov::PropertyName{ov::intel_gpu::hint::queue_throttle.name(), PropertyMutability::RO},
-            ov::PropertyName{ov::intel_gpu::enable_loop_unrolling.name(), PropertyMutability::RO},
+            ov::PropertyName{ov::opencl_gpu::hint::host_task_priority.name(), PropertyMutability::RO},
+            ov::PropertyName{ov::opencl_gpu::hint::queue_priority.name(), PropertyMutability::RO},
+            ov::PropertyName{ov::opencl_gpu::hint::queue_throttle.name(), PropertyMutability::RO},
+            ov::PropertyName{ov::opencl_gpu::enable_loop_unrolling.name(), PropertyMutability::RO},
             ov::PropertyName{ov::cache_dir.name(), PropertyMutability::RO},
             ov::PropertyName{ov::hint::performance_mode.name(), PropertyMutability::RO},
             ov::PropertyName{ov::compilation_num_threads.name(), PropertyMutability::RO},
@@ -236,6 +236,6 @@ std::shared_ptr<InferenceEngine::RemoteContext> CompiledModel::GetContext() cons
     return m_context;
 }
 
-}  // namespace intel_gpu
+}  // namespace opencl_gpu
 }  // namespace runtime
 }  // namespace ov

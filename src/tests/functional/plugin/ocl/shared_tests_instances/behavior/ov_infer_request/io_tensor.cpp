@@ -15,23 +15,23 @@ const std::vector<ov::AnyMap> configs = {
 };
 
 const std::vector<ov::AnyMap> Multiconfigs = {
-        {ov::device::priorities(CommonTestUtils::DEVICE_GPU)}
+        {ov::device::priorities(CommonTestUtils::DEVICE_OCL)}
 };
 
 const std::vector<ov::AnyMap> Autoconfigs = {
-        {ov::device::priorities(CommonTestUtils::DEVICE_GPU)}
+        {ov::device::priorities(CommonTestUtils::DEVICE_OCL)}
 };
 
 const std::vector<ov::AnyMap> AutoBatchConfigs = {
         // explicit batch size 4 to avoid fallback to no auto-batching (i.e. plain GPU)
-        {{CONFIG_KEY(AUTO_BATCH_DEVICE_CONFIG) , std::string(CommonTestUtils::DEVICE_GPU) + "(4)"},
+        {{CONFIG_KEY(AUTO_BATCH_DEVICE_CONFIG) , std::string(CommonTestUtils::DEVICE_OCL) + "(4)"},
                 // no timeout to avoid increasing the test time
                 {CONFIG_KEY(AUTO_BATCH_TIMEOUT) , "0 "}}
 };
 
 INSTANTIATE_TEST_SUITE_P(smoke_BehaviorTests, OVInferRequestIOTensorTest,
                         ::testing::Combine(
-                                ::testing::Values(CommonTestUtils::DEVICE_GPU),
+                                ::testing::Values(CommonTestUtils::DEVICE_OCL),
                                 ::testing::ValuesIn(configs)),
                         OVInferRequestIOTensorTest::getTestCaseName);
 
@@ -92,7 +92,7 @@ const std::vector<ov::AnyMap> emptyConfigs = {{}};
 INSTANTIATE_TEST_SUITE_P(smoke_BehaviorTests, OVInferRequestIOTensorSetPrecisionTest,
                          ::testing::Combine(
                                  ::testing::ValuesIn(prcs),
-                                 ::testing::Values(CommonTestUtils::DEVICE_GPU),
+                                 ::testing::Values(CommonTestUtils::DEVICE_OCL),
                                  ::testing::ValuesIn(configs)),
                          OVInferRequestIOTensorSetPrecisionTest::getTestCaseName);
 
@@ -120,7 +120,7 @@ INSTANTIATE_TEST_SUITE_P(smoke_AutoBatch_BehaviorTests, OVInferRequestIOTensorSe
 INSTANTIATE_TEST_SUITE_P(smoke_GPU_BehaviorTests, OVInferRequestCheckTensorPrecision,
                          ::testing::Combine(
                                  ::testing::ValuesIn(supported_input_prcs),
-                                 ::testing::Values(CommonTestUtils::DEVICE_GPU),
+                                 ::testing::Values(CommonTestUtils::DEVICE_OCL),
                                  ::testing::ValuesIn(emptyConfigs)),
                          OVInferRequestCheckTensorPrecision::getTestCaseName);
 

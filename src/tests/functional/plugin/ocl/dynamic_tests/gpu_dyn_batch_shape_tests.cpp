@@ -90,7 +90,7 @@ namespace {
 const ov::AnyMap config = {};
 
 const ov::AnyMap hetero_config = {
-    {"TARGET_FALLBACK", CommonTestUtils::DEVICE_GPU}
+    {"TARGET_FALLBACK", CommonTestUtils::DEVICE_OCL}
 };
 
 const std::vector<InputShape> inputShapes = {
@@ -106,7 +106,7 @@ INSTANTIATE_TEST_SUITE_P(smoke_GPU_DynBatch, OVDynamicBatchShape_Tests,
     ::testing::Combine(
         ::testing::Values(inputShapes),
         ::testing::ValuesIn(netPrecisions),
-        ::testing::Values(CommonTestUtils::DEVICE_GPU),
+        ::testing::Values(CommonTestUtils::DEVICE_OCL),
         ::testing::Values(config)),
     OVDynamicBatchShape_Tests::getTestCaseName);
 

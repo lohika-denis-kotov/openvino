@@ -2,18 +2,18 @@
 // SPDX-License-Identifier: Apache-2.0
 //
 
-#include "intel_gpu/plugin/program.hpp"
-#include "intel_gpu/plugin/common_utils.hpp"
+#include "opencl_gpu/plugin/program.hpp"
+#include "opencl_gpu/plugin/common_utils.hpp"
 
 #include "ngraph/op/normalize_l2.hpp"
 #include "ngraph/op/constant.hpp"
 
-#include "intel_gpu/primitives/normalize.hpp"
-#include "intel_gpu/primitives/data.hpp"
+#include "opencl_gpu/primitives/normalize.hpp"
+#include "opencl_gpu/primitives/data.hpp"
 
 namespace ov {
 namespace runtime {
-namespace intel_gpu {
+namespace opencl_gpu {
 
 static void CreateNormalizeL2Op(Program& p, const std::shared_ptr<ngraph::op::v0::NormalizeL2>& op) {
     p.ValidateInputs(op, {2});
@@ -63,6 +63,6 @@ static void CreateNormalizeL2Op(Program& p, const std::shared_ptr<ngraph::op::v0
 
 REGISTER_FACTORY_IMPL(v0, NormalizeL2);
 
-}  // namespace intel_gpu
+}  // namespace opencl_gpu
 }  // namespace runtime
 }  // namespace ov

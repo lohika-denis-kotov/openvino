@@ -4,8 +4,8 @@
 
 #pragma once
 
-#include "intel_gpu/runtime/event.hpp"
-#include "intel_gpu/runtime/stream.hpp"
+#include "opencl_gpu/runtime/event.hpp"
+#include "opencl_gpu/runtime/stream.hpp"
 #include "ocl_common.hpp"
 #include "ocl_engine.hpp"
 

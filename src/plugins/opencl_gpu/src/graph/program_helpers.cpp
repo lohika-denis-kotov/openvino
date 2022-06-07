@@ -5,7 +5,7 @@
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 
 #include "program_helpers.h"
-#include "intel_gpu/graph/program.hpp"
+#include "opencl_gpu/graph/program.hpp"
 #include "data_inst.h"
 #include <algorithm>
 #include <utility>

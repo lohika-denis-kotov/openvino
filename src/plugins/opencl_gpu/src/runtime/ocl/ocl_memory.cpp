@@ -2,9 +2,9 @@
 // SPDX-License-Identifier: Apache-2.0
 //
 
-#include "intel_gpu/runtime/debug_configuration.hpp"
-#include "intel_gpu/runtime/error_handler.hpp"
-#include "intel_gpu/runtime/utils.hpp"
+#include "opencl_gpu/runtime/debug_configuration.hpp"
+#include "opencl_gpu/runtime/error_handler.hpp"
+#include "opencl_gpu/runtime/utils.hpp"
 #include "ocl_memory.hpp"
 #include "ocl_engine.hpp"
 #include "ocl_stream.hpp"

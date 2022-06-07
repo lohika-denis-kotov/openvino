@@ -14,7 +14,7 @@
 #include <tuple>
 #include <set>
 #include <iostream>
-#include "intel_gpu/runtime/debug_configuration.hpp"
+#include "opencl_gpu/runtime/debug_configuration.hpp"
 
 // #define ENABLE_ENV
 // #define ENABLE_ENV_PRINT

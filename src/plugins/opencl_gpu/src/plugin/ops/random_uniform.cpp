@@ -2,15 +2,15 @@
 // SPDX-License-Identifier: Apache-2.0
 //
 
-#include "intel_gpu/plugin/program.hpp"
-#include "intel_gpu/plugin/common_utils.hpp"
+#include "opencl_gpu/plugin/program.hpp"
+#include "opencl_gpu/plugin/common_utils.hpp"
 #include "ngraph/op/random_uniform.hpp"
-#include "intel_gpu/primitives/random_uniform.hpp"
+#include "opencl_gpu/primitives/random_uniform.hpp"
 
 
 namespace ov {
 namespace runtime {
-namespace intel_gpu {
+namespace opencl_gpu {
 
 namespace {
 
@@ -34,6 +34,6 @@ void CreateRandomUniformOp(Program &p, const std::shared_ptr<ngraph::op::v8::Ran
 
 REGISTER_FACTORY_IMPL(v8, RandomUniform);
 
-} // namespace intel_gpu
+} // namespace opencl_gpu
 } // namespace runtime
 } // namespace ov

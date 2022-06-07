@@ -2,17 +2,17 @@
 // SPDX-License-Identifier: Apache-2.0
 //
 
-#include "intel_gpu/plugin/program.hpp"
-#include "intel_gpu/plugin/common_utils.hpp"
+#include "opencl_gpu/plugin/program.hpp"
+#include "opencl_gpu/plugin/common_utils.hpp"
 #include "transformations/utils/utils.hpp"
 
 #include "ngraph/op/pad.hpp"
 
-#include "intel_gpu/primitives/border.hpp"
+#include "opencl_gpu/primitives/border.hpp"
 
 namespace ov {
 namespace runtime {
-namespace intel_gpu {
+namespace opencl_gpu {
 
 static cldnn::border_type GetBorderType(ngraph::op::PadMode mode) {
     switch (mode) {
@@ -75,6 +75,6 @@ static void CreatePadOp(Program& p, const std::shared_ptr<ngraph::op::v1::Pad>& 
 
 REGISTER_FACTORY_IMPL(v1, Pad);
 
-}  // namespace intel_gpu
+}  // namespace opencl_gpu
 }  // namespace runtime
 }  // namespace ov

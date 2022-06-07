@@ -3,7 +3,7 @@
 //
 
 #include "ocl_event.hpp"
-#include "intel_gpu/runtime/debug_configuration.hpp"
+#include "opencl_gpu/runtime/debug_configuration.hpp"
 
 #include <cassert>
 #include <iostream>
