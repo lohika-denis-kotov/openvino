@@ -26,7 +26,7 @@ INSTANTIATE_TEST_SUITE_P(
 
 INSTANTIATE_TEST_SUITE_P(
         nightly_IEClassNetworkTestP, IEClassNetworkTestP,
-        ::testing::Values("GPU")
+        ::testing::Values("OCL")
 );
 
 //
@@ -35,62 +35,62 @@ INSTANTIATE_TEST_SUITE_P(
 
 INSTANTIATE_TEST_SUITE_P(
         nightly_IEClassGetMetricTest, IEClassGetMetricTest_SUPPORTED_CONFIG_KEYS,
-        ::testing::Values("GPU", "MULTI", "HETERO", "AUTO", "BATCH")
+        ::testing::Values("OCL", "MULTI", "HETERO", "AUTO", "BATCH")
 );
 
 INSTANTIATE_TEST_SUITE_P(
         nightly_IEClassGetMetricTest, IEClassGetMetricTest_SUPPORTED_METRICS,
-        ::testing::Values("GPU", "MULTI", "HETERO", "AUTO", "BATCH")
+        ::testing::Values("OCL", "MULTI", "HETERO", "AUTO", "BATCH")
 );
 
 INSTANTIATE_TEST_SUITE_P(
         nightly_IEClassGetMetricTest, IEClassGetMetricTest_AVAILABLE_DEVICES,
-        ::testing::Values("GPU")
+        ::testing::Values("OCL")
 );
 
 INSTANTIATE_TEST_SUITE_P(
         nightly_IEClassGetMetricTest, IEClassGetMetricTest_FULL_DEVICE_NAME,
-        ::testing::Values("GPU", "MULTI", "HETERO", "AUTO", "BATCH")
+        ::testing::Values("OCL", "MULTI", "HETERO", "AUTO", "BATCH")
 );
 
 INSTANTIATE_TEST_SUITE_P(
         nightly_IEClassGetMetricTest, IEClassGetMetricTest_OPTIMIZATION_CAPABILITIES,
-        ::testing::Values("GPU")
+        ::testing::Values("OCL")
 );
 
 INSTANTIATE_TEST_SUITE_P(
         nightly_IEClassGetMetricTest, IEClassGetMetricTest_DEVICE_GOPS,
-        ::testing::Values("GPU")
+        ::testing::Values("OCL")
 );
 
 INSTANTIATE_TEST_SUITE_P(
         nightly_IEClassGetMetricTest, IEClassGetMetricTest_DEVICE_TYPE,
-        ::testing::Values("GPU")
+        ::testing::Values("OCL")
 );
 
 INSTANTIATE_TEST_SUITE_P(
         nightly_IEClassGetMetricTest, IEClassGetMetricTest_RANGE_FOR_ASYNC_INFER_REQUESTS,
-        ::testing::Values("GPU")
+        ::testing::Values("OCL")
 );
 
 INSTANTIATE_TEST_SUITE_P(
         nightly_IEClassGetMetricTest, IEClassGetMetricTest_RANGE_FOR_STREAMS,
-        ::testing::Values("GPU")
+        ::testing::Values("OCL")
 );
 
 INSTANTIATE_TEST_SUITE_P(
         nightly_IEClassGetMetricTest, IEClassGetMetricTest_ThrowUnsupported,
-        ::testing::Values("GPU", "MULTI", "HETERO", "AUTO", "BATCH")
+        ::testing::Values("OCL", "MULTI", "HETERO", "AUTO", "BATCH")
 );
 
 INSTANTIATE_TEST_SUITE_P(
         nightly_IEClassGetConfigTest, IEClassGetConfigTest_ThrowUnsupported,
-        ::testing::Values("GPU", "MULTI", "HETERO", "AUTO", "BATCH")
+        ::testing::Values("OCL", "MULTI", "HETERO", "AUTO", "BATCH")
 );
 
 INSTANTIATE_TEST_SUITE_P(
         nightly_IEClassGetAvailableDevices, IEClassGetAvailableDevices,
-        ::testing::Values("GPU")
+        ::testing::Values("OCL")
 );
 
 //
@@ -112,7 +112,7 @@ TEST_P(IEClassGetMetricTest_GPU_DEVICE_TOTAL_MEM_SIZE, GetMetricAndPrintNoThrow)
 
 INSTANTIATE_TEST_SUITE_P(
         nightly_IEClassGetMetricTest, IEClassGetMetricTest_GPU_DEVICE_TOTAL_MEM_SIZE,
-        ::testing::Values("GPU")
+        ::testing::Values("OCL")
 );
 
 using IEClassGetMetricTest_GPU_OPTIMAL_BATCH_SIZE = BehaviorTestsUtils::IEClassBaseTestP;
@@ -132,7 +132,7 @@ TEST_P(IEClassGetMetricTest_GPU_OPTIMAL_BATCH_SIZE, GetMetricAndPrintNoThrow) {
 
 INSTANTIATE_TEST_SUITE_P(
         nightly_IEClassExecutableNetworkGetMetricTest, IEClassGetMetricTest_GPU_OPTIMAL_BATCH_SIZE,
-        ::testing::Values("GPU")
+        ::testing::Values("OCL")
 );
 
 using IEClassGetMetricTest_GPU_MAX_BATCH_SIZE_DEFAULT = BehaviorTestsUtils::IEClassBaseTestP;
@@ -152,7 +152,7 @@ TEST_P(IEClassGetMetricTest_GPU_MAX_BATCH_SIZE_DEFAULT, GetMetricAndPrintNoThrow
 
 INSTANTIATE_TEST_SUITE_P(
         nightly_IEClassExecutableNetworkGetMetricTest, IEClassGetMetricTest_GPU_MAX_BATCH_SIZE_DEFAULT,
-        ::testing::Values("GPU")
+        ::testing::Values("OCL")
 );
 
 using IEClassGetMetricTest_GPU_MAX_BATCH_SIZE_STREAM_DEVICE_MEM = BehaviorTestsUtils::IEClassBaseTestP;
@@ -177,7 +177,7 @@ TEST_P(IEClassGetMetricTest_GPU_MAX_BATCH_SIZE_STREAM_DEVICE_MEM, GetMetricAndPr
 
 INSTANTIATE_TEST_SUITE_P(
         nightly_IEClassExecutableNetworkGetMetricTest, IEClassGetMetricTest_GPU_MAX_BATCH_SIZE_STREAM_DEVICE_MEM,
-        ::testing::Values("GPU")
+        ::testing::Values("OCL")
 );
 
 using IEClassGetMetricTest_GPU_UARCH_VERSION = BehaviorTestsUtils::IEClassBaseTestP;
@@ -196,7 +196,7 @@ TEST_P(IEClassGetMetricTest_GPU_UARCH_VERSION, GetMetricAndPrintNoThrow) {
 
 INSTANTIATE_TEST_SUITE_P(
         nightly_IEClassGetMetricTest, IEClassGetMetricTest_GPU_UARCH_VERSION,
-        ::testing::Values("GPU")
+        ::testing::Values("OCL")
 );
 
 using IEClassGetMetricTest_GPU_EXECUTION_UNITS_COUNT = BehaviorTestsUtils::IEClassBaseTestP;
@@ -215,7 +215,7 @@ TEST_P(IEClassGetMetricTest_GPU_EXECUTION_UNITS_COUNT, GetMetricAndPrintNoThrow)
 
 INSTANTIATE_TEST_SUITE_P(
         nightly_IEClassGetMetricTest, IEClassGetMetricTest_GPU_EXECUTION_UNITS_COUNT,
-        ::testing::Values("GPU")
+        ::testing::Values("OCL")
 );
 
 using IEClassGetMetricTest_GPU_MEMORY_STATISTICS_DEFAULT = BehaviorTestsUtils::IEClassBaseTestP;
@@ -241,7 +241,7 @@ TEST_P(IEClassGetMetricTest_GPU_MEMORY_STATISTICS_DEFAULT, GetMetricAndPrintNoTh
 
 INSTANTIATE_TEST_SUITE_P(
         nightly_IEClassGetMetricTest, IEClassGetMetricTest_GPU_MEMORY_STATISTICS_DEFAULT,
-        ::testing::Values("GPU")
+        ::testing::Values("OCL")
 );
 
 using IEClassGetMetricTest_GPU_MEMORY_STATISTICS_MULTIPLE_NETWORKS = BehaviorTestsUtils::IEClassBaseTestP;
@@ -279,7 +279,7 @@ TEST_P(IEClassGetMetricTest_GPU_MEMORY_STATISTICS_MULTIPLE_NETWORKS, GetMetricAn
 
 INSTANTIATE_TEST_SUITE_P(
         nightly_IEClassGetMetricTest, IEClassGetMetricTest_GPU_MEMORY_STATISTICS_MULTIPLE_NETWORKS,
-        ::testing::Values("GPU")
+        ::testing::Values("OCL")
 );
 
 using IEClassGetMetricTest_GPU_MEMORY_STATISTICS_CHECK_VALUES = BehaviorTestsUtils::IEClassBaseTestP;
@@ -341,7 +341,7 @@ TEST_P(IEClassGetMetricTest_GPU_MEMORY_STATISTICS_CHECK_VALUES, GetMetricAndPrin
 
 INSTANTIATE_TEST_SUITE_P(
         nightly_IEClassGetMetricTest, IEClassGetMetricTest_GPU_MEMORY_STATISTICS_CHECK_VALUES,
-        ::testing::Values("GPU")
+        ::testing::Values("OCL")
 );
 
 using IEClassGetMetricTest_GPU_MEMORY_STATISTICS_MULTI_THREADS = BehaviorTestsUtils::IEClassBaseTestP;
@@ -398,7 +398,7 @@ TEST_P(IEClassGetMetricTest_GPU_MEMORY_STATISTICS_MULTI_THREADS, GetMetricAndPri
 
 INSTANTIATE_TEST_SUITE_P(
         nightly_IEClassGetMetricTest, IEClassGetMetricTest_GPU_MEMORY_STATISTICS_MULTI_THREADS,
-        ::testing::Values("GPU")
+        ::testing::Values("OCL")
 );
 
 //
@@ -407,26 +407,26 @@ INSTANTIATE_TEST_SUITE_P(
 
 INSTANTIATE_TEST_SUITE_P(
         nightly_IEClassGetConfigTest, IEClassGetConfigTest,
-        ::testing::Values("GPU")
+        ::testing::Values("OCL")
 );
 
 // IE Class Query network
 
 INSTANTIATE_TEST_SUITE_P(
         smoke_IEClassQueryNetworkTest, IEClassQueryNetworkTest,
-        ::testing::Values("GPU")
+        ::testing::Values("OCL")
 );
 
 // IE Class Load network
 
 INSTANTIATE_TEST_SUITE_P(
         smoke_IEClassLoadNetworkTest, IEClassLoadNetworkTest,
-        ::testing::Values("GPU")
+        ::testing::Values("OCL")
 );
 
 INSTANTIATE_TEST_SUITE_P(
         smoke_IEClassHeteroExecutableNetworkGetMetricTest, IEClassLoadNetworkAfterCoreRecreateTest,
-        ::testing::Values("GPU")
+        ::testing::Values("OCL")
 );
 
 // GetConfig / SetConfig for specific device
@@ -472,14 +472,14 @@ INSTANTIATE_TEST_SUITE_P(
 
 INSTANTIATE_TEST_SUITE_P(
         nightly_IEClassSetDefaultDeviceIDTest, IEClassSetDefaultDeviceIDTest,
-        ::testing::Values(std::make_pair("GPU", "1"))
+        ::testing::Values(std::make_pair("OCL", "1"))
 );
 
 // Set config for all GPU devices
 
 INSTANTIATE_TEST_SUITE_P(
         nightly_IEClassSetGlobalConfigTest, IEClassSetGlobalConfigTest,
-        ::testing::Values("GPU")
+        ::testing::Values("OCL")
 );
 
 } // namespace

@@ -30,7 +30,7 @@ TEST_F(CompiledKernelsCacheTest, CanCreateCacheDirAndDumpBinaries) {
     std::map<std::string, std::string> config = {{ CONFIG_KEY(CACHE_DIR), cache_path }};
     try {
         // Load CNNNetwork to target plugins
-        auto execNet = ie->LoadNetwork(cnnNet, "GPU", config);
+        auto execNet = ie->LoadNetwork(cnnNet, "OCL", config);
 
         // Check that directory with cached kernels exists after loading network
         ASSERT_TRUE(CommonTestUtils::directoryExists(cache_path)) << "Directory with cached kernels doesn't exist";
@@ -57,13 +57,13 @@ TEST_F(CompiledKernelsCacheTest, TwoNetworksWithSameModelCreatesSameCache) {
     std::map<std::string, std::string> config = {{ CONFIG_KEY(CACHE_DIR), cache_path }};
     try {
         // Load 1st CNNNetwork
-        auto execNet1 = ie->LoadNetwork(cnnNet1, "GPU", config);
+        auto execNet1 = ie->LoadNetwork(cnnNet1, "OCL", config);
         auto n_cache_files = CommonTestUtils::listFilesWithExt(cache_path, "cl_cache").size();
 
         // Check that directory with cached kernels exists after loading network
         ASSERT_TRUE(CommonTestUtils::directoryExists(cache_path)) << "Directory with cached kernels doesn't exist";
         // Load 2nd CNNNetwork
-        auto execNet2 = ie->LoadNetwork(cnnNet2, "GPU", config);
+        auto execNet2 = ie->LoadNetwork(cnnNet2, "OCL", config);
 
         // Check that two loaded networks with same function creates same caches
         ASSERT_EQ(CommonTestUtils::removeFilesWithExt(cache_path, "cl_cache"), n_cache_files);
@@ -96,7 +96,7 @@ TEST_F(CompiledKernelsCacheTest, CanCreateCacheDirAndDumpBinariesUnicodePath) {
             auto cache_path_mb = ov::util::wstring_to_string(cache_path_w);
             std::map<std::string, std::string> config = {{ CONFIG_KEY(CACHE_DIR), cache_path_mb }};
             // Load CNNNetwork to target plugins
-            auto execNet = ie->LoadNetwork(cnnNet, "GPU", config);
+            auto execNet = ie->LoadNetwork(cnnNet, "OCL", config);
 
             // Check that directory with cached kernels exists after loading network
             ASSERT_TRUE(CommonTestUtils::directoryExists(cache_path_w)) << "Directory with cached kernels doesn't exist";

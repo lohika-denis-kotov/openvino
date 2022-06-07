@@ -16,23 +16,23 @@ namespace {
 
 INSTANTIATE_TEST_SUITE_P(nightly_OVClassExecutableNetworkGetMetricTest,
                          OVClassExecutableNetworkGetMetricTest_OPTIMAL_NUMBER_OF_INFER_REQUESTS,
-                         ::testing::Values("GPU", "MULTI:GPU", "HETERO:GPU", "AUTO:GPU,CPU", "BATCH:GPU"));
+                         ::testing::Values("OCL", "MULTI:OCL", "HETERO:OCL", "AUTO:OCL,CPU", "BATCH:OCL"));
 
 INSTANTIATE_TEST_SUITE_P(nightly_OVClassExecutableNetworkGetMetricTest,
                          OVClassExecutableNetworkGetMetricTest_SUPPORTED_CONFIG_KEYS,
-                         ::testing::Values("GPU", "MULTI:GPU", "HETERO:GPU", "AUTO:GPU,CPU", "BATCH:GPU"));
+                         ::testing::Values("OCL", "MULTI:OCL", "HETERO:OCL", "AUTO:OCL,CPU", "BATCH:OCL"));
 
 INSTANTIATE_TEST_SUITE_P(nightly_OVClassExecutableNetworkGetMetricTest,
                          OVClassExecutableNetworkGetMetricTest_SUPPORTED_METRICS,
-                         ::testing::Values("GPU", "MULTI:GPU", "HETERO:GPU", "AUTO:GPU,CPU", "BATCH:GPU"));
+                         ::testing::Values("OCL", "MULTI:OCL", "HETERO:OCL", "AUTO:OCL,CPU", "BATCH:OCL"));
 
 INSTANTIATE_TEST_SUITE_P(nightly_OVClassExecutableNetworkGetMetricTest,
                          OVClassExecutableNetworkGetMetricTest_NETWORK_NAME,
-                         ::testing::Values("GPU", "MULTI:GPU", "HETERO:GPU", "AUTO:GPU,CPU", "BATCH:GPU"));
+                         ::testing::Values("OCL", "MULTI:OCL", "HETERO:OCL", "AUTO:OCL,CPU", "BATCH:OCL"));
 
 INSTANTIATE_TEST_SUITE_P(nightly_OVClassExecutableNetworkGetMetricTest,
                          OVClassExecutableNetworkGetMetricTest_ThrowsUnsupported,
-                         ::testing::Values("GPU", "MULTI:GPU", "HETERO:GPU", "AUTO:GPU,CPU", "BATCH:GPU"));
+                         ::testing::Values("OCL", "MULTI:OCL", "HETERO:OCL", "AUTO:OCL,CPU", "BATCH:OCL"));
 
 const std::vector<ov::AnyMap> multiDevicePriorityConfigs = {
         {ov::device::priorities(CommonTestUtils::DEVICE_CPU)},
@@ -62,11 +62,11 @@ INSTANTIATE_TEST_SUITE_P(nightly_OVClassExecutableNetworkGetMetricTest,
 
 INSTANTIATE_TEST_SUITE_P(nightly_OVClassExecutableNetworkGetConfigTest,
                          OVClassExecutableNetworkGetConfigTest,
-                         ::testing::Values("GPU"));
+                         ::testing::Values("OCL"));
 
 INSTANTIATE_TEST_SUITE_P(nightly_OVClassExecutableNetworkSetConfigTest,
                          OVClassExecutableNetworkSetConfigTest,
-                         ::testing::Values("GPU"));
+                         ::testing::Values("OCL"));
 
 //
 // Hetero Executable Network GetMetric
@@ -74,19 +74,19 @@ INSTANTIATE_TEST_SUITE_P(nightly_OVClassExecutableNetworkSetConfigTest,
 
 INSTANTIATE_TEST_SUITE_P(nightly_OVClassHeteroExecutableNetworlGetMetricTest,
                          OVClassHeteroExecutableNetworkGetMetricTest_SUPPORTED_CONFIG_KEYS,
-                         ::testing::Values("GPU"));
+                         ::testing::Values("OCL"));
 
 INSTANTIATE_TEST_SUITE_P(nightly_OVClassHeteroExecutableNetworlGetMetricTest,
                          OVClassHeteroExecutableNetworkGetMetricTest_SUPPORTED_METRICS,
-                         ::testing::Values("GPU"));
+                         ::testing::Values("OCL"));
 
 INSTANTIATE_TEST_SUITE_P(nightly_OVClassHeteroExecutableNetworlGetMetricTest,
                          OVClassHeteroExecutableNetworkGetMetricTest_NETWORK_NAME,
-                         ::testing::Values("GPU"));
+                         ::testing::Values("OCL"));
 
 INSTANTIATE_TEST_SUITE_P(nightly_OVClassHeteroExecutableNetworlGetMetricTest,
                          OVClassHeteroExecutableNetworkGetMetricTest_TARGET_FALLBACK,
-                         ::testing::Values("GPU"));
+                         ::testing::Values("OCL"));
 
 } // namespace
 

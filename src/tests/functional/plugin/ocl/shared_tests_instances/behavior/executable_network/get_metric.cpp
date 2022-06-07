@@ -22,27 +22,27 @@ namespace {
 
 INSTANTIATE_TEST_SUITE_P(
         nightly_IEClassExecutableNetworkGetMetricTest, IEClassExecutableNetworkGetMetricTest_OPTIMAL_NUMBER_OF_INFER_REQUESTS,
-        ::testing::Values("GPU", "MULTI:GPU", "HETERO:GPU", "AUTO:GPU,CPU", "BATCH:GPU")
+        ::testing::Values("OCL", "MULTI:OCL", "HETERO:OCL", "AUTO:OCL,CPU", "BATCH:OCL")
 );
 
 INSTANTIATE_TEST_SUITE_P(
         nightly_IEClassExecutableNetworkGetMetricTest, IEClassExecutableNetworkGetMetricTest_SUPPORTED_CONFIG_KEYS,
-        ::testing::Values("GPU", "MULTI:GPU", "HETERO:GPU", "AUTO:GPU,CPU", "BATCH:GPU")
+        ::testing::Values("OCL", "MULTI:OCL", "HETERO:OCL", "AUTO:OCL,CPU", "BATCH:OCL")
 );
 
 INSTANTIATE_TEST_SUITE_P(
         nightly_IEClassExecutableNetworkGetMetricTest, IEClassExecutableNetworkGetMetricTest_SUPPORTED_METRICS,
-        ::testing::Values("GPU", "MULTI:GPU", "HETERO:GPU", "AUTO:GPU,CPU", "BATCH:GPU")
+        ::testing::Values("OCL", "MULTI:OCL", "HETERO:OCL", "AUTO:OCL,CPU", "BATCH:OCL")
 );
 
 INSTANTIATE_TEST_SUITE_P(
         nightly_IEClassExecutableNetworkGetMetricTest, IEClassExecutableNetworkGetMetricTest_NETWORK_NAME,
-        ::testing::Values("GPU", "MULTI:GPU", "HETERO:GPU", "AUTO:GPU,CPU", "BATCH:GPU")
+        ::testing::Values("OCL", "MULTI:OCL", "HETERO:OCL", "AUTO:OCL,CPU", "BATCH:OCL")
 );
 
 INSTANTIATE_TEST_SUITE_P(
         nightly_IEClassExecutableNetworkGetMetricTest, IEClassExecutableNetworkGetMetricTest_ThrowsUnsupported,
-        ::testing::Values("GPU", "MULTI:GPU", "HETERO:GPU", "AUTO:GPU,CPU", "BATCH:GPU")
+        ::testing::Values("OCL", "MULTI:OCL", "HETERO:OCL", "AUTO:OCL,CPU", "BATCH:OCL")
 );
 
 //
@@ -51,12 +51,12 @@ INSTANTIATE_TEST_SUITE_P(
 
 INSTANTIATE_TEST_SUITE_P(
         nightly_IEClassExecutableNetworkGetConfigTest, IEClassExecutableNetworkGetConfigTest,
-        ::testing::Values("GPU")
+        ::testing::Values("OCL")
 );
 
 INSTANTIATE_TEST_SUITE_P(
         nightly_IEClassExecutableNetworkSetConfigTest, IEClassExecutableNetworkSetConfigTest,
-        ::testing::Values("GPU")
+        ::testing::Values("OCL")
 );
 
 //
@@ -65,21 +65,21 @@ INSTANTIATE_TEST_SUITE_P(
 
 INSTANTIATE_TEST_SUITE_P(
         nightly_IEClassHeteroExecutableNetworlGetMetricTest, IEClassHeteroExecutableNetworkGetMetricTest_SUPPORTED_CONFIG_KEYS,
-        ::testing::Values("GPU")
+        ::testing::Values("OCL")
 );
 
 INSTANTIATE_TEST_SUITE_P(
         nightly_IEClassHeteroExecutableNetworlGetMetricTest, IEClassHeteroExecutableNetworkGetMetricTest_SUPPORTED_METRICS,
-        ::testing::Values("GPU")
+        ::testing::Values("OCL")
 );
 
 INSTANTIATE_TEST_SUITE_P(
         nightly_IEClassHeteroExecutableNetworlGetMetricTest, IEClassHeteroExecutableNetworkGetMetricTest_NETWORK_NAME,
-        ::testing::Values("GPU")
+        ::testing::Values("OCL")
 );
 
 INSTANTIATE_TEST_SUITE_P(
         nightly_IEClassHeteroExecutableNetworlGetMetricTest, IEClassHeteroExecutableNetworkGetMetricTest_TARGET_FALLBACK,
-        ::testing::Values("GPU")
+        ::testing::Values("OCL")
 );
 } // namespace

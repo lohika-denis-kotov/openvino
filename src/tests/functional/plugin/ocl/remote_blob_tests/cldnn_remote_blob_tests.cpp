@@ -236,7 +236,7 @@ TEST_P(RemoteBlob_Test, smoke_canInferOnUserContext) {
     auto ocl_instance = std::make_shared<OpenCL>();
     auto remote_context = make_shared_context(*ie, deviceName, ocl_instance->_context.get());
     // since there is no way to enable the Auto-Batching thru the device name when loading with the RemoteContext
-    // (as the device name is deduced from the context, which is the "GPU")
+    // (as the device name is deduced from the context, which is the "OCL")
     // the only-way to test the auto-batching is explicit config with ALLOW_AUTO_BATCHING set to YES
     auto exec_net_shared = ie->LoadNetwork(net, remote_context, config);
     auto inf_req_shared = exec_net_shared.CreateInferRequest();
